@@ -9,10 +9,10 @@ Item {
         height: 100%;
         color: "#f5f5f5";
 
-        Text {
-            anchors.centerIn: parent;
-            text: parent.height + " " + parent.width;
-        }
+        // Text {
+        //     anchors.centerIn: parent;
+        //     text: parent.height + " " + parent.width;
+        // }
     }
 
     PersonalPage {
@@ -21,9 +21,15 @@ Item {
         Rectangle {
             id: panel;
             anchors.top: parent.top;
-            height: app.height;
+            height: 100%;
             width: 250;
             color: "white";
+
+            Text {
+                font.pixelSize: 26;
+                text: "ПРИВЕТ";                
+                anchors.horizontalCenter: parent.horizontalCenter;
+            }
 
             Rectangle {
             anchors.right: parent.right;
