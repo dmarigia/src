@@ -11,7 +11,10 @@ Rectangle {
     MousePressMixin {
         id: pressMixin;
         onPressedChanged: {
-            if (this.pressed) app.page = leftButton.page;
+            if (this.pressed) {
+                app.page = leftButton.page
+                app.pageName = leftButton.name
+            }
         }
     }
     
