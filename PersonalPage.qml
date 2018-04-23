@@ -1,6 +1,6 @@
 Item {
     id: psPage;
-  anchors.fill: parent;
+    anchors.fill: parent;
 
     Column {    
         spacing: 20;       

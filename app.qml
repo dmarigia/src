@@ -5,15 +5,22 @@ Rectangle {
     id: app;
     anchors.fill: parent;
     color: "#f5f5f5";
-    
-    LeftPanel {  
-    }
-    
     property string page: "PersonalPage";
-    Loader {
-        source: "src." + parent.page;
-        anchors.left: panel.right;
-        anchors.right: parent.right;
-        height: 100%;
+    
+    Item {
+        // for Desktop
+        anchors.centerIn: parent;
+        width: 90%;
+        height: 95%;
+        
+        LeftPanel {
+            id: leftPanel;
+        }
+        Loader {
+            source: "src." + app.page;
+            anchors.left: leftPanel.right;
+            anchors.right: parent.right;
+            height: 100%;
+        }
     }
 }
