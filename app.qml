@@ -8,10 +8,8 @@ Rectangle {
     property string page: "PersonalPage";
     property string pageName: "Личная информация";
     
-    Rectangle {
-        // for Desktop
+    Item {
         anchors.centerIn: parent;
-        color: "white";
         width: 90%;
         height: 95%;
         
@@ -24,19 +22,23 @@ Rectangle {
             height: 80;
             anchors.left: leftPanel.right;
             anchors.right: parent.right;
-            Text {
+            Row {
                 anchors.verticalCenter: parent.verticalCenter;
                 anchors.left: panel.right;
                 anchors.leftMargin: 30;
-                text: app.pageName;
-                font.pixelSize: 18;
-                color: "#212121";
-                font.family: "century gothic";
-                font.bold: true;
+                MenuButton {}
+                Text {
+                    text: app.pageName;
+                    font.pixelSize: 18;
+                    color: "#212121";
+                    font.family: "century gothic";
+                    font.bold: true;
+                }
             }
         }
         
         Loader {
+            id: loader;
             source: "src." + app.page;
             anchors.top: infoPanel.bottom;
             anchors.bottom: parent.bottom;

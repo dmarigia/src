@@ -1,150 +1,149 @@
 Item {
     id: psPage;
     anchors.fill: parent;
-
-    Rectangle {
-        id: mainInfo;
-        anchors.top: parent.top;
-        anchors.topMargin: 70;
-        anchors.horizontalCenter: parent.horizontalCenter;
-        width: 950;
-        height: 200;
-        color: "white";
-        radius: 5;
-        border.width: 1;
-        border.color: "#EAEAEA";
-
-        Column {
-            id: mainAvatar;
-            anchors.leftMargin: 30;            
-            anchors.left: parent.left;
-            anchors.verticalCenter: parent.verticalCenter;
-            spacing: 10;
-            Rectangle {
-                radius: 100;
-                width: 125;
-                height: 125;
-                Image {
-                    anchors.centerIn: parent;
-                    source: "images/avatarbig.png";
-                    height: 120;
-                    width: 120; 
-                    opacity: 0.4; 
-                }
-            }
-            Rectangle {
-                width: addPhotoText.width + 20;
-                height: 20;
-                color: "#ff5252";
-                radius: 50;
-                Text {
-                    id: addPhotoText;
-                    anchors.centerIn: parent;
-                    text: "Добавить фото";
-                    font.pixelSize: 14;
-                    font.family: "century gothic";
-                    color: "white";
-                }
-            }
-            
-            
-        }
-
-        Column {
-            spacing: 15;
-            anchors.left: mainAvatar.right;  
-            anchors.leftMargin: 40;          
-            anchors.verticalCenter: parent.verticalCenter;
-            Row {
-                spacing: 80;
-                Text {
-                    text: "Фамилия Имя Отчество";
-                    color: "#212121";
-                    font.pixelSize: 16;
-                    font.family: "century gothic";
-                    font.bold: true;
-                }
-                Text {
-                    text: "Sirname Name";
-                    color: "#212121";
-                    font.pixelSize: 16;
-                    font.family: "century gothic";
-                    font.bold: true;
-                }
-            }
-            Row {
-                spacing: 10;
-                Text {
-                    text: "Специальность: ";
-                    font.family: "century gothic";
-                    font.pixelSize: 14;
-                    color: "#757575";
-                }
-                Text {
-                    text: "такая вот";
-                    font.family: "century gothic";
-                    font.pixelSize: 14;
-                    color: "#212121";
-                }
-            }
-            Row {
-                spacing: 10;
-                Text {
-                    text: "Кафедра: ";
-                    font.family: "century gothic";
-                    font.pixelSize: 14;
-                    color: "#757575";
-                }
-                Text {
-                    text: "кафедра";
-                    font.family: "century gothic";
-                    font.pixelSize: 14;
-                    color: "#212121";
-                }
-            }
-            Row {
-                spacing: 10;
-                Text {
-                    text: "Степень: ";
-                    font.family: "century gothic";
-                    font.pixelSize: 14;
-                    color: "#757575";
-                }
-                Text {
-                    text: "степень";
-                    font.family: "century gothic";
-                    font.pixelSize: 14;
-                    color: "#212121";
-                }
-            }
-            Row {
-                spacing: 10;
-                Text {
-                    text: "Звание: ";
-                    font.family: "century gothic";
-                    font.pixelSize: 14;
-                    color: "#757575";
-                }
-                Text {
-                    text: "звание";
-                    font.family: "century gothic";
-                    font.pixelSize: 14;
-                    color: "#212121";
-                } //год рождения, год обучения, форма обучения (дневная, заочная), бюджет/контракт, руководитель +ссылка на его профиль
-            }
-        }
-    }
-
-    Row {        
-        anchors.horizontalCenter: parent.horizontalCenter;
-        anchors.top: mainInfo.bottom;
-        anchors.topMargin: 100;
-        spacing: 150;
+    
+    Grid {
+        id: grid;
+        height: 97%;
+        anchors.centerIn: parent;
+        width: (psPage.width - 20) > 820 ? 410 * 2 + 10 : psPage.width - 20;
         
+        spacing: 10;
         Rectangle {
+            id: mainInfo;
+            height: 200;
+            width: grid.width > 820 ? 410 : grid.width;
+            color: "white";
+            radius: 5;
+            border.width: 1;
+            border.color: "#EAEAEA";
+
+            Column {
+                id: mainAvatar;
+                anchors.leftMargin: 30;            
+                anchors.left: parent.left;
+                anchors.verticalCenter: parent.verticalCenter;
+                spacing: 10;
+                Rectangle {
+                    radius: 100;
+                    width: 125;
+                    height: 125;
+                    Image {
+                        anchors.centerIn: parent;
+                        source: "images/avatarbig.png";
+                        height: 120;
+                        width: 120; 
+                        opacity: 0.4; 
+                    }
+                }
+                Rectangle {
+                    width: addPhotoText.width + 20;
+                    height: 20;
+                    color: "#ff5252";
+                    radius: 50;
+                    Text {
+                        id: addPhotoText;
+                        anchors.centerIn: parent;
+                        text: "Добавить фото";
+                        font.pixelSize: 14;
+                        font.family: "century gothic";
+                        color: "white";
+                    }
+                }
+            }
+            
+            Column {
+                spacing: 15;
+                anchors.left: mainAvatar.right;  
+                anchors.leftMargin: 40;          
+                anchors.verticalCenter: parent.verticalCenter;
+                Row {
+                    spacing: 80;
+                    Text {
+                        id: nameSurname;
+                        text: "Фамилия Имя Отчество";
+                        color: "#212121";
+                        font.pixelSize: 16;
+                        font.family: "century gothic";
+                        font.bold: true;
+                    }
+                }
+
+                Row {
+                    spacing: 10;
+                    Text {
+                        text: "Специальность: ";
+                        font.family: "century gothic";
+                        font.pixelSize: 14;
+                        color: "#757575";
+                    }
+                    Text {
+                        text: "такая вот";
+                        font.family: "century gothic";
+                        font.pixelSize: 14;
+                        color: "#212121";
+                    }
+                }
+                Row {
+                    spacing: 10;
+                    Text {
+                        text: "Кафедра: ";
+                        font.family: "century gothic";
+                        font.pixelSize: 14;
+                        color: "#757575";
+                    }
+                    Text {
+                        text: "кафедра";
+                        font.family: "century gothic";
+                        font.pixelSize: 14;
+                        color: "#212121";
+                    }
+                }
+                Row {
+                    spacing: 10;
+                    Text {
+                        text: "Степень: ";
+                        font.family: "century gothic";
+                        font.pixelSize: 14;
+                        color: "#757575";
+                    }
+                    Text {
+                        text: "степень";
+                        font.family: "century gothic";
+                        font.pixelSize: 14;
+                        color: "#212121";
+                    }
+                }
+                Row {
+                    spacing: 10;
+                    Text {
+                        text: "Звание: ";
+                        font.family: "century gothic";
+                        font.pixelSize: 14;
+                        color: "#757575";
+                    }
+                    Text {
+                        text: "звание";
+                        font.family: "century gothic";
+                        font.pixelSize: 14;
+                        color: "#212121";
+                    } //год рождения, год обучения, форма обучения (дневная, заочная), бюджет/контракт, руководитель +ссылка на его профиль
+                }
+            }
+        }
+
+        Rectangle {
+            Text {
+                text: "О СЕБЕ";
+                font.family: "century gothic";
+                font.pixelSize: 14;
+                color: "#757575";
+                font.bold: true;
+            }
+
             id: info;
-            width: 400;
-            height: 130;
+            width: grid.width > 820 ? 410 : grid.width;
+            height: 200;
             color: "white";
             border.width: 1;
             border.color: "#EAEAEA";
@@ -202,11 +201,19 @@ Item {
                 }
             } 
         }
-
+        
         Rectangle {
+            Text {
+                text: "КОНТАКТНАЯ ИНФОРМАЦИЯ";
+                font.family: "century gothic";
+                font.pixelSize: 14;
+                color: "#757575";
+                font.bold: true;
+            }
+
             id: contactInfo;
-            width: 400;
-            height: 130;
+            width: grid.width > 820 ? 410 : grid.width;
+            height: 200;
             color: "white";
             border.width: 1;
             border.color: "#EAEAEA";
@@ -265,27 +272,6 @@ Item {
             }
             // телефон, мыло, адрес
         }
-    }
-
-    Text {
-        anchors.bottom: info.top;
-        anchors.bottomMargin: 10;
-        anchors.left: info.left;
-        text: "О СЕБЕ";
-        font.family: "century gothic";
-        font.pixelSize: 14;
-        color: "#757575";
-        font.bold: true;
-    }
-    Text { // ???????????????????????????????????????????????????????????
-        anchors.bottom: contactInfo.top;
-        anchors.bottomMargin: 10;
-        anchors.left: contactInfo.left;
-        text: "КОНТАКТНАЯ ИНФОРМАЦИЯ";
-        font.family: "century gothic";
-        font.pixelSize: 14;
-        color: "#757575";
-        font.bold: true;
     }
 
 // Column {
