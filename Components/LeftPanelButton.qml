@@ -6,6 +6,7 @@ Rectangle {
     property string image;
     property string page;
     color: hover.value ? (pressMixin.pressed ? "darkgray" : "lightgray") : "transparent";
+    Behavior on background { ColorAnimation { duration: 200; } }
     
     MousePressMixin {
         id: pressMixin;
