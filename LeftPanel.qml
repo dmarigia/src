@@ -2,8 +2,10 @@ Rectangle {
     id: panel;
     anchors.top: parent.top;
     height: 100%;
-    width: 250;
+    width: app.mobile ? 0.7 * parent.width : 250;
     color: "white";
+    property bool active: false;
+    x: active || !app.mobile ? 0 : -width;
 
     // Text {
     //     font.pixelSize: 26;
@@ -67,31 +69,31 @@ Rectangle {
             width: panel.width;
             color: "#f5f5f5";
         }
-        
+
         LeftPanelButton {
             name: "Личная информация";
             image: "account36.png";
             page: "PersonalPage";
         }
-        
+
         Rectangle {
             height: 1;
             width: panel.width;
             color: "#f5f5f5";
         }
-        
+
         LeftPanelButton {
             name: "Журнал заданий";
             image: "todo.png";
             page: "Journal";
         }
-        
+
         Rectangle {
             height: 1;
             width: panel.width;
             color: "#f5f5f5";
         }
-        
+
         LeftPanelButton {
             name: "Статистика";
             image: "statistics.png";
@@ -116,6 +118,5 @@ Rectangle {
             width: panel.width;
             color: "#f5f5f5";
         }
-        
     }
 }
