@@ -1,22 +1,19 @@
-Item {
+/*** @using { src.PersonalPage } **/
+/*** @using { src.Journal } **/
+
+Rectangle {
     id: app;
     anchors.fill: parent;
+    color: "#f5f5f5";
     
     LeftPanel {  
     }
     
-    Rectangle {
-        id: rect;
+    property string page: "PersonalPage";
+    Loader {
+        source: "src." + parent.page;
         anchors.left: panel.right;
         anchors.right: parent.right;
         height: 100%;
-        color: "#f5f5f5";
-    }
-    
-    PersonalPage {
-    }
-    
-    Journal {
-        visible: false;
     }
 }

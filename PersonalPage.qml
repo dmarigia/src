@@ -1,13 +1,14 @@
 Item {
     id: psPage;
-	anchors.fill: rect;
+  anchors.fill: parent;
 
     Column {    
         spacing: 20;       
+        anchors.fill: parent;
         Rectangle {
             id: topCol;
             height: 80;
-            width: rect.width;
+            width: psPage.width;
             color: "white";
             Text {
                 anchors.top: parent.top;
