@@ -19,14 +19,15 @@ Item {
                     text: "Авторизация";
                     font.family: "century gothic";
                     font.pixelSize: 22;
-                    color: "#8BC34A";
+                    color: "#757575";
+                    //color: "#8BC34A";
                 }
                 
                 TextInputMaterial {
                     id: email;
                     width: 250;
                     //materialColor: "#8BC34A";
-                    materialColor: valid || !text ? "#8BC34A" : "#F44336"; // NEW
+                    materialColor: valid || !text ? "#757575" : "#F44336"; // NEW
                     Behavior on materialColor { ColorAnimation { duration: 500; } }
                     font.pixelSize: 18;
                     placeholder.text: "e-mail";
@@ -43,7 +44,7 @@ Item {
                 
                 TextInputMaterial {
                     id: password;
-                    materialColor: "#8BC34A";
+                    materialColor: "#757575";
                     width: 250;
                     font.pixelSize: 18;
                     placeholder.text: "пароль";
@@ -60,13 +61,13 @@ Item {
                     font.family: "century gothic";
                     font.pixelSize: 18;
                     textColor: "white";
-                    color: "#8BC34A";
+                    color: "#757575";
                 }
             }
         }
         
         width: app.width;
         height: app.height;
-        color: "#8BC34A";
+        color: "#9e9e9e";
     }
 }

@@ -18,6 +18,10 @@ Item {
     PersonalPage {
         }
 
+    Journal {
+        visible: false;
+    }
+
         Rectangle {
             id: panel;
             anchors.top: parent.top;
@@ -25,11 +29,11 @@ Item {
             width: 250;
             color: "white";
 
-            Text {
-                font.pixelSize: 26;
-                text: "ПРИВЕТ";                
-                anchors.horizontalCenter: parent.horizontalCenter;
-            }
+            // Text {
+            //     font.pixelSize: 26;
+            //     text: "ПРИВЕТ";                
+            //     anchors.horizontalCenter: parent.horizontalCenter;
+            // }
 
             Rectangle {
             anchors.right: parent.right;
@@ -128,7 +132,7 @@ Item {
                         opacity: 0.4;                        
                     }
                     Text {
-                        text: "Журнал";
+                        text: "Журнал заданий";
                         font.pixelSize: 16;
                         color: "#212121";
                         font.family: "century gothic";
