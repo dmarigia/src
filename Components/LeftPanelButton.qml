@@ -6,7 +6,6 @@ Rectangle {
     property string image;
     property string page;
     color: hover.value ? (pressMixin.pressed ? "darkgray" : "lightgray") : "transparent";
-    Behavior on background { ColorAnimation { duration: 200; } }
     
     MousePressMixin {
         id: pressMixin;
@@ -26,6 +25,10 @@ Rectangle {
         anchors.verticalCenter: parent.verticalCenter;
         spacing: 15;
         
+        Item {
+            height: 1;
+            width: 5;
+        }
         Image {
             height: 25;
             width: 25;

@@ -6,12 +6,7 @@ Rectangle {
     color: "white";
     property bool active: false;
     x: active || !app.mobile ? 0 : -width;
-
-    // Text {
-    //     font.pixelSize: 26;
-    //     text: "ПРИВЕТ";                
-    //     anchors.horizontalCenter: parent.horizontalCenter;
-    // }
+    clip: true;
 
     Rectangle {
         anchors.right: parent.right;
@@ -58,11 +53,10 @@ Rectangle {
         anchors.leftMargin: 20;
     }
 
-    Column {                
-        anchors.horizontalCenter:  parent.horizontalCenter;
+    Column { 
         anchors.top: post.top;
         anchors.topMargin: 80;
-        anchors.left: parent.left;
+        width: 100%;
 
         Rectangle {
             height: 1;

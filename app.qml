@@ -1,19 +1,20 @@
 /*** @using { src.PersonalPage } **/
 /*** @using { src.Journal } **/
 
-Rectangle {
+MainItem {
     id: app;
     anchors.fill: parent;
     color: "#f5f5f5";
     property string page: "PersonalPage";
     property string pageName: "Личная информация";
-    property bool mobile: false;
+    property bool mobile: context.system.device === System.Mobile || width < height;
 
     Button {
         width: 30;
         height: 10;
         text: app.mobile ? "To Desktop" : "To Mobile";
         onClicked: { app.mobile = !app.mobile }
+        anchors.horizontalCenter: parent.horizontalCenter;
         z: 1;
     }
 
@@ -34,7 +35,7 @@ Rectangle {
             anchors.right: parent.right;
             Row {
                 anchors.verticalCenter: parent.verticalCenter;
-                anchors.left: panel.right;
+                anchors.left: parent.left;
                 anchors.leftMargin: 30;
                 MenuButton { }
                 Text {

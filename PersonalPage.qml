@@ -17,6 +17,7 @@ Item {
             radius: 5;
             border.width: 1;
             border.color: "#EAEAEA";
+            clip: true;
 
             Column {
                 id: mainAvatar;
@@ -133,6 +134,7 @@ Item {
         }
 
         Rectangle {
+            clip: true;
             Text {
                 text: "О СЕБЕ";
                 font.family: "century gothic";
@@ -203,6 +205,7 @@ Item {
         }
         
         Rectangle {
+            clip: true;
             Text {
                 text: "КОНТАКТНАЯ ИНФОРМАЦИЯ";
                 font.family: "century gothic";
