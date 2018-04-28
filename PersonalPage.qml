@@ -39,7 +39,7 @@ Item {
                     Image {
                          anchors.fill: parent;
                          source: global.avatarPath;
-                         opacity: 1;
+                         radius: 60;
                          visible: global.avatarPath !== "";
                          fillMode: Image.PreserveAspectCrop;
                     }
