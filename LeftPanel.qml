@@ -15,37 +15,47 @@ Rectangle {
         color: "#f5f5f5";   
     }
 
-    Rectangle {
+    Image {
         id: avatar;
         anchors.top: parent.top;
         anchors.topMargin: 50;
-        color: "#f5f5f5";
+        source: "images/avatarbig.png";
+        opacity: 0.4; 
         height: 50;
         width: 50;
-        RadiusMixin { leftTop: parent.height / 2; leftBottom: parent.height / 2;  rightTop: 0;  rightBottom: parent.height / 2;  }
         anchors.left: parent.left;
         anchors.leftMargin: 20;
     }
+    Image {
+        anchors.fill: avatar;
+        source: global.avatarPath;
+        visible: global.avatarPath !== "";
+        RadiusMixin { leftTop: parent.height / 2; leftBottom: parent.height / 2;  rightTop: 0;  rightBottom: parent.height / 2;  }
+        fillMode: Image.PreserveAspectCrop;
+     }
 
     Text {
         id: name;
         anchors.top: avatar.top;
         anchors.topMargin: 70;
         //anchors.horizontalCenter: parent.horizontalCenter;
-        text: "Фамилия Имя Отчество";
+        text: global.name;
         font.pixelSize: 18;
         color: "#212121";
         font.bold: true;
         font.family: "century gothic";
         anchors.left: parent.left;
         anchors.leftMargin: 20;
+        anchors.right: parent.right;
+        anchors.rightMargin: 20;
+        wrapMode: Text.Wrap;
     }
     Text {
         id: post;
-        anchors.top: name.top;
-        anchors.topMargin: 30;
+        anchors.top: name.bottom;
+        anchors.topMargin: 5;
         //anchors.horizontalCenter: parent.horizontalCenter;
-        text: "Крутая должность";
+        text: global.job;
         font.pixelSize: 15;
         color: "#757575";
         font.family: "century gothic";

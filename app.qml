@@ -8,6 +8,15 @@ MainItem {
     property string page: "PersonalPage";
     property string pageName: "Личная информация";
     property bool mobile: context.system.device === System.Mobile || width < height;
+    
+    GlobalSettings {
+        id: global;
+        firstName: "Евгений";
+        lastName: "Кошевой";
+        middleName: "Викторович";
+        avatarPath: "http://gordonua.com/img/article/2003/67_tn.jpg";
+        job: "Комик";
+    }
 
     Button {
         width: 30;
@@ -16,6 +25,8 @@ MainItem {
         onClicked: { app.mobile = !app.mobile }
         anchors.horizontalCenter: parent.horizontalCenter;
         z: 1;
+        opacity: 0.5;
+        color: "transparent";
     }
 
     Rectangle {

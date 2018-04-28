@@ -29,29 +29,29 @@ Item {
                 spacing: 10;
                 Rectangle {
                     radius: 100;
-                    width: 125;
-                    height: 125;
+                    width: 120;
+                    height: 120;
                     Image {
-                        anchors.centerIn: parent;
+                        anchors.fill: parent;
                         source: "images/avatarbig.png";
-                        height: 120;
-                        width: 120; 
-                        opacity: 0.4; 
+                        opacity: 0.4;
+                    }
+                    Image {
+                         anchors.fill: parent;
+                         source: global.avatarPath;
+                         opacity: 1;
+                         visible: global.avatarPath !== "";
+                         fillMode: Image.PreserveAspectCrop;
                     }
                 }
-                Rectangle {
-                    width: addPhotoText.width + 20;
+                OurButton {
+                    anchors.horizontalCenter: parent.horizontalCenter;
+                    text: "Добавить фото";
                     height: 20;
                     color: "#ff5252";
                     radius: 50;
-                    Text {
-                        id: addPhotoText;
-                        anchors.centerIn: parent;
-                        text: "Добавить фото";
-                        font.pixelSize: 14;
-                        font.family: "century gothic";
-                        color: "white";
-                    }
+                    textColor: "white";
+                    onClicked: { this.text += "!" }
                 }
             }
             
@@ -67,7 +67,7 @@ Item {
                     spacing: 80;
                     Text {
                         id: nameSurname;
-                        text: "Фамилия Имя Отчество";
+                        text: global.name;
                         color: "#212121";
                         font.pixelSize: 16;
                         font.family: "century gothic";

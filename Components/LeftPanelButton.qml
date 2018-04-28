@@ -18,6 +18,7 @@ Rectangle {
     
     HoverMixin {
         id: hover;
+        cursor: "pointer";
     }
     
     Row {
