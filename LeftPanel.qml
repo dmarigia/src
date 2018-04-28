@@ -1,7 +1,7 @@
 Rectangle {
     id: panel;
-    anchors.top: parent.top;
-    height: 100%;
+    anchors.top: infoPanel.bottom;
+    height: 100% - infoPanel.height;
     width: app.mobile ? 0.7 * parent.width : 250;
     color: "white";
     property bool active: false;

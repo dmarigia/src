@@ -10,9 +10,11 @@ Item {
         
         spacing: 10;
         Rectangle {
-            id: mainInfo;
-            height: 200;
-            width: grid.width > 820 ? 410 : grid.width;
+            id: mainInfo;            
+            anchors.horizontalCenter: parent.horizontalCenter;
+            anchors.topMargin: 40;
+            height: 220;
+            width: grid.width > 820 ? 830 : grid.width;
             color: "white";
             radius: 5;
             border.width: 1;
@@ -53,11 +55,14 @@ Item {
                 }
             }
             
-            Column {
-                spacing: 15;
+            Row {
+                spacing: 90;
                 anchors.left: mainAvatar.right;  
                 anchors.leftMargin: 40;          
-                anchors.verticalCenter: parent.verticalCenter;
+                anchors.top: parent.top;
+                anchors.topMargin: 25;
+            Column {
+                spacing: 5;
                 Row {
                     spacing: 80;
                     Text {
@@ -71,37 +76,23 @@ Item {
                 }
 
                 Row {
-                    spacing: 10;
+                    anchors.topMargin: 15;
+                    spacing: 5;
                     Text {
-                        text: "Специальность: ";
+                        text: "Звание: ";
                         font.family: "century gothic";
                         font.pixelSize: 14;
                         color: "#757575";
                     }
                     Text {
-                        text: "такая вот";
+                        text: "звание";
                         font.family: "century gothic";
                         font.pixelSize: 14;
                         color: "#212121";
                     }
                 }
                 Row {
-                    spacing: 10;
-                    Text {
-                        text: "Кафедра: ";
-                        font.family: "century gothic";
-                        font.pixelSize: 14;
-                        color: "#757575";
-                    }
-                    Text {
-                        text: "кафедра";
-                        font.family: "century gothic";
-                        font.pixelSize: 14;
-                        color: "#212121";
-                    }
-                }
-                Row {
-                    spacing: 10;
+                    spacing: 5;
                     Text {
                         text: "Степень: ";
                         font.family: "century gothic";
@@ -115,34 +106,108 @@ Item {
                         color: "#212121";
                     }
                 }
+            }
+            Column {
+                spacing: 5;
+                Text {
+                        id: nameSurnameEng;
+                        text: "Name Surname";
+                        color: "#212121";
+                        font.pixelSize: 16;
+                        font.family: "century gothic";
+                        font.bold: true;
+                    }
                 Row {
-                    spacing: 10;
+                    anchors.topMargin: 15;
+                    spacing: 5;
                     Text {
-                        text: "Звание: ";
+                        text: "Специальность: ";
                         font.family: "century gothic";
                         font.pixelSize: 14;
                         color: "#757575";
                     }
                     Text {
-                        text: "звание";
+                        text: "специальность";
+                        font.family: "century gothic";
+                        font.pixelSize: 14;
+                        color: "#212121";
+                    }
+                }
+                Row {
+                    spacing: 5;
+                    Text {
+                        text: "Кафедра: ";
+                        font.family: "century gothic";
+                        font.pixelSize: 14;
+                        color: "#757575";
+                    }
+                    Text {
+                        text: "кафедра";
                         font.family: "century gothic";
                         font.pixelSize: 14;
                         color: "#212121";
                     } //год рождения, год обучения, форма обучения (дневная, заочная), бюджет/контракт, руководитель +ссылка на его профиль
                 }
             }
+            }
+
+            Column {
+                spacing: 20;
+                anchors.left: mainAvatar.right;
+                anchors.leftMargin: 40;
+                anchors.bottomMargin: 5;
+                anchors.bottom: mainInfo.bottom;
+                Rectangle {
+                    id: mainLine;
+                    width: (mainInfo.width - mainAvatar.width) * 0.83;
+                    height: 1;
+                    color: "#EAEAEA";
+                }
+                Row {  
+                    spacing: 25;                  
+                    anchors.horizontalCenter: mainLine.horizontalCenter;                    
+                    Column {
+                        spacing: 15;
+                        Text {
+                            text: "Заданий";
+                            color: "#757575";
+                            font.pixelSize: 14;
+                            font.family: "century gothic";
+                        }
+                        Text {
+                            anchors.centerIn: parent;
+                            text: "9";
+                            color: "#f48fb1";
+                            font.pixelSize: 24;
+                            font.family: "century gothic";
+                            //font.bold: true;
+                        }
+                    }
+                    Column {
+                        spacing: 15;
+                        Text {
+                            text: "Рейтинг";
+                            color: "#757575";
+                            font.pixelSize: 14;
+                            font.family: "century gothic";                            
+                        }
+                        Text {
+                            anchors.centerIn: parent;
+                            text: "2";
+                            color: "#f48fb1";
+                            font.pixelSize: 24;
+                            font.family: "century gothic";
+                            //font.bold: true;
+                        }
+                    }
+                }
+            }
+
         }
 
         Rectangle {
             clip: true;
-            Text {
-                text: "О СЕБЕ";
-                font.family: "century gothic";
-                font.pixelSize: 14;
-                color: "#757575";
-                font.bold: true;
-            }
-
+            anchors.topMargin: 40;
             id: info;
             width: grid.width > 820 ? 410 : grid.width;
             height: 200;
@@ -206,14 +271,7 @@ Item {
         
         Rectangle {
             clip: true;
-            Text {
-                text: "КОНТАКТНАЯ ИНФОРМАЦИЯ";
-                font.family: "century gothic";
-                font.pixelSize: 14;
-                color: "#757575";
-                font.bold: true;
-            }
-
+            anchors.topMargin: 40;
             id: contactInfo;
             width: grid.width > 820 ? 410 : grid.width;
             height: 200;
@@ -275,6 +333,31 @@ Item {
             }
             // телефон, мыло, адрес
         }
+
+                    Text {
+                anchors.bottom: info.top;
+                anchors.bottomMargin: 5;
+                anchors.left: info.left;
+                text: "О СЕБЕ";
+                font.family: "century gothic";
+                font.pixelSize: 14;
+                color: "#757575";
+                //font.bold: true;
+            }
+
+            Text {
+                anchors.bottom: contactInfo.top;
+                anchors.bottomMargin: 5;
+                
+                anchors.left: contactInfo.left;
+                text: "КОНТАКТНАЯ ИФНОРМАЦИЯ";
+                font.family: "century gothic";
+                font.pixelSize: 14;
+                color: "#757575";
+                //font.bold: true;
+            }
+
+
     }
 
 // Column {
