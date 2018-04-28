@@ -9,10 +9,10 @@ Rectangle {
     MousePressMixin {
         id: pressMixin;
         onPressedChanged: {
-                if (!this.pressed) this.parent.clicked()
+            if (!this.pressed) this.parent.clicked()
         }
     }
-    
+
     HoverMixin {
         id: hover;
         cursor: "pointer";

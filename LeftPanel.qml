@@ -26,13 +26,14 @@ Rectangle {
         anchors.left: parent.left;
         anchors.leftMargin: 20;
     }
+
     Image {
         anchors.fill: avatar;
         source: global.avatarPath;
         visible: global.avatarPath !== "";
         RadiusMixin { leftTop: parent.height / 2; leftBottom: parent.height / 2;  rightTop: 0;  rightBottom: parent.height / 2;  }
         fillMode: Image.PreserveAspectCrop;
-     }
+    }
 
     Text {
         id: name;
@@ -50,6 +51,7 @@ Rectangle {
         anchors.rightMargin: 20;
         wrapMode: Text.Wrap;
     }
+
     Text {
         id: post;
         anchors.top: name.bottom;
@@ -115,7 +117,6 @@ Rectangle {
             image: "docs.png";
             page: "Docs";
         }
-
 
         Rectangle {
             height: 1;

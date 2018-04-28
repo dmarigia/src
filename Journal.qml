@@ -1,7 +1,7 @@
 Item {
     id: journal;
     anchors.fill: parent;
-    
+
     ListView {
         anchors.fill: parent;
         model: ListModel {
@@ -12,7 +12,7 @@ Item {
             ListElement {}
             ListElement {}
         }
-        
+
         delegate: Rectangle {
             width: 100%;
             height: 100;

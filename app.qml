@@ -8,7 +8,7 @@ MainItem {
     property string page: "PersonalPage";
     property string pageName: "Личная информация";
     property bool mobile: context.system.device === System.Mobile || width < height;
-    
+
     GlobalSettings {
         id: global;
         firstName: "Евгений";
@@ -80,9 +80,7 @@ MainItem {
                     color: "#adb1ba";
                 }
             }
-
         }
-        
 
         Loader {
             id: loader;
