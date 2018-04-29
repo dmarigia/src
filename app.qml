@@ -9,21 +9,6 @@ MainItem {
     property string page: "PersonalPage";
     property string pageName: "Личная информация";
 
-    GlobalSettings {
-        id: global;
-        firstName: "Евгений";
-        lastName: "Кошевой";
-        middleName: "Викторович";
-        avatarPath: "http://gordonua.com/img/article/2003/67_tn.jpg";
-        job: "Комик";
-    }
-
-    onMobileChanged: {
-        if (!this.mobile) leftPanel.close()
-    }
-
-    MainItemDebug { visible: true; }
-
     Rectangle {
         id: insideRect;
         color: "#f5f5f5";
@@ -89,7 +74,8 @@ MainItem {
             anchors.right: parent.right;
         }
     }
-    
+
+    // background for mobile menu
     Rectangle {
         anchors.fill: parent;
         color: "darkgray";
@@ -101,4 +87,20 @@ MainItem {
             onClicked: { leftPanel.close() }
         }
     }
+
+    onMobileChanged: {
+        if (!this.mobile) leftPanel.close()
+    }
+
+    // test config
+    GlobalSettings {
+        id: global; // TODO: rename to settings
+        firstName: "Евгений";
+        lastName: "Кошевой";
+        middleName: "Викторович";
+        avatarPath: "http://gordonua.com/img/article/2003/67_tn.jpg";
+        job: "Комик";
+    }
+
+    MainItemDebug { visible: true; }
 }

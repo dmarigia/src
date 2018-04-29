@@ -1,8 +1,9 @@
 Rectangle {
     id: panel;
     anchors.top: infoPanel.bottom;
-    height: 100% - infoPanel.height;
-    width: app.mobile ? 0.7 * parent.width : 250;
+    // TODO: сделать адекватно :)
+    height: Math.max(app.height - infoPanel.height, leftPanelColumn.height + avatar.height + name.height + 70 + post.height + 5 + 80);
+    width: app.mobile ? 0.7 * parent.width : personalInfoButton.rowWidth + 20;
     color: "white";
     property bool active: false;
     x: active || !app.mobile ? 0 : -width;
@@ -23,13 +24,6 @@ Rectangle {
         id: disableAnimation;
         interval: 101;
         onTriggered: { leftPanelAnim.duration = 0 }
-    }
-
-    Rectangle {
-        anchors.right: parent.right;
-        height: panel.height;
-        width: 1; 
-        color: "#f5f5f5";   
     }
 
     Image {
@@ -82,7 +76,8 @@ Rectangle {
         anchors.leftMargin: 20;
     }
 
-    Column { 
+    Column {
+        id: leftPanelColumn;
         anchors.top: post.top;
         anchors.topMargin: 80;
         width: 100%;
@@ -94,6 +89,7 @@ Rectangle {
         }
 
         LeftPanelButton {
+            id: personalInfoButton;
             name: "Личная информация";
             image: "account36.png";
             page: "PersonalPage";
