@@ -5,9 +5,9 @@ MainItem {
     id: app;
     anchors.fill: parent;
     color: "#BDBDBD";
+    title: "Личный кабинет - " + pageName;
     property string page: "PersonalPage";
     property string pageName: "Личная информация";
-    property bool mobile: context.system.device === System.Mobile || width < height;
 
     GlobalSettings {
         id: global;
@@ -17,17 +17,8 @@ MainItem {
         avatarPath: "http://gordonua.com/img/article/2003/67_tn.jpg";
         job: "Комик";
     }
-
-    Button {
-        width: 30;
-        height: 10;
-        text: app.mobile ? "To Desktop" : "To Mobile";
-        onClicked: { app.mobile = !app.mobile }
-        anchors.horizontalCenter: parent.horizontalCenter;
-        z: 1;
-        opacity: 0.5;
-        color: "transparent";
-    }
+    
+    MainItemDebug { visible: true; }
 
     Rectangle {
         id: insideRect;
