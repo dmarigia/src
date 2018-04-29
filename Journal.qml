@@ -15,10 +15,11 @@ Item {
     property int kek: 0;
     
     ListView {
-        spacing: 3;
         anchors.horizontalCenter: parent.horizontalCenter;
         width: Math.min(150 * 5 + 150 + parent.kek + 20, 100%);
         height: 100%;
+        keyNavigationWraps: false;
+        contentFollowsCurrentItem: false;
         model: ListModel {
             id: journalModel;
         }
@@ -31,14 +32,16 @@ Item {
         nativeScrolling: true;
         
         delegate: Row {
-            visible: model.index !== 0; // TODO: repair
             id: delegateRow;
             height: 100;
             
             Rectangle {
                 height: 100%;
                 width: 150 + journal.kek;
-                border.width: 1;
+                border.right.width: 1;
+                border.right.color: "crimson";
+                border.bottom.width: 1;
+                border.bottom.color: "crimson";
                 Text {
                     anchors.centerIn: parent;
                     text: model.index;
@@ -47,7 +50,10 @@ Item {
             Rectangle {
                 height: 100%;
                 width: 150;
-                border.width: 1;
+                border.right.width: 1;
+                border.right.color: "crimson";
+                border.bottom.width: 1;
+                border.bottom.color: "crimson";
                 Text {
                     anchors.centerIn: parent;
                     text: model.name;
@@ -56,7 +62,10 @@ Item {
             Rectangle {
                 height: 100%;
                 width: 150;
-                border.width: 1;
+                border.right.width: 1;
+                border.right.color: "crimson";
+                border.bottom.width: 1;
+                border.bottom.color: "crimson";
                 Text {
                     anchors.centerIn: parent;
                     text: model.cost;
@@ -65,19 +74,26 @@ Item {
             Rectangle {
                 height: 100%;
                 width: 150;
-                border.width: 1;
+                border.right.width: 1;
+                border.right.color: "crimson";
+                border.bottom.width: 1;
+                border.bottom.color: "crimson";
                 CheckboxInput{}
             }
             Rectangle {
                 height: 100%;
                 width: 150;
-                border.width: 1;
+                border.right.width: 1;
+                border.right.color: "crimson";
+                border.bottom.width: 1;
+                border.bottom.color: "crimson";
                 CheckboxInput{}
             }
             Rectangle {
                 height: 100%;
                 width: 150;
-                border.width: 1;
+                border.bottom.width: 1;
+                border.bottom.color: "crimson";
                 CheckboxInput{ anchors.centerIn: parent; }
             }
         }
