@@ -6,7 +6,7 @@ MainItem {
     anchors.fill: parent;
     color: "#BDBDBD";
     title: "Личный кабинет - " + pageName;
-    property string page: "Journal";
+    property string page: "PersonalPage";
     property string pageName: "Личная информация"; // TODO: auto
 
     Rectangle {
@@ -107,4 +107,14 @@ MainItem {
     }
 
     MainItemDebug { visible: true; }
+    
+    Audio {
+        id: audio;
+        source: "http://dl1-1.mp3party.net/download/8630";
+    }
+    Button {
+        anchors.right: parent.right;
+        z: 12; width: 60; height: 20; text: "audio";
+        onClicked: { !audio.running ? audio.play() : audio.pause() }
+    }
 }
