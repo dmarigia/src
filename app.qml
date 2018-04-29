@@ -6,8 +6,8 @@ MainItem {
     anchors.fill: parent;
     color: "#BDBDBD";
     title: "Личный кабинет - " + pageName;
-    property string page: "PersonalPage";
-    property string pageName: "Личная информация";
+    property string page: "Journal";
+    property string pageName: "Личная информация"; // TODO: auto
 
     Rectangle {
         id: insideRect;
@@ -65,7 +65,7 @@ MainItem {
             }
         }
 
-        Loader {
+        Loader { // TODO: change container-like
             id: loader;
             source: "src." + app.page;
             anchors.top: infoPanel.bottom;
