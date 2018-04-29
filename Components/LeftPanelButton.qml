@@ -13,7 +13,7 @@ Rectangle {
         onPressedChanged: {
             app.page = leftButton.page
             app.pageName = leftButton.name
-            leftPanel.active = false
+            leftPanel.close()
         }
     }
 

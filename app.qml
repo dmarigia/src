@@ -36,6 +36,7 @@ MainItem {
                 anchors.leftMargin: 30;
                 spacing: 10;
                 MenuButtonMaterial {
+                    id: menuButton;
                     visible: app.mobile;
                     onClicked: { leftPanel.active ? leftPanel.close() :  leftPanel.open() }
                     Behavior on background { ColorAnimation { duration: 200; } }

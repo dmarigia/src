@@ -18,6 +18,7 @@ Rectangle {
     function close() {
         this.active = false
         disableAnimation.start()
+        menuButton.deactivate()
     }
 
     Timer {
