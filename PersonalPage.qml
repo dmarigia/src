@@ -43,6 +43,10 @@ Rectangle {
                         radius: 60;
                         visible: global.avatarPath !== "";
                         fillMode: Image.PreserveAspectCrop;
+                        Border {
+                            width: 2;
+                            color: "crimson";
+                        }
                     }
                 }
                 OurButton {
