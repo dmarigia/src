@@ -6,8 +6,24 @@ Rectangle {
     color: "white";
     property bool active: false;
     x: active || !app.mobile ? 0 : -width;
-    Behavior on x { Animation { duration: 100; } }
+    Behavior on x { Animation { id: leftPanelAnim; duration: 0; } }
     clip: true;
+
+    function open() {
+        leftPanelAnim.duration = 100
+        this.active = true
+    }
+
+    function close() {
+        this.active = false
+        disableAnimation.start()
+    }
+
+    Timer {
+        id: disableAnimation;
+        interval: 101;
+        onTriggered: { leftPanelAnim.duration = 0 }
+    }
 
     Rectangle {
         anchors.right: parent.right;

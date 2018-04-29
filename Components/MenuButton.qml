@@ -8,8 +8,8 @@ Rectangle {
     MousePressMixin {
         id: pressMixin;
         onPressedChanged: {
-            if (!this.pressed)
-                leftPanel.active = !leftPanel.active
+            if (!this.pressed) 
+                leftPanel.active ? leftPanel.close() :  leftPanel.open()
         }
     }
 

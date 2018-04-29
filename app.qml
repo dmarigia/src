@@ -17,7 +17,7 @@ MainItem {
         avatarPath: "http://gordonua.com/img/article/2003/67_tn.jpg";
         job: "Комик";
     }
-    
+
     MainItemDebug { visible: true; }
 
     Rectangle {
@@ -30,10 +30,13 @@ MainItem {
         LeftPanel {
             id: leftPanel;
             z: 1;
+            fixed: app.mobile;
         }
 
         Rectangle {
             id: infoPanel;
+            fixed: app.mobile;
+            z: 1;
             height: 70;
             anchors.left: parent.left;
             anchors.right: parent.right;
@@ -80,6 +83,18 @@ MainItem {
             anchors.bottom: parent.bottom;
             anchors.left: app.mobile ? parent.left : leftPanel.right;
             anchors.right: parent.right;
+        }
+    }
+    
+    Rectangle {
+        anchors.fill: parent;
+        color: "darkgray";
+        opacity: 0.6;
+        visible: leftPanel.active;
+        fixed: true;
+        MouseArea {
+            anchors.fill: parent;
+            onClicked: { leftPanel.close() }
         }
     }
 }

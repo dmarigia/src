@@ -1,10 +1,11 @@
-Item {
+Rectangle {
     id: psPage;
-    anchors.fill: parent;
+    width: 100%;
+    height: grid.height;
+    color: "#f5f5f5";
 
     Grid {
         id: grid;
-        height: 97%;
         anchors.centerIn: parent;
         width: (psPage.width - 20) > 820 ? 410 * 2 + 10 : psPage.width - 20;
         spacing: 10;
