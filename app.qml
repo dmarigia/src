@@ -44,7 +44,7 @@ MainItem {
         Rectangle {
             id: infoPanel;
             height: 70;
-            anchors.left: app.mobile ? parent.left : parent.left;
+            anchors.left: parent.left;
             anchors.right: parent.right;
             color: "#5d6578";
             Row {
