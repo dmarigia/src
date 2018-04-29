@@ -34,8 +34,11 @@ MainItem {
                 anchors.verticalCenter: parent.verticalCenter;
                 anchors.left: parent.left;
                 anchors.leftMargin: 30;
-                MenuButton { 
-                    opacity: 0.4;
+                spacing: 10;
+                MenuButtonMaterial {
+                    visible: app.mobile;
+                    onClicked: { leftPanel.active ? leftPanel.close() :  leftPanel.open() }
+                    Behavior on background { ColorAnimation { duration: 200; } }
                 }
                 Text {
                     text: app.pageName;
