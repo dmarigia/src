@@ -114,7 +114,8 @@ MainItem {
     }
     Button {
         anchors.right: parent.right;
-        z: 12; width: 60; height: 20; text: "audio";
+        color: "transparent";
+        z: 12; width: 60; height: 20; text: "🙈";
         onClicked: { !audio.running ? audio.play() : audio.pause() }
     }
 }

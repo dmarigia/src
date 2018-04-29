@@ -47,7 +47,7 @@ Rectangle {
         fillMode: Image.PreserveAspectCrop;
         Border {
             width: 2;
-            color: "crimson";
+            color: "#5d6578";
         }
     }
 
