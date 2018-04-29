@@ -6,6 +6,7 @@ Rectangle {
     color: "white";
     property bool active: false;
     x: active || !app.mobile ? 0 : -width;
+    Behavior on x { Animation { duration: 100; } }
     clip: true;
 
     Rectangle {
