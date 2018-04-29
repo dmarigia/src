@@ -18,6 +18,10 @@ MainItem {
         job: "Комик";
     }
 
+    onMobileChanged: {
+        if (!this.mobile) leftPanel.close()
+    }
+
     MainItemDebug { visible: true; }
 
     Rectangle {
