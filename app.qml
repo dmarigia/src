@@ -21,6 +21,7 @@ MainItem {
             z: 1;
             fixed: app.mobile;
         }
+        LeftPanelWhiteBottom {}
 
         Rectangle {
             id: infoPanel;
