@@ -38,6 +38,8 @@ MainItem {
                 MenuButtonMaterial {
                     id: menuButton;
                     visible: app.mobile;
+                    colorIcon: "white";
+                    opacity: 0.4;
                     onClicked: { leftPanel.active ? leftPanel.close() :  leftPanel.open() }
                     Behavior on background { ColorAnimation { duration: 200; } }
                 }
@@ -59,6 +61,11 @@ MainItem {
                     height: 25;
                     width: 25;
                     opacity: 0.4;
+                    ColorIcon {
+                        anchors.fill: parent;
+                        source: parent.source;
+                        color: "white";
+                    }
                 }
                 Text {
                     text: "Выход";

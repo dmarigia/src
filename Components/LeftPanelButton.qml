@@ -36,7 +36,7 @@ Rectangle {
             height: 25;
             width: 25;
             source: "images/" + leftButton.image;
-            opacity: 0.4;                        
+            opacity: 0.4;
         }
 
         Text {
