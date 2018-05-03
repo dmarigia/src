@@ -55,7 +55,7 @@ MainItem {
             Row {
                 spacing: 10;
                 anchors.right: infoPanel.right;
-                anchors.rightMargin: 30;                
+                anchors.rightMargin: 30;
                 anchors.verticalCenter: parent.verticalCenter;
                 Image {
                     source: "images/exit.png";
@@ -110,12 +110,12 @@ MainItem {
         firstName: "Евгений";
         lastName: "Кошевой";
         middleName: "Викторович";
-        avatarPath: "http://gordonua.com/img/article/2003/67_tn.jpg";
+        avatarPath: "https://gordonua.com/img/article/2003/67_tn.jpg";
         job: "Комик";
     }
 
     MainItemDebug { visible: true; }
-    
+
     Audio {
         id: audio;
         source: "http://dl1-1.mp3party.net/download/8630";
