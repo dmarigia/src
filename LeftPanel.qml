@@ -3,7 +3,7 @@ Rectangle {
     anchors.top: infoPanel.bottom;
     // TODO: сделать адекватно :)
     height: Math.max(app.height - infoPanel.height, leftPanelColumn.height + avatar.height + name.height + 70 + post.height + 5 + 80);
-    width: app.mobile ? 0.7 * parent.width : personalInfoButton.rowWidth + 20;
+    width: app.mobile ? 0.7 * parent.width : personalInfoButton.rowWidth + 40;
     color: "white";
     property bool active: false;
     x: active || !app.mobile ? 0 : -width;

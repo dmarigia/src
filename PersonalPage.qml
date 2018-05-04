@@ -7,7 +7,8 @@ Rectangle {
     Grid {
         id: grid;
         anchors.centerIn: parent;
-        width: (psPage.width - 20) > 820 ? 410 * 2 + 10 : psPage.width - 20;
+        width: (psPage.width - 20) > 820 ? insideRect.width * 0.7 : psPage.width - 20;
+        //idth: (psPage.width - 20) > 820 ? 410 * 2 + 10 : psPage.width - 20;
         spacing: 10;
 
         Rectangle {
@@ -15,7 +16,7 @@ Rectangle {
             anchors.horizontalCenter: parent.horizontalCenter;
             anchors.topMargin: 40;
             height: 220;
-            width: grid.width > 820 ? insideRect.width * 0.75 : grid.width;
+            width: grid.width > 820 ? insideRect.width * 0.7 : grid.width;
             color: "white";
             radius: 5;
             border.width: 1;
@@ -61,7 +62,6 @@ Rectangle {
             }
 
             Row {
-                spacing: 90;
                 anchors.left: mainAvatar.right;  
                 anchors.leftMargin: 40;          
                 anchors.top: parent.top;
@@ -112,6 +112,8 @@ Rectangle {
                     }
                 }
                 Column {
+                    anchors.left: mainAvatar.right;
+                    anchors.leftMargin: (mainInfo.width - mainAvatar.width) * 0.55;
                     spacing: 5;
                     Text {
                         id: nameSurnameEng;
@@ -163,7 +165,7 @@ Rectangle {
                 anchors.bottom: mainInfo.bottom;
                 Rectangle {
                     id: mainLine;
-                    width: (mainInfo.width - mainAvatar.width) * 0.83;
+                    width: (mainInfo.width - mainAvatar.width) * 0.86;
                     height: 1;
                     color: "#EAEAEA";
                 }
@@ -210,15 +212,24 @@ Rectangle {
 
         Rectangle {
             clip: true;
-            id: info;
+            id: infoEdu;
             anchors.topMargin: 40;
-            width: grid.width > 820 ? 260 : grid.width;
-            height: 200;
+            width: grid.width > 800 ? mainInfo.width / 3 : grid.width;
+            height: contactText.height + 40;
             color: "white";
             border.width: 1;
             border.color: "#EAEAEA";
             radius: 5;
-
+            Image {
+                source: "images/edit.png";
+                width: 20;
+                height: 20;
+                anchors.right: parent.right;
+                anchors.top: parent.top;
+                anchors.topMargin: 15;
+                anchors.rightMargin: 15;
+                opacity: 0.6;
+            }
             Column {                
                 anchors.verticalCenter: parent.verticalCenter;
                 anchors.left: parent.left;
@@ -232,6 +243,7 @@ Rectangle {
                         font.pixelSize: 14;
                         font.family: "century gothic";
                     }
+                    
                     Text {
                         text: "2";
                         color: "#212121";
@@ -242,7 +254,23 @@ Rectangle {
                 Column {
                     spacing: 5;
                     Text {
-                        text: "Форма обучения";
+                        text: "Тема научной работы";
+                        color: "#757575";
+                        font.pixelSize: 14;
+                        font.family: "century gothic";
+                    }
+                    
+                    Text {
+                        text: "тема научной работы";
+                        color: "#212121";
+                        font.pixelSize: 15;
+                        font.family: "century gothic";
+                    }
+                }
+                Column {
+                    spacing: 5;
+                    Text {
+                        text: "Основа обучения";
                         color: "#757575";
                         font.pixelSize: 14;
                         font.family: "century gothic";
@@ -257,7 +285,7 @@ Rectangle {
                 Column {
                     spacing: 5;
                     Text {
-                        text: "Бюджетная/контрактная форма обучения";
+                        text: "Форма обучения";
                         color: "#757575";
                         font.pixelSize: 14;
                         font.family: "century gothic";
@@ -276,13 +304,22 @@ Rectangle {
             clip: true;
             id: info;
             anchors.topMargin: 40;
-            width: grid.width > 820 ? 260 : grid.width;
-            height: 200;
+            width: grid.width > 800 ? mainInfo.width / 3 - 20 : grid.width;
+            height: contactText.height + 40;
             color: "white";
             border.width: 1;
             border.color: "#EAEAEA";
             radius: 5;
-
+            Image {
+                source: "images/edit.png";
+                width: 20;
+                height: 20;
+                anchors.right: parent.right;
+                anchors.top: parent.top;
+                anchors.topMargin: 15;
+                anchors.rightMargin: 15;
+                opacity: 0.6;
+            }
             Column {                
                 anchors.verticalCenter: parent.verticalCenter;
                 anchors.left: parent.left;
@@ -338,16 +375,26 @@ Rectangle {
 
         Rectangle {
             clip: true;
-            id: info;
+            id: contactInfo;
             anchors.topMargin: 40;
-            width: grid.width > 820 ? 260 : grid.width;
-            height: 200;
+            width: grid.width > 800 ? mainInfo.width / 3 : grid.width;
+            height: contactText.height + 40;
             color: "white";
             border.width: 1;
             border.color: "#EAEAEA";
             radius: 5;
-
-            Column {                
+            Image {
+                source: "images/edit.png";
+                width: 20;
+                height: 20;
+                anchors.right: parent.right;
+                anchors.top: parent.top;
+                anchors.topMargin: 15;
+                anchors.rightMargin: 15;
+                opacity: 0.6;
+            }
+            Column {      
+                id: contactText;          
                 anchors.verticalCenter: parent.verticalCenter;
                 anchors.left: parent.left;
                 anchors.leftMargin: 20;
@@ -412,6 +459,34 @@ Rectangle {
                         font.family: "century gothic";
                     }
                 }
+            }
+        }
+
+        Row {
+            spacing: 40;
+            anchors.topMargin: 60;
+            anchors.horizontalCenter: parent.horizontalCenter;
+            opacity: 0.6;
+            Image {
+                source: "images/orcid.svg";
+                width: 60;
+                height: 60;
+                
+            }
+            Image {
+                source: "images/scopus.svg";
+                width: 60;
+                height: 60;
+            }
+            Image {
+                source: "images/ResearcherID.svg";
+                width: 60;
+                height: 60;
+            }
+            Image {
+                source: "images/gscholar.png";
+                width: 60;
+                height: 60;
             }
         }
         // Rectangle {
@@ -541,30 +616,36 @@ Rectangle {
         //         }
         //     }
         //     // телефон, мыло, адрес
-        // }
-
-        //     Text {
-        //         anchors.bottom: info.top;
-        //         anchors.bottomMargin: 5;
-        //         anchors.left: info.left;
-        //         text: "О СЕБЕ";
-        //         font.family: "century gothic";
-        //         font.pixelSize: 14;
-        //         color: "#757575";
-        //         //font.bold: true;
-        //     }
-
-        //     Text {
-        //         anchors.bottom: contactInfo.top;
-        //         anchors.bottomMargin: 5;
-                
-        //         anchors.left: contactInfo.left;
-        //         text: "КОНТАКТНАЯ ИФНОРМАЦИЯ";
-        //         font.family: "century gothic";
-        //         font.pixelSize: 14;
-        //         color: "#757575";
-        //         //font.bold: true;
-        //     }
-        
+        // }        
+    }
+     Text {
+        anchors.bottom: infoEdu.top;
+        anchors.bottomMargin: 5;
+        anchors.left: infoEdu.left;
+        text: "ОБУЧЕНИЕ";
+        font.family: "century gothic";
+        font.pixelSize: 14;
+        color: "#757575";
+        //font.bold: true;
+    }
+    Text {
+        anchors.bottom: info.top;
+        anchors.bottomMargin: 5;
+        anchors.left: info.left;
+        text: "О СЕБЕ";
+        font.family: "century gothic";
+        font.pixelSize: 14;
+        color: "#757575";
+        //font.bold: true;
+    }
+    Text {
+        anchors.bottom: contactInfo.top;
+        anchors.bottomMargin: 5;                
+        anchors.left: contactInfo.left;
+        text: "КОНТАКТНАЯ ИНФОРМАЦИЯ";
+        font.family: "century gothic";
+        font.pixelSize: 14;
+        color: "#757575";
+        //font.bold: true;
     }
 }
