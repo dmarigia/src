@@ -15,6 +15,7 @@ MainItem {
         anchors.centerIn: parent;
         width: app.mobile ? app.width : app.width * 0.9;
         height: app.mobile ? app.height : app.height;
+        clip: true;
 
         LeftPanel {
             id: leftPanel;
@@ -23,58 +24,9 @@ MainItem {
         }
         LeftPanelWhiteBottom {}
 
-        Rectangle {
+        InfoPanel {
             id: infoPanel;
-            fixed: app.mobile;
-            z: 1;
-            height: 70;
-            anchors.left: parent.left;
-            anchors.right: parent.right;
-            color: "#5d6578";
-            Row {
-                anchors.verticalCenter: parent.verticalCenter;
-                anchors.left: parent.left;
-                anchors.leftMargin: 30;
-                spacing: 10;
-                MenuButtonMaterial {
-                    id: menuButton;
-                    visible: app.mobile;
-                    colorIcon: "white";
-                    opacity: 0.4;
-                    onClicked: { leftPanel.active ? leftPanel.close() :  leftPanel.open() }
-                    Behavior on background { ColorAnimation { duration: 200; } }
-                }
-                Text {
-                    text: app.pageName;
-                    font.pixelSize: 18;
-                    color: "#adb1ba";
-                    font.family: "century gothic";
-                }
-            }
-
-            Row {
-                spacing: 10;
-                anchors.right: infoPanel.right;
-                anchors.rightMargin: 30;
-                anchors.verticalCenter: parent.verticalCenter;
-                Image {
-                    source: "images/exit.png";
-                    height: 25;
-                    width: 25;
-                    opacity: 0.4;
-                    ColorIcon {
-                        anchors.fill: parent;
-                        source: parent.source;
-                        color: "white";
-                    }
-                }
-                Text {
-                    text: "Выход";
-                    font.pixelSize: 16;
-                    font.family: "century gothic";
-                    color: "#adb1ba";
-                }
-            }
+            effects.shadow.blur: 6;
         }
 
         Loader { // TODO: change container-like
@@ -115,15 +67,4 @@ MainItem {
     }
 
     MainItemDebug { visible: true; }
-
-    Audio {
-        id: audio;
-        source: "http://dl1-1.mp3party.net/download/8630";
-    }
-    Button {
-        anchors.right: parent.right;
-        color: "transparent";
-        z: 12; width: 60; height: 20; text: "🙈";
-        onClicked: { !audio.running ? audio.play() : audio.pause() }
-    }
 }
