@@ -93,7 +93,7 @@ Rectangle {
 
         LeftPanelButton {
             id: personalInfoButton;
-            name: "Личная информация";
+            name: qsTr("Личная информация");
             image: "account36.png";
             page: "PersonalPage";
         }
@@ -105,7 +105,7 @@ Rectangle {
         }
 
         LeftPanelButton {
-            name: "Журнал заданий";
+            name: qsTr("Журнал заданий");
             image: "todo.png";
             page: "Journal";
         }
@@ -117,7 +117,7 @@ Rectangle {
         }
 
         LeftPanelButton {
-            name: "Статистика";
+            name: qsTr("Статистика");
             image: "statistics.png";
             page: "Statistics";
         }
@@ -129,7 +129,7 @@ Rectangle {
         }
 
         LeftPanelButton {
-            name: "Отчеты pdf";
+            name: qsTr("Отчеты pdf");
             image: "docs.png";
             page: "Docs";
         }

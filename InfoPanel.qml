@@ -21,7 +21,7 @@ Rectangle {
             Behavior on background { ColorAnimation { duration: 200; } }
         }
         Text {
-            text: app.pageName;
+            text: qsTr(app.pageName);
             font.pixelSize: 18;
             color: "#adb1ba";
         }
@@ -44,7 +44,7 @@ Rectangle {
             }
         }
         Text {
-            text: "Выход";
+            text: qsTr("Выход");
             font.pixelSize: 16;
             color: "#adb1ba";
         }

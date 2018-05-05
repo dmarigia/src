@@ -27,7 +27,7 @@ Item {
             this.style("overflow-x", "auto")
             var cost = 5.95
             for (var i = 0; i !== 30; ++i)
-                journalModel.append({"cost": cost + i, "name":"Pizza"})
+                journalModel.append({"cost": cost + i, "name": "Пицца"})
         }
         nativeScrolling: true;
         
@@ -56,7 +56,7 @@ Item {
                 border.bottom.color: "crimson";
                 Text {
                     anchors.centerIn: parent;
-                    text: model.name;
+                    text: qsTr(model.name);
                 }
             }
             Rectangle {

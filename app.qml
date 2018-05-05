@@ -5,9 +5,9 @@ MainItem {
     id: app;
     anchors.fill: parent;
     color: "#BDBDBD";
-    title: "Личный кабинет - " + pageName;
+    title: qsTr("Личный кабинет") + " - " + pageName;
     property string page: "PersonalPage";
-    property string pageName: "Личная информация"; // TODO: auto
+    property string pageName: qsTr("Личная информация"); // TODO: auto
 
     Rectangle {
         id: insideRect;
@@ -26,6 +26,7 @@ MainItem {
         InfoPanel {
             id: infoPanel;
             effects.shadow.blur: 6;
+            LanguageButton {}
         }
 
         Loader { // TODO: change container-like

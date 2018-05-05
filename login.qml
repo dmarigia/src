@@ -16,7 +16,7 @@ Item {
                 
                 Text {
                     anchors.horizontalCenter: parent.horizontalCenter;
-                    text: "Авторизация";
+                    text: qsTr("Авторизация");
                     font.pixelSize: 22;
                     color: "#757575";
                     //color: "#8BC34A";
@@ -45,7 +45,7 @@ Item {
                     materialColor: "#757575";
                     width: 250;
                     font.pixelSize: 18;
-                    placeholder.text: "пароль";
+                    placeholder.text: qsTr("пароль");
                     echoMode: TextInput.Password; // NEW
                     //textInput.horizontalAlignment: TextInput.AlignHCenter; // NEW
                 }
@@ -54,7 +54,7 @@ Item {
                     anchors.horizontalCenter: password.horizontalCenter;
                     width: 100;
                     height: 40;
-                    text: "Войти";
+                    text: qsTr("Войти");
                     font.pixelSize: 18;
                     textColor: "white";
                     color: "#757575";

@@ -52,7 +52,7 @@ Rectangle {
                 }
                 OurButton {
                     anchors.horizontalCenter: parent.horizontalCenter;
-                    text: "Добавить фото";
+                    text: qsTr("Добавить фото");
                     height: 20;
                     color: "#ff5252";
                     radius: 50;
@@ -82,13 +82,11 @@ Rectangle {
                         anchors.topMargin: 15;
                         spacing: 5;
                         Text {
-                            text: "Звание: ";
-                            font.pixelSize: 14;
+                            text: qsTr("Звание: ");
                             color: "#757575";
                         }
                         Text {
-                            text: "звание";
-                            font.pixelSize: 14;
+                            text: qsTr("звание");
                             color: "#212121";
                         }
                     }
@@ -96,12 +94,10 @@ Rectangle {
                         spacing: 5;
                         Text {
                             text: "Степень: ";
-                            font.pixelSize: 14;
                             color: "#757575";
                         }
                         Text {
-                            text: "степень";
-                            font.pixelSize: 14;
+                            text: qsTr("степень");
                             color: "#212121";
                         }
                     }
@@ -121,26 +117,22 @@ Rectangle {
                         anchors.topMargin: 15;
                         spacing: 5;
                         Text {
-                            text: "Специальность: ";
-                            font.pixelSize: 14;
+                            text: qsTr("Специальность: ");
                             color: "#757575";
                         }
                         Text {
-                            text: "специальность";
-                            font.pixelSize: 14;
+                            text: ("специальность");
                             color: "#212121";
                         }
                     }
                     Row {
                         spacing: 5;
                         Text {
-                            text: "Кафедра: ";
-                            font.pixelSize: 14;
+                            text: qsTr("Кафедра: ");
                             color: "#757575";
                         }
                         Text {
-                            text: "кафедра";
-                            font.pixelSize: 14;
+                            text: qsTr("кафедра");
                             color: "#212121";
                         } //год рождения, год обучения, форма обучения (дневная, заочная), бюджет/контракт, руководитель +ссылка на его профиль
                     }
@@ -165,9 +157,8 @@ Rectangle {
                     Column {
                         spacing: 15;
                         Text {
-                            text: "Заданий";
+                            text: qsTr("Заданий");
                             color: "#757575";
-                            font.pixelSize: 14;
                         }
                         Text {
                             anchors.centerIn: parent;
@@ -180,9 +171,8 @@ Rectangle {
                     Column {
                         spacing: 15;
                         Text {
-                            text: "Рейтинг";
+                            text: qsTr("Рейтинг");
                             color: "#757575";
-                            font.pixelSize: 14;
                         }
                         Text {
                             anchors.centerIn: parent;
@@ -223,9 +213,8 @@ Rectangle {
                 Column {
                     spacing: 5;
                     Text {
-                        text: "Год обучения";
+                        text: qsTr("Год обучения");
                         color: "#757575";
-                        font.pixelSize: 14;
                     }
                     
                     Text {
@@ -237,13 +226,12 @@ Rectangle {
                 Column {
                     spacing: 5;
                     Text {
-                        text: "Тема научной работы";
+                        text: qsTr("Тема научной работы");
                         color: "#757575";
-                        font.pixelSize: 14;
                     }
                     
                     Text {
-                        text: "тема научной работы";
+                        text: qsTr("тема научной работы");
                         color: "#212121";
                         font.pixelSize: 15;
                     }
@@ -251,12 +239,11 @@ Rectangle {
                 Column {
                     spacing: 5;
                     Text {
-                        text: "Основа обучения";
+                        text: qsTr("Основа обучения");
                         color: "#757575";
-                        font.pixelSize: 14;
                     }
                     Text {
-                        text: "Дневная";
+                        text: qsTr("Дневная");
                         color: "#212121";
                         font.pixelSize: 15;
                     }
@@ -264,12 +251,11 @@ Rectangle {
                 Column {
                     spacing: 5;
                     Text {
-                        text: "Форма обучения";
+                        text: qsTr("Форма обучения");
                         color: "#757575";
-                        font.pixelSize: 14;
                     }
                     Text {
-                        text: "Бюджет";
+                        text: qsTr("Бюджет");
                         color: "#212121";
                         font.pixelSize: 15;
                     }
@@ -305,9 +291,8 @@ Rectangle {
                 Column {
                     spacing: 5;
                     Text {
-                        text: "Дата рождения";
+                        text: qsTr("Дата рождения");
                         color: "#757575";
-                        font.pixelSize: 14;
                     }
                     Text {
                         text: "13.10.1990";
@@ -318,12 +303,11 @@ Rectangle {
                 Column {
                     spacing: 5;
                     Text {
-                        text: "Семейное положение";
+                        text: qsTr("Семейное положение");
                         color: "#757575";
-                        font.pixelSize: 14;
                     }
                     Text {
-                        text: "Не замужем";
+                        text: qsTr("Не замужем");
                         color: "#212121";
                         font.pixelSize: 15;
                     }
@@ -331,12 +315,11 @@ Rectangle {
                 Column {
                     spacing: 5;
                     Text {
-                        text: "Дети";
+                        text: qsTr("Дети");
                         color: "#757575";
-                        font.pixelSize: 14;
                     }
                     Text {
-                        text: "Нет";
+                        text: qsTr("Нет");
                         color: "#212121";
                         font.pixelSize: 15;
                     }
@@ -373,9 +356,8 @@ Rectangle {
                 Column {
                     spacing: 5;
                     Text {
-                        text: "Телефон";
+                        text: qsTr("Телефон");
                         color: "#757575";
-                        font.pixelSize: 14;
                     }
                     Text {
                         text: "+380639170208";
@@ -388,7 +370,6 @@ Rectangle {
                     Text {
                         text: "e-mail";
                         color: "#757575";
-                        font.pixelSize: 14;
                     }
                     Text {
                         text: "myemail@email.my";
@@ -399,12 +380,11 @@ Rectangle {
                 Column {
                     spacing: 5;
                     Text {
-                        text: "Место работы";
+                        text: qsTr("Место работы");
                         color: "#757575";
-                        font.pixelSize: 14;
                     }
                     Text {
-                        text: "Место работы";
+                        text: qsTr("Место работы");
                         color: "#212121";
                         font.pixelSize: 15;
                     }
@@ -412,12 +392,11 @@ Rectangle {
                 Column {
                     spacing: 5;
                     Text {
-                        text: "Адрес проживания";
+                        text: qsTr("Адрес проживания");
                         color: "#757575";
-                        font.pixelSize: 14;
                     }
                     Text {
-                        text: "Адрес проживания";
+                        text: qsTr("Адрес проживания");
                         color: "#212121";
                         font.pixelSize: 15;
                     }
@@ -471,12 +450,10 @@ Rectangle {
         //             spacing: 15;
         //             Text {                        
         //                 text: "Семейное положение: ";
-        //                 font.pixelSize: 14;
         //                 color: "#757575";
         //             }
         //             Text {
         //                 text: "Не замужем";
-        //                 font.pixelSize: 14;
         //                 color: "#212121";
         //             }
         //         }
@@ -484,12 +461,10 @@ Rectangle {
         //             spacing: 15;
         //             Text {                        
         //                 text: "Дети: ";
-        //                 font.pixelSize: 14;
         //                 color: "#757575";
         //             }
         //             Text {
         //                 text: "нет";
-        //                 font.pixelSize: 14;
         //                 color: "#212121";
         //             }
         //         }
@@ -497,12 +472,10 @@ Rectangle {
         //             spacing: 15;
         //             Text {                        
         //                 text: "Место работы: ";
-        //                 font.pixelSize: 14;
         //                 color: "#757575";
         //             }
         //             Text {
         //                 text: "место работы";
-        //                 font.pixelSize: 14;
         //                 color: "#212121";
         //             }
                     
@@ -529,12 +502,10 @@ Rectangle {
         //             spacing: 15;
         //             Text {                        
         //                 text: "Телефон: ";
-        //                 font.pixelSize: 14;
         //                 color: "#757575";
         //             }
         //             Text {
         //                 text: "+980635698574";
-        //                 font.pixelSize: 14;
         //                 color: "#212121";
         //             }
         //         }
@@ -542,12 +513,10 @@ Rectangle {
         //             spacing: 15;
         //             Text {                        
         //                 text: "e-mail: ";
-        //                 font.pixelSize: 14;
         //                 color: "#757575";
         //             }
         //             Text {
         //                 text: "myemail@email.my";
-        //                 font.pixelSize: 14;
         //                 color: "#212121";
         //             }
         //         }
@@ -555,12 +524,10 @@ Rectangle {
         //             spacing: 15;
         //             Text {                        
         //                 text: "Адрес проживания: ";
-        //                 font.pixelSize: 14;
         //                 color: "#757575";
         //             }
         //             Text {
         //                 text: "ул. Уличиная, д. 8, кв. 5";
-        //                 font.pixelSize: 14;
         //                 color: "#212121";
         //             }
                     
@@ -573,8 +540,7 @@ Rectangle {
         anchors.bottom: infoEdu.top;
         anchors.bottomMargin: 5;
         anchors.left: infoEdu.left;
-        text: "ОБУЧЕНИЕ";
-        font.pixelSize: 14;
+        text: qsTr("ОБУЧЕНИЕ");
         color: "#757575";
         //font.bold: true;
     }
@@ -582,8 +548,7 @@ Rectangle {
         anchors.bottom: info.top;
         anchors.bottomMargin: 5;
         anchors.left: info.left;
-        text: "О СЕБЕ";
-        font.pixelSize: 14;
+        text: qsTr("О СЕБЕ");
         color: "#757575";
         //font.bold: true;
     }
@@ -591,8 +556,7 @@ Rectangle {
         anchors.bottom: contactInfo.top;
         anchors.bottomMargin: 5;                
         anchors.left: contactInfo.left;
-        text: "КОНТАКТНАЯ ИНФОРМАЦИЯ";
-        font.pixelSize: 14;
+        text: qsTr("КОНТАКТНАЯ ИНФОРМАЦИЯ");
         color: "#757575";
         //font.bold: true;
     }
