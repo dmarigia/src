@@ -17,7 +17,6 @@ Item {
                 Text {
                     anchors.horizontalCenter: parent.horizontalCenter;
                     text: "Авторизация";
-                    font.family: "century gothic";
                     font.pixelSize: 22;
                     color: "#757575";
                     //color: "#8BC34A";
@@ -31,7 +30,6 @@ Item {
                     Behavior on materialColor { ColorAnimation { duration: 500; } }
                     font.pixelSize: 18;
                     placeholder.text: "e-mail";
-                    font.family: "century gothic";
                     //textInput.horizontalAlignment: TextInput.AlignHCenter; // NEW
                     
                     property bool valid; // NEW
@@ -48,7 +46,6 @@ Item {
                     width: 250;
                     font.pixelSize: 18;
                     placeholder.text: "пароль";
-                    font.family: "century gothic";
                     echoMode: TextInput.Password; // NEW
                     //textInput.horizontalAlignment: TextInput.AlignHCenter; // NEW
                 }
@@ -58,7 +55,6 @@ Item {
                     width: 100;
                     height: 40;
                     text: "Войти";
-                    font.family: "century gothic";
                     font.pixelSize: 18;
                     textColor: "white";
                     color: "#757575";

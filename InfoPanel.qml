@@ -24,7 +24,6 @@ Rectangle {
             text: app.pageName;
             font.pixelSize: 18;
             color: "#adb1ba";
-            font.family: "century gothic";
         }
     }
 
@@ -47,7 +46,6 @@ Rectangle {
         Text {
             text: "Выход";
             font.pixelSize: 16;
-            font.family: "century gothic";
             color: "#adb1ba";
         }
     }

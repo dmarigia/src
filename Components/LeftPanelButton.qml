@@ -44,7 +44,6 @@ Rectangle {
             anchors.verticalCenter: parent.verticalCenter;
             font.pixelSize: 16;
             color: "#212121";
-            font.family: "century gothic";
         }
     }
 }

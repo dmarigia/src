@@ -1,0 +1,7 @@
+{
+	"platforms": ["web"],
+	"languages": ["uk", "ru"],
+	"properties": {
+		"style.font": { "family": "century gothic" }
+	}
+}

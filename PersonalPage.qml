@@ -75,7 +75,6 @@ Rectangle {
                             text: global.name;
                             color: "#212121";
                             font.pixelSize: 16;
-                            font.family: "century gothic";
                             font.bold: true;
                         }
                     }
@@ -84,13 +83,11 @@ Rectangle {
                         spacing: 5;
                         Text {
                             text: "Звание: ";
-                            font.family: "century gothic";
                             font.pixelSize: 14;
                             color: "#757575";
                         }
                         Text {
                             text: "звание";
-                            font.family: "century gothic";
                             font.pixelSize: 14;
                             color: "#212121";
                         }
@@ -99,13 +96,11 @@ Rectangle {
                         spacing: 5;
                         Text {
                             text: "Степень: ";
-                            font.family: "century gothic";
                             font.pixelSize: 14;
                             color: "#757575";
                         }
                         Text {
                             text: "степень";
-                            font.family: "century gothic";
                             font.pixelSize: 14;
                             color: "#212121";
                         }
@@ -120,7 +115,6 @@ Rectangle {
                         text: "Name Surname";
                         color: "#212121";
                         font.pixelSize: 16;
-                        font.family: "century gothic";
                         font.bold: true;
                     }
                     Row {
@@ -128,13 +122,11 @@ Rectangle {
                         spacing: 5;
                         Text {
                             text: "Специальность: ";
-                            font.family: "century gothic";
                             font.pixelSize: 14;
                             color: "#757575";
                         }
                         Text {
                             text: "специальность";
-                            font.family: "century gothic";
                             font.pixelSize: 14;
                             color: "#212121";
                         }
@@ -143,13 +135,11 @@ Rectangle {
                         spacing: 5;
                         Text {
                             text: "Кафедра: ";
-                            font.family: "century gothic";
                             font.pixelSize: 14;
                             color: "#757575";
                         }
                         Text {
                             text: "кафедра";
-                            font.family: "century gothic";
                             font.pixelSize: 14;
                             color: "#212121";
                         } //год рождения, год обучения, форма обучения (дневная, заочная), бюджет/контракт, руководитель +ссылка на его профиль
@@ -178,14 +168,12 @@ Rectangle {
                             text: "Заданий";
                             color: "#757575";
                             font.pixelSize: 14;
-                            font.family: "century gothic";
                         }
                         Text {
                             anchors.centerIn: parent;
                             text: "9";
                             color: "#f48fb1";
                             font.pixelSize: 24;
-                            font.family: "century gothic";
                             //font.bold: true;
                         }
                     }
@@ -195,15 +183,12 @@ Rectangle {
                             text: "Рейтинг";
                             color: "#757575";
                             font.pixelSize: 14;
-                            font.family: "century gothic";                            
                         }
                         Text {
                             anchors.centerIn: parent;
                             text: "2";
                             color: "#f48fb1";
                             font.pixelSize: 24;
-                            font.family: "century gothic";
-                            //font.bold: true;
                         }
                     }
                 }
@@ -241,14 +226,12 @@ Rectangle {
                         text: "Год обучения";
                         color: "#757575";
                         font.pixelSize: 14;
-                        font.family: "century gothic";
                     }
                     
                     Text {
                         text: "2";
                         color: "#212121";
                         font.pixelSize: 15;
-                        font.family: "century gothic";
                     }
                 }
                 Column {
@@ -257,14 +240,12 @@ Rectangle {
                         text: "Тема научной работы";
                         color: "#757575";
                         font.pixelSize: 14;
-                        font.family: "century gothic";
                     }
                     
                     Text {
                         text: "тема научной работы";
                         color: "#212121";
                         font.pixelSize: 15;
-                        font.family: "century gothic";
                     }
                 }
                 Column {
@@ -273,13 +254,11 @@ Rectangle {
                         text: "Основа обучения";
                         color: "#757575";
                         font.pixelSize: 14;
-                        font.family: "century gothic";
                     }
                     Text {
                         text: "Дневная";
                         color: "#212121";
                         font.pixelSize: 15;
-                        font.family: "century gothic";
                     }
                 }
                 Column {
@@ -288,13 +267,11 @@ Rectangle {
                         text: "Форма обучения";
                         color: "#757575";
                         font.pixelSize: 14;
-                        font.family: "century gothic";
                     }
                     Text {
                         text: "Бюджет";
                         color: "#212121";
                         font.pixelSize: 15;
-                        font.family: "century gothic";
                     }
                 }
             }
@@ -331,13 +308,11 @@ Rectangle {
                         text: "Дата рождения";
                         color: "#757575";
                         font.pixelSize: 14;
-                        font.family: "century gothic";
                     }
                     Text {
                         text: "13.10.1990";
                         color: "#212121";
                         font.pixelSize: 15;
-                        font.family: "century gothic";
                     }
                 }
                 Column {
@@ -346,13 +321,11 @@ Rectangle {
                         text: "Семейное положение";
                         color: "#757575";
                         font.pixelSize: 14;
-                        font.family: "century gothic";
                     }
                     Text {
                         text: "Не замужем";
                         color: "#212121";
                         font.pixelSize: 15;
-                        font.family: "century gothic";
                     }
                 }
                 Column {
@@ -361,13 +334,11 @@ Rectangle {
                         text: "Дети";
                         color: "#757575";
                         font.pixelSize: 14;
-                        font.family: "century gothic";
                     }
                     Text {
                         text: "Нет";
                         color: "#212121";
                         font.pixelSize: 15;
-                        font.family: "century gothic";
                     }
                 }
             }
@@ -405,13 +376,11 @@ Rectangle {
                         text: "Телефон";
                         color: "#757575";
                         font.pixelSize: 14;
-                        font.family: "century gothic";
                     }
                     Text {
                         text: "+380639170208";
                         color: "#212121";
                         font.pixelSize: 15;
-                        font.family: "century gothic";
                     }
                 }
                 Column {
@@ -420,13 +389,11 @@ Rectangle {
                         text: "e-mail";
                         color: "#757575";
                         font.pixelSize: 14;
-                        font.family: "century gothic";
                     }
                     Text {
                         text: "myemail@email.my";
                         color: "#212121";
                         font.pixelSize: 15;
-                        font.family: "century gothic";
                     }
                 }
                 Column {
@@ -435,13 +402,11 @@ Rectangle {
                         text: "Место работы";
                         color: "#757575";
                         font.pixelSize: 14;
-                        font.family: "century gothic";
                     }
                     Text {
                         text: "Место работы";
                         color: "#212121";
                         font.pixelSize: 15;
-                        font.family: "century gothic";
                     }
                 }
                 Column {
@@ -450,13 +415,11 @@ Rectangle {
                         text: "Адрес проживания";
                         color: "#757575";
                         font.pixelSize: 14;
-                        font.family: "century gothic";
                     }
                     Text {
                         text: "Адрес проживания";
                         color: "#212121";
                         font.pixelSize: 15;
-                        font.family: "century gothic";
                     }
                 }
             }
@@ -508,13 +471,11 @@ Rectangle {
         //             spacing: 15;
         //             Text {                        
         //                 text: "Семейное положение: ";
-        //                 font.family: "century gothic";
         //                 font.pixelSize: 14;
         //                 color: "#757575";
         //             }
         //             Text {
         //                 text: "Не замужем";
-        //                 font.family: "century gothic";
         //                 font.pixelSize: 14;
         //                 color: "#212121";
         //             }
@@ -523,13 +484,11 @@ Rectangle {
         //             spacing: 15;
         //             Text {                        
         //                 text: "Дети: ";
-        //                 font.family: "century gothic";
         //                 font.pixelSize: 14;
         //                 color: "#757575";
         //             }
         //             Text {
         //                 text: "нет";
-        //                 font.family: "century gothic";
         //                 font.pixelSize: 14;
         //                 color: "#212121";
         //             }
@@ -538,13 +497,11 @@ Rectangle {
         //             spacing: 15;
         //             Text {                        
         //                 text: "Место работы: ";
-        //                 font.family: "century gothic";
         //                 font.pixelSize: 14;
         //                 color: "#757575";
         //             }
         //             Text {
         //                 text: "место работы";
-        //                 font.family: "century gothic";
         //                 font.pixelSize: 14;
         //                 color: "#212121";
         //             }
@@ -572,13 +529,11 @@ Rectangle {
         //             spacing: 15;
         //             Text {                        
         //                 text: "Телефон: ";
-        //                 font.family: "century gothic";
         //                 font.pixelSize: 14;
         //                 color: "#757575";
         //             }
         //             Text {
         //                 text: "+980635698574";
-        //                 font.family: "century gothic";
         //                 font.pixelSize: 14;
         //                 color: "#212121";
         //             }
@@ -587,13 +542,11 @@ Rectangle {
         //             spacing: 15;
         //             Text {                        
         //                 text: "e-mail: ";
-        //                 font.family: "century gothic";
         //                 font.pixelSize: 14;
         //                 color: "#757575";
         //             }
         //             Text {
         //                 text: "myemail@email.my";
-        //                 font.family: "century gothic";
         //                 font.pixelSize: 14;
         //                 color: "#212121";
         //             }
@@ -602,13 +555,11 @@ Rectangle {
         //             spacing: 15;
         //             Text {                        
         //                 text: "Адрес проживания: ";
-        //                 font.family: "century gothic";
         //                 font.pixelSize: 14;
         //                 color: "#757575";
         //             }
         //             Text {
         //                 text: "ул. Уличиная, д. 8, кв. 5";
-        //                 font.family: "century gothic";
         //                 font.pixelSize: 14;
         //                 color: "#212121";
         //             }
@@ -623,7 +574,6 @@ Rectangle {
         anchors.bottomMargin: 5;
         anchors.left: infoEdu.left;
         text: "ОБУЧЕНИЕ";
-        font.family: "century gothic";
         font.pixelSize: 14;
         color: "#757575";
         //font.bold: true;
@@ -633,7 +583,6 @@ Rectangle {
         anchors.bottomMargin: 5;
         anchors.left: info.left;
         text: "О СЕБЕ";
-        font.family: "century gothic";
         font.pixelSize: 14;
         color: "#757575";
         //font.bold: true;
@@ -643,7 +592,6 @@ Rectangle {
         anchors.bottomMargin: 5;                
         anchors.left: contactInfo.left;
         text: "КОНТАКТНАЯ ИНФОРМАЦИЯ";
-        font.family: "century gothic";
         font.pixelSize: 14;
         color: "#757575";
         //font.bold: true;

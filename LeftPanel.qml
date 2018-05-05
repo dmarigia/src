@@ -60,7 +60,6 @@ Rectangle {
         font.pixelSize: 18;
         color: "#212121";
         font.bold: true;
-        font.family: "century gothic";
         anchors.left: parent.left;
         anchors.leftMargin: 20;
         anchors.right: parent.right;
@@ -76,7 +75,6 @@ Rectangle {
         text: global.job;
         font.pixelSize: 15;
         color: "#757575";
-        font.family: "century gothic";
         anchors.left: parent.left;
         anchors.leftMargin: 20;
     }

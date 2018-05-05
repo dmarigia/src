@@ -14,8 +14,7 @@ MainItem {
         color: "#f5f5f5";
         anchors.centerIn: parent;
         width: app.mobile ? app.width : (app.width <= 1280 ? app.width * 0.9 : (app.width <= 1600 && app.width >= 1280  ? app.width * 0.82 : app.width * 0.72)); //TODO
-        height: app.mobile ? app.height : app.height;
-        clip: true;
+        height: app.height;
 
         LeftPanel {
             id: leftPanel;

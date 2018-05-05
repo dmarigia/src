@@ -23,7 +23,6 @@ Rectangle {
         anchors.centerIn: parent;
         text: parent.text;
         font.pixelSize: 14;
-        font.family: "century gothic";
         color: parent.textColor;
     }
 }
