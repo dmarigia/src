@@ -47,9 +47,24 @@ Item {
                     Rectangle {
                         height: 50;
                         width: parent.width / 3.4;
-                        Text {
+                        Row {
+                            AbstractButton {
                             anchors.centerIn: parent;
-                            text: "Задание 1";
+                            width: 30;
+                            height: 30;
+                            icon.source: "images/addTask.png";
+                            icon.width: 25;
+                            icon.height: 25;
+                            colors.hovered: "lightblue";
+                            colors.pressed: "blue";
+                            radius: 50;
+                            opacity: 0.4;
+                            onClicked: { alert("Clicked") }
+                        }
+                            Text {
+                                anchors.centerIn: parent;
+                                text: "Задание 1";
+                            }
                         }
                     }
                     Rectangle {
@@ -100,6 +115,23 @@ Item {
                         height: 50;
                         width: parent.width / 8;
                         CheckboxInput { anchors.centerIn: parent; }
+                    }
+                    Rectangle {
+                        height: 50;
+                        
+                        AbstractButton {
+                            anchors.centerIn: parent;
+                            width: 30;
+                            height: 30;
+                            icon.source: "images/options.png";
+                            icon.width: 25;
+                            icon.height: 25;
+                            colors.hovered: "lightblue";
+                            colors.pressed: "blue";
+                            radius: 50;
+                            opacity: 0.5;
+                            onClicked: { alert("Clicked") }
+                        }
                     }
                 }
             }
