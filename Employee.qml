@@ -9,8 +9,8 @@ Rectangle {
         id: addButton;
         anchors.top: parent.top;
         anchors.right: parent.right;
-        anchors.topMargin: 50;
-        anchors.rightMargin: 50;
+        anchors.topMargin: 40;
+        anchors.rightMargin: 40;
         text: "Добавить";
         textColor: "#757575"; 
         width: 85;
@@ -23,55 +23,10 @@ Rectangle {
         }
     }
 
-    Rectangle {
-        id: listRect;
-        anchors.top: addButton.bottom;
-        anchors.topMargin: 50;
-        color: "lightgray";
-        anchors.horizontalCenter: parent.horizontalCenter;
-        width: parent.width * 0.85;
-        height: 50;
-        effects.shadow.color: "#efefef";
-		effects.shadow.blur: 10;
-		effects.shadow.spread: 10;
-                Row {
-                    anchors.fill: parent;
-                    Item {
-                        height: 50;
-                        width: parent.width / 4;
-                    }
-                    Item {
-                        height: 50;
-                        width: parent.width / 4;
-                        Text {
-                            anchors.centerIn: parent;
-                            text: "Имя";
-                        }
-                    }
-                    Item {
-                        height: 50;
-                        width: parent.width / 4;
-                        Text {
-                            anchors.centerIn: parent;
-                            text: "Должность";
-                        }
-                    }
-                    Item {
-                        height: 50;
-                        width: parent.width / 4;
-                        Text {
-                            anchors.centerIn: parent;
-                            text: "Опции";
-                        }
-                    }
-                }
-    }
-
-
     ListView {
         id: listik;
         anchors.top: listRect.bottom;
-        anchors.topMargin: 50;
+        anchors.topMargin: 40;
         anchors.horizontalCenter: parent.horizontalCenter;
         width: parent.width * 0.85;
         effects.shadow.color: "#efefef";
@@ -98,7 +53,7 @@ Rectangle {
                     width: parent.width;
                     Item {
                         height: 100;
-                        width: parent.width / 4;
+                        width: parent.width / 5;
                         Image {
                             anchors.centerIn: parent;
                             source: "images/avatarbig.png";
@@ -109,7 +64,7 @@ Rectangle {
                     }
                     Item {
                         height: 100;
-                        width: parent.width / 4;
+                        width: parent.width / 2.7;
                         Text {
                             anchors.centerIn: parent;
                             text: "Фамилия Имя Отчество";
@@ -125,13 +80,19 @@ Rectangle {
                     }
                     Item {
                         height: 100;
-                        width: parent.width / 4;
-                        LeftPanelButton {
+                        width: parent.width / 5;
+                        AbstractButton {
                             anchors.centerIn: parent;
-                            width: 25;
-                            height: 25;
-                            image: "options.png";
-                            page: "OptionMenu";
+                            width: 30;
+                            height: 30;
+                            icon.source: "images/options.png";
+                            icon.width: 25;
+                            icon.height: 25;
+                            colors.hovered: "lightblue";
+                            colors.pressed: "blue";
+                            radius: 50;
+                            opacity: 0.5;
+                            onClicked: { alert("Clicked") }
                         }
                     }
                 }
@@ -139,4 +100,54 @@ Rectangle {
             }
        
    }
+
+   Rectangle {
+        id: listRect;
+        anchors.top: addButton.bottom;
+        anchors.topMargin: 40;
+        color: "#d9e2e7";
+        anchors.horizontalCenter: parent.horizontalCenter;
+        width: parent.width * 0.85;
+        height: 50;
+        effects.shadow.color: "#efefef";
+		effects.shadow.blur: 10;
+		effects.shadow.spread: 2;
+                Row {
+                    anchors.fill: parent;
+                    Item {
+                        height: 50;
+                        width: parent.width / 5;
+                    }
+                    Item {
+                        height: 50;
+                        width: parent.width / 2.7;
+                        Text {
+                            anchors.centerIn: parent;
+                            text: "ИМЯ";
+                            color: "#73818e";
+                            font.bold: true;
+                        }
+                    }
+                    Item {
+                        height: 50;
+                        width: parent.width / 4;
+                        Text {
+                            anchors.centerIn: parent;
+                            text: "ДОЛЖНОСТЬ";
+                            color: "#73818e";
+                            font.bold: true;
+                        }
+                    }
+                    Item {
+                        height: 50;
+                        width: parent.width / 5;
+                        Text {
+                            anchors.centerIn: parent;
+                            text: "ОПЦИИ";
+                            color: "#73818e";
+                            font.bold: true;
+                        }
+                    }
+                }
+    }
 }

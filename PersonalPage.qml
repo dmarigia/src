@@ -17,7 +17,7 @@ Rectangle {
             anchors.topMargin: 60;
             height: 220;
             width: grid.width > 820 ? insideRect.width * 0.7 : grid.width;
-            color: "white";
+            color: "#ffffff";
             clip: true;
             effects.shadow.color: "#efefef";
 		    effects.shadow.blur: 10;
@@ -189,9 +189,9 @@ Rectangle {
             clip: true;
             id: infoEdu;
             anchors.topMargin: 60;
-            width: grid.width > 800 ? mainInfo.width / 3 : grid.width;
+            width: grid.width > 750 ? mainInfo.width / 3 : grid.width;
             height: contactText.height + 40;
-            color: "white";
+            color: "#ffffff";
             effects.shadow.color: "#efefef";
 		    effects.shadow.blur: 10;
 		    effects.shadow.spread: 10;
@@ -268,9 +268,9 @@ Rectangle {
             clip: true;
             id: info;
             anchors.topMargin: 60;
-            width: grid.width > 800 ? mainInfo.width / 3 - 20 : grid.width;
+            width: grid.width > 750 ? mainInfo.width / 3 - 20 : grid.width;
             height: contactText.height + 40;
-            color: "white";
+            color: "#ffffff";
             effects.shadow.color: "#efefef";
 		    effects.shadow.blur: 10;
 		    effects.shadow.spread: 10;
@@ -333,9 +333,9 @@ Rectangle {
             clip: true;
             id: contactInfo;
             anchors.topMargin: 60;
-            width: grid.width > 800 ? mainInfo.width / 3 : grid.width;
+            width: grid.width > 750 ? mainInfo.width / 3 : grid.width;
             height: contactText.height + 40;
-            color: "white";
+            color: "#ffffff";
             effects.shadow.color: "#efefef";
 		    effects.shadow.blur: 10;
 		    effects.shadow.spread: 10;
@@ -408,30 +408,31 @@ Rectangle {
         }
 
         Row {
+            height: 80;
             spacing: 40;
             anchors.topMargin: 60;
             anchors.horizontalCenter: parent.horizontalCenter;
             opacity: 0.6;
             Image {
                 source: "images/orcid.svg";
-                width: 60;
-                height: 60;
+                width: 50;
+                height: 50;
                 
             }
             Image {
                 source: "images/scopus.svg";
-                width: 60;
-                height: 60;
+                width: 50;
+                height: 50;
             }
             Image {
                 source: "images/ResearcherID.svg";
-                width: 60;
-                height: 60;
+                width: 50;
+                height: 50;
             }
             Image {
                 source: "images/gscholar.png";
-                width: 60;
-                height: 60;
+                width: 50;
+                height: 50;
             }
         }
         // Rectangle {

@@ -4,7 +4,7 @@ Rectangle {
     // TODO: сделать адекватно :)
     height: Math.max(app.height - infoPanel.height, leftPanelColumn.height + avatar.height + name.height + 70 + post.height + 5 + 80);
     width: app.mobile ? 0.7 * parent.width : personalInfoButton.rowWidth + 40;
-    color: "white";
+    color: "#fefefe";
     property bool active: false;
     x: active || !app.mobile ? 0 : -width;
     Behavior on x { Animation { id: leftPanelAnim; duration: 0; } }
@@ -106,7 +106,7 @@ Rectangle {
 
         LeftPanelButton {
             name: qsTr("Список аспирантов");
-            image: "edit1.png";
+            image: "users.png";
             page: "Employee";
         }       
 
