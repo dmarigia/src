@@ -1,6 +1,12 @@
 Item {
     id: journal;
     anchors.fill: parent;
+    property bool hideSub: false;
+
+    AbstractButton {
+        text: parent.hideSub;
+        onClicked: { journal.hideSub = !journal.hideSub }
+    }
 
     Button {
         id: addTaskButton;
@@ -16,7 +22,7 @@ Item {
         border.width: 1;
         border.color: "#EAEAEA";
         onClicked: {
-            listModel.append({})
+            listModel.append({"sub": false})
         }
     }
 
@@ -30,7 +36,9 @@ Item {
 		effects.shadow.blur: 10;
 		effects.shadow.spread: 10;
         height: contentHeight;
-        spacing: 2;
+        keyNavigationWraps: false;
+        handleNavigationKeys: false;
+        //spacing: 2;
         //var subPar: false;
 
         model: ListModel {
@@ -40,34 +48,38 @@ Item {
        delegate: 
             Rectangle {
                 width: 100%; 
-                height: 50;
-                color: "#ffffff";
+                height: (!journal.hideSub && model.sub) ? 50 : (model.sub ? 0 : 50);
+                visible: (!journal.hideSub && model.sub) || !model.sub; // TODO
+                color: normalnayaPeremennaya1.checked && normalnayaPeremennaya2.checked && normalnayaPeremennaya3.checked ? "lightgreen" : "white";
+                //color: !model.sub ? "#ffffff" : "red";
                 Row {
                     width: parent.width;
-                    Rectangle {
+                    Item {
                         height: 50;
                         width: parent.width / 3.4;
                         Row {
+                            anchors.centerIn: parent; // ???
                             AbstractButton {
-                            anchors.centerIn: parent;
-                            width: 30;
-                            height: 30;
-                            icon.source: "images/addTask.png";
-                            icon.width: 25;
-                            icon.height: 25;
-                            colors.hovered: "lightblue";
-                            colors.pressed: "blue";
-                            radius: 50;
-                            opacity: 0.4;
-                            onClicked: { alert("Clicked") }
-                        }
+                                visible: !model.sub;
+                                anchors.verticalCenter: parent.verticalCenter;
+                                width: 30;
+                                height: 30;
+                                icon.source: "images/addTask.png";
+                                icon.width: 25;
+                                icon.height: 25;
+                                colors.hovered: "lightblue";
+                                colors.pressed: "blue";
+                                radius: 50;
+                                opacity: 0.4;
+                                onClicked: { listModel.insert(model.index + 1, {"sub":true}) }
+                            }
                             Text {
-                                anchors.centerIn: parent;
-                                text: "Задание 1";
+                                anchors.verticalCenter: parent.verticalCenter;
+                                text: model.sub ? "Подзадание " : "Задание " + 1;
                             }
                         }
                     }
-                    Rectangle {
+                    Item {
                         height: 50;
                         width: parent.width / 6;
                         Column {
@@ -91,35 +103,49 @@ Item {
                             }
                         }
                     }
-                    Rectangle {
+                    Item {
                         height: 50;
                         width: parent.width / 8;
-                        CheckboxInput { anchors.centerIn: parent; }
+                        CheckboxInput {
+                            id: normalnayaPeremennaya1; anchors.centerIn: parent;
+                            // onCheckedChanged: {
+                            //     log("[normalnayaPeremennaya1]", value)
+                            //     if (!model.sub) return
+                            //     for (var i = model.index; i != 0; --i) {
+                            //         console.log("цикл", listModel.get(i).sub)
+                            //         if (!listModel.get(i).sub) {
+                            //             break
+                            //         }
+                            //     }
+                            // }
+                        }
                     }
-                    Rectangle {
+                    Item {
                         height: 50;
                         width: parent.width / 8;
-                        CheckboxInput { anchors.centerIn: parent; }
+                        CheckboxInput { id: normalnayaPeremennaya2; anchors.centerIn: parent; }
                     }
-                    Rectangle {
+                    Item {
                         height: 50;
                         width: parent.width / 8;
                         TextInputMaterial {
                             width: 100;
                             anchors.bottom: parent.bottom;
+                            color: "green";
                             materialColor: "lightblue";
                         }
                         
                     }
-                    Rectangle {
+                    Item {
                         height: 50;
                         width: parent.width / 8;
-                        CheckboxInput { anchors.centerIn: parent; }
+                        CheckboxInput { id: normalnayaPeremennaya3; anchors.centerIn: parent; }
                     }
-                    Rectangle {
+                    Item {
                         height: 50;
                         
                         AbstractButton {
+                            id: normalnayaPeremennaya5;
                             anchors.centerIn: parent;
                             width: 30;
                             height: 30;
@@ -130,7 +156,15 @@ Item {
                             colors.pressed: "blue";
                             radius: 50;
                             opacity: 0.5;
-                            onClicked: { alert("Clicked") }
+                            onClicked: { normalnayaPeremennaya4.visible = !normalnayaPeremennaya4.visible }
+                        }
+                        OptionMenu {
+                            //TODO: сделать по центру
+                            id: normalnayaPeremennaya4;
+                            anchors.top: normalnayaPeremennaya5.bottom;
+                            anchors.topMargin: 10;
+                            visible: false;
+                            z: 1;
                         }
                     }
                 }

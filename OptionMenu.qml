@@ -43,10 +43,11 @@ Item {
     }
     Rectangle {
         clip: true;
-        anchors.centerIn: parent;
+        anchors.top: parent.top;
+        anchors.topMargin: -8;
         id: triangle;
-        width: 15;
-        height: 15;
+        width: 16;
+        height: 16;
         rotation: 45;
         effects.shadow.y: -10;
         effects.shadow.x: -10;
