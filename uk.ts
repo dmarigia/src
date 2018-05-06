@@ -36,6 +36,11 @@
     </message>
     <message>
         <location filename="src/LeftPanel.qml" line="1"/>
+        <source>Список аспирантов</source>
+        <translation>Список аспірантів</translation>
+    </message>
+    <message>
+        <location filename="src/LeftPanel.qml" line="1"/>
         <source>Статистика</source>
         <translation>Статистика</translation>
     </message>
