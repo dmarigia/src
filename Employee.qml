@@ -26,7 +26,7 @@ Rectangle {
     ListView {
         id: listik;
         anchors.top: listRect.bottom;
-        anchors.topMargin: 40;
+        anchors.topMargin: 45;
         anchors.horizontalCenter: parent.horizontalCenter;
         width: parent.width * 0.85;
         effects.shadow.color: "#efefef";
@@ -82,6 +82,7 @@ Rectangle {
                         height: 100;
                         width: parent.width / 5;
                         AbstractButton {
+                            id: normalnayaPeremennaya5;
                             anchors.centerIn: parent;
                             width: 30;
                             height: 30;
@@ -92,8 +93,19 @@ Rectangle {
                             colors.pressed: "blue";
                             radius: 50;
                             opacity: 0.5;
-                            onClicked: { alert("Clicked") }
+                            onClicked: { normalnayaPeremennaya4.visible = !normalnayaPeremennaya4.visible }
                         }
+                            OptionMenu {
+                                //TODO: сделать по центру
+                                id: normalnayaPeremennaya4;
+                                anchors.top: normalnayaPeremennaya5.bottom;
+                                anchors.topMargin: 20;
+                                anchors.horizontalCenter: normalnayaPeremennaya5.horizontalCenter;
+                                visible: false;
+                                z: 1;
+                            }
+                            
+                        
                     }
                 }
 

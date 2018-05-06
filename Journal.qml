@@ -29,7 +29,7 @@ Item {
     ListView {
         id: listView;
         anchors.top: listRect.bottom;
-        anchors.topMargin: 40;
+        anchors.topMargin: 28;
         anchors.horizontalCenter: parent.horizontalCenter;
         width: parent.width * 0.9;
         effects.shadow.color: "#efefef";
@@ -57,8 +57,11 @@ Item {
                     Item {
                         height: 50;
                         width: parent.width / 3.4;
-                        Row {
-                            anchors.centerIn: parent; // ???
+                        Row {      
+                            spacing: 40;   
+                            anchors.left: parent.left;    
+                            anchors.leftMargin: 20;               
+                            anchors.verticalCenter: parent.verticalCenter; // ???
                             AbstractButton {
                                 visible: !model.sub;
                                 anchors.verticalCenter: parent.verticalCenter;
@@ -162,7 +165,8 @@ Item {
                             //TODO: сделать по центру
                             id: normalnayaPeremennaya4;
                             anchors.top: normalnayaPeremennaya5.bottom;
-                            anchors.topMargin: 10;
+                            anchors.topMargin: 20;
+                            anchors.horizontalCenter: normalnayaPeremennaya5.horizontalCenter;
                             visible: false;
                             z: 1;
                         }

@@ -10,7 +10,7 @@ Item {
         radius: 4;
         effects.shadow.color: "#efefef";
 		effects.shadow.blur: 10;
-		effects.shadow.spread: 10;
+		effects.shadow.spread: 3;
         Column {
             id: columnMenu;        
             anchors.centerIn: parent;
@@ -44,15 +44,15 @@ Item {
     Rectangle {
         clip: true;
         anchors.top: parent.top;
-        anchors.topMargin: -8;
+		anchors.topMargin: -8;        
         id: triangle;
         width: 16;
         height: 16;
         rotation: 45;
-        effects.shadow.y: -10;
-        effects.shadow.x: -10;
+        effects.shadow.y: -5;
+        effects.shadow.x: -5;
         effects.shadow.color: "#efefef";
-		effects.shadow.blur: 10;
+		effects.shadow.blur: 5;
 		effects.shadow.spread: 3;
     }
 

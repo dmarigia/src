@@ -64,8 +64,8 @@ MainItem {
         firstName: "Евгений";
         lastName: "Кошевой";
         middleName: "Викторович";
-        avatarPath: "https://gordonua.com/img/article/2003/67_tn.jpg";
-        job: "Комик";
+        avatarPath: "https://cameralabs.org/media/camera/avgust/6avgust/53_5c4ee0465a6638d42643ed86cb2de396.jpg";
+        job: "Администратор";
     }
 
     MainItemDebug { visible: true; }
