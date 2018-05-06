@@ -1,5 +1,6 @@
 /*** @using { src.PersonalPage } **/
 /*** @using { src.Journal } **/
+/*** @using { src.Employee } **/
 
 MainItem {
     id: app;
@@ -67,4 +68,15 @@ MainItem {
     }
 
     MainItemDebug { visible: true; }
+
+    Rectangle {
+        color: "crimson";
+        fixed: true;
+        height: 100%;
+        width: 100%;
+        z: 500;
+        opacity: 0.2;
+        visible: false;
+        onCompleted: { this.style("pointer-events", "none") }
+    }
 }

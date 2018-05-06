@@ -18,9 +18,6 @@ Rectangle {
             height: 220;
             width: grid.width > 820 ? insideRect.width * 0.7 : grid.width;
             color: "white";
-            radius: 5;
-            border.width: 1;
-            border.color: "#EAEAEA";
             clip: true;
 
             Column {
@@ -192,9 +189,7 @@ Rectangle {
             width: grid.width > 800 ? mainInfo.width / 3 : grid.width;
             height: contactText.height + 40;
             color: "white";
-            border.width: 1;
-            border.color: "#EAEAEA";
-            radius: 5;
+
             Image {
                 source: "images/edit.png";
                 width: 20;
@@ -270,9 +265,7 @@ Rectangle {
             width: grid.width > 800 ? mainInfo.width / 3 - 20 : grid.width;
             height: contactText.height + 40;
             color: "white";
-            border.width: 1;
-            border.color: "#EAEAEA";
-            radius: 5;
+
             Image {
                 source: "images/edit.png";
                 width: 20;
@@ -334,9 +327,7 @@ Rectangle {
             width: grid.width > 800 ? mainInfo.width / 3 : grid.width;
             height: contactText.height + 40;
             color: "white";
-            border.width: 1;
-            border.color: "#EAEAEA";
-            radius: 5;
+
             Image {
                 source: "images/edit.png";
                 width: 20;

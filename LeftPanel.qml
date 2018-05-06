@@ -105,6 +105,18 @@ Rectangle {
         }
 
         LeftPanelButton {
+            name: qsTr("Список аспирантов");
+            image: "edit1.png";
+            page: "Employee";
+        }       
+
+        Rectangle {
+            height: 1;
+            width: panel.width;
+            color: "#f5f5f5";
+        }
+
+        LeftPanelButton {
             name: qsTr("Журнал заданий");
             image: "todo.png";
             page: "Journal";
