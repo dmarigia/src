@@ -14,11 +14,14 @@ Rectangle {
         Rectangle {
             id: mainInfo;            
             anchors.horizontalCenter: parent.horizontalCenter;
-            anchors.topMargin: 40;
+            anchors.topMargin: 60;
             height: 220;
             width: grid.width > 820 ? insideRect.width * 0.7 : grid.width;
             color: "white";
             clip: true;
+            effects.shadow.color: "#efefef";
+		    effects.shadow.blur: 10;
+		    effects.shadow.spread: 10;
 
             Column {
                 id: mainAvatar;
@@ -185,10 +188,13 @@ Rectangle {
         Rectangle {
             clip: true;
             id: infoEdu;
-            anchors.topMargin: 40;
+            anchors.topMargin: 60;
             width: grid.width > 800 ? mainInfo.width / 3 : grid.width;
             height: contactText.height + 40;
             color: "white";
+            effects.shadow.color: "#efefef";
+		    effects.shadow.blur: 10;
+		    effects.shadow.spread: 10;
 
             Image {
                 source: "images/edit.png";
@@ -261,10 +267,13 @@ Rectangle {
         Rectangle {
             clip: true;
             id: info;
-            anchors.topMargin: 40;
+            anchors.topMargin: 60;
             width: grid.width > 800 ? mainInfo.width / 3 - 20 : grid.width;
             height: contactText.height + 40;
             color: "white";
+            effects.shadow.color: "#efefef";
+		    effects.shadow.blur: 10;
+		    effects.shadow.spread: 10;
 
             Image {
                 source: "images/edit.png";
@@ -323,10 +332,13 @@ Rectangle {
         Rectangle {
             clip: true;
             id: contactInfo;
-            anchors.topMargin: 40;
+            anchors.topMargin: 60;
             width: grid.width > 800 ? mainInfo.width / 3 : grid.width;
             height: contactText.height + 40;
             color: "white";
+            effects.shadow.color: "#efefef";
+		    effects.shadow.blur: 10;
+		    effects.shadow.spread: 10;
 
             Image {
                 source: "images/edit.png";

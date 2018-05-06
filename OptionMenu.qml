@@ -2,6 +2,7 @@ Item {
     id: optionMenu;    
     anchors.centerIn: parent;
     Rectangle {
+        clip: true;
         anchors.centerIn: triangle.centerIn;
         anchors.horizontalCenter: triangle.horizontalCenter;
         height: columnMenu.height + 35;
@@ -41,6 +42,7 @@ Item {
         }
     }
     Rectangle {
+        clip: true;
         anchors.centerIn: parent;
         id: triangle;
         width: 15;

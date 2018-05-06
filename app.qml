@@ -1,6 +1,7 @@
 /*** @using { src.PersonalPage } **/
 /*** @using { src.Journal } **/
 /*** @using { src.Employee } **/
+/*** @using { src.OptionMenu } **/
 
 MainItem {
     id: app;

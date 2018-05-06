@@ -30,39 +30,38 @@ Rectangle {
         color: "lightgray";
         anchors.horizontalCenter: parent.horizontalCenter;
         width: parent.width * 0.85;
-        height: 100;
+        height: 50;
+        effects.shadow.color: "#efefef";
+		effects.shadow.blur: 10;
+		effects.shadow.spread: 10;
                 Row {
                     anchors.fill: parent;
                     Item {
-                        height: 100;
+                        height: 50;
+                        width: parent.width / 4;
+                    }
+                    Item {
+                        height: 50;
                         width: parent.width / 4;
                         Text {
                             anchors.centerIn: parent;
-                            text: "1!";
+                            text: "Имя";
                         }
                     }
                     Item {
-                        height: 100;
+                        height: 50;
                         width: parent.width / 4;
                         Text {
                             anchors.centerIn: parent;
-                            text: "2!";
+                            text: "Должность";
                         }
                     }
                     Item {
-                        height: 100;
+                        height: 50;
                         width: parent.width / 4;
                         Text {
                             anchors.centerIn: parent;
-                            text: "3!";
-                        }
-                    }
-                    Item {
-                        height: 100;
-                        width: parent.width / 4;
-                        Text {
-                            anchors.centerIn: parent;
-                            text: "4!";
+                            text: "Опции";
                         }
                     }
                 }
@@ -75,6 +74,9 @@ Rectangle {
         anchors.topMargin: 50;
         anchors.horizontalCenter: parent.horizontalCenter;
         width: parent.width * 0.85;
+        effects.shadow.color: "#efefef";
+		effects.shadow.blur: 10;
+		effects.shadow.spread: 10;
         height: contentHeight; // если не nativeScrolling: true, то так
         // если true
         //nativeScrolling: true;
@@ -88,7 +90,7 @@ Rectangle {
 
        delegate: 
             Rectangle {
-                color: model.index % 2 ? "#EAEAEA" : "white"; //model.color; // доступ к тому самому color
+                //color: model.index % 2 ? "#EAEAEA" : "white"; //model.color; // доступ к тому самому color
                 width: 100%; // 100% размер ListView
                 height: 100; // просто длина
                 
@@ -97,9 +99,12 @@ Rectangle {
                     Item {
                         height: 100;
                         width: parent.width / 4;
-                        Text {
+                        Image {
                             anchors.centerIn: parent;
-                            text: model.index;
+                            source: "images/avatarbig.png";
+                            height: 45;
+                            width: 45;
+                            opacity: 0.4;
                         }
                     }
                     Item {
@@ -107,7 +112,7 @@ Rectangle {
                         width: parent.width / 4;
                         Text {
                             anchors.centerIn: parent;
-                            text: model.index;
+                            text: "Фамилия Имя Отчество";
                         }
                     }
                     Item {
@@ -115,15 +120,18 @@ Rectangle {
                         width: parent.width / 4;
                         Text {
                             anchors.centerIn: parent;
-                            text: model.index;
+                            text: "Аспирант";
                         }
                     }
                     Item {
                         height: 100;
                         width: parent.width / 4;
-                        Text {
+                        LeftPanelButton {
                             anchors.centerIn: parent;
-                            text: model.index;
+                            width: 25;
+                            height: 25;
+                            image: "options.png";
+                            page: "OptionMenu";
                         }
                     }
                 }
