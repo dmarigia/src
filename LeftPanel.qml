@@ -41,8 +41,8 @@ Rectangle {
 
     Image {
         anchors.fill: avatar;
-        source: global.avatarPath;
-        visible: global.avatarPath !== "";
+        source: settings.avatarPath;
+        visible: settings.avatarPath !== "";
         RadiusMixin { leftTop: parent.height / 2; leftBottom: parent.height / 2;  rightTop: 0;  rightBottom: parent.height / 2;  }
         fillMode: Image.PreserveAspectCrop;
         Border {
@@ -56,7 +56,7 @@ Rectangle {
         anchors.top: avatar.top;
         anchors.topMargin: 70;
         //anchors.horizontalCenter: parent.horizontalCenter;
-        text: global.name;
+        text: settings.name;
         font.pixelSize: 18;
         color: "#212121";
         font.bold: true;
@@ -72,7 +72,8 @@ Rectangle {
         anchors.top: name.bottom;
         anchors.topMargin: 5;
         //anchors.horizontalCenter: parent.horizontalCenter;
-        text: global.job;
+        text: settings.role === 2 ? qsTr("Администратор") : (settings.role === 1 ?
+                        qsTr("Руководитель") : (settings.role === 0 ? qsTr("Аспирант") : qsTr("загружается")));
         font.pixelSize: 15;
         color: "#757575";
         anchors.left: parent.left;

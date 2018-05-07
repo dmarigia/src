@@ -6,6 +6,8 @@
 MainItem {
     id: app;
     anchors.fill: parent;
+    property bool disableBackend: false;
+
     color: "#BDBDBD";
     title: qsTr("Личный кабинет") + " - " + pageName;
     property string page: "PersonalPage";
@@ -60,24 +62,51 @@ MainItem {
 
     // test config
     GlobalSettings {
-        id: global; // TODO: rename to settings
-        firstName: "Евгений";
-        lastName: "Кошевой";
-        middleName: "Викторович";
+        id: settings;
         avatarPath: "https://cameralabs.org/media/camera/avgust/6avgust/53_5c4ee0465a6638d42643ed86cb2de396.jpg";
-        job: "Администратор";
     }
-
     MainItemDebug { visible: true; }
 
-    Rectangle {
-        color: "crimson";
-        fixed: true;
-        height: 100%;
-        width: 100%;
-        z: 500;
-        opacity: 0.2;
+    LocalStorage {
+        id: localStorage;
+
+        function qset(key, value) {
+            localStorage.set(key, value, function() { log(key + " error") })
+        }
+    }
+
+    onCompleted: {
+        if (this.disableBackend) return
+        var token, email
+        localStorage.getOrDefault("token", function(arg) { token = arg }, "")
+        localStorage.getOrDefault("email", function(arg) { email = arg }, "")
+        console.log(token, email, email.length)
+        if (!email.length)
+            loginPage.visible = true
+        else {
+            settings.email = email
+            settings.token = token
+        }
+    }
+
+    LoginPage {
+        z: 600;
         visible: false;
-        onCompleted: { this.style("pointer-events", "none") }
+    }
+
+    Rectangle {
+        id: tempErrorRect;
+        anchors.fill: parent;
+        color: "crimson";
+        visible: false;
+        z: 601;
+
+        Text {
+            anchors.centerIn: parent;
+            
+            color: "white";
+            font.pixelSize: 100;
+            text: "Error connection";
+        }
     }
 }

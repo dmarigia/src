@@ -40,9 +40,9 @@ Rectangle {
                     }
                     Image {
                         anchors.fill: parent;
-                        source: global.avatarPath;
+                        source: settings.avatarPath;
                         radius: 60;
-                        visible: global.avatarPath !== "";
+                        visible: settings.avatarPath !== "";
                         fillMode: Image.PreserveAspectCrop;
                         Border {
                             width: 2;
@@ -72,7 +72,7 @@ Rectangle {
                         spacing: 80;
                         Text {
                             id: nameSurname;
-                            text: global.name;
+                            text: settings.name;
                             color: "#212121";
                             font.pixelSize: 16;
                             font.bold: true;
@@ -563,5 +563,29 @@ Rectangle {
         text: qsTr("КОНТАКТНАЯ ИНФОРМАЦИЯ");
         color: "#757575";
         //font.bold: true;
+    }
+
+    NetworkRequest {
+        id: networkReqPP;
+        onLoaded: {
+            var json = this.toJson()
+            log("current profile", json, json.email)
+            if (!json.email) return
+            
+            settings.firstName = json.firstname
+            settings.lastName = json.lastname
+            settings.middleName = json.middlename
+            settings.role = json.role
+        }
+        onError: {
+            console.warn("Error connection!")
+            tempErrorRect.visible = true
+        }
+    }
+
+    function getProfile() {
+        if (!settings.email) return
+        networkReqPP.url = "http://localhost:3001/profile?email=" + settings.email;
+        networkReqPP.send()
     }
 }
