@@ -42,7 +42,7 @@ Item {
     Rectangle {
         clip: true;
         anchors.top: parent.top;
-		anchors.topMargin: -8; 
+        anchors.topMargin: -8; 
         anchors.horizontalCenter: parent.horizontalCenter;      
         id: triangle;
         width: 16;
