@@ -45,6 +45,7 @@ Rectangle {
         visible: settings.avatarPath !== "";
         RadiusMixin { leftTop: parent.height / 2; leftBottom: parent.height / 2;  rightTop: 0;  rightBottom: parent.height / 2;  }
         fillMode: Image.PreserveAspectCrop;
+        
         Border {
             width: 2;
             color: "#5d6578";

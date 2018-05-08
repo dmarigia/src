@@ -60,6 +60,7 @@ Rectangle {
                             height: 45;
                             width: 45;
                             opacity: 0.4;
+                            //smooth: false;
                         }
                     }
                     Item {

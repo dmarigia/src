@@ -1,6 +1,8 @@
 Item {
     id: journal;
-    anchors.fill: parent;
+    width: 100%;
+    //anchors.fill: parent;
+    height: parent.height; // ???????????????????????????????????????????????????????????????
     property bool hideSub: false;
 
     AbstractButton {
@@ -50,38 +52,37 @@ Item {
                 width: 100%; 
                 height: (!journal.hideSub && model.sub) ? 50 : (model.sub ? 0 : 50);
                 visible: (!journal.hideSub && model.sub) || !model.sub; // TODO
-                color: normalnayaPeremennaya1.checked && normalnayaPeremennaya2.checked && normalnayaPeremennaya3.checked ? "lightgreen" : "white";
+                color: normalnayaPeremennaya1.checked && normalnayaPeremennaya2.checked ? "lightgreen" : "white";
                 //color: !model.sub ? "#ffffff" : "red";
                 Row {
                     width: parent.width;
                     Item {
                         height: 50;
-                        width: parent.width / 3.4;
-                        Row {      
-                            spacing: 40;   
-                            anchors.left: parent.left;    
-                            anchors.leftMargin: 20;               
-                            anchors.verticalCenter: parent.verticalCenter; // ???
-                            AbstractButton {
-                                visible: !model.sub;
-                                anchors.verticalCenter: parent.verticalCenter;
-                                width: 30;
-                                height: 30;
-                                icon.source: "images/addTask.png";
-                                icon.width: 25;
-                                icon.height: 25;
-                                colors.hovered: "lightblue";
-                                colors.pressed: "blue";
-                                radius: 50;
-                                opacity: 0.4;
-                                onClicked: { listModel.insert(model.index + 1, {"sub":true}) }
-                            }
-                            Text {
-                                anchors.verticalCenter: parent.verticalCenter;
+                        width: parent.width / 10;
+                        AbstractButton {
+                            anchors.centerIn: parent;
+                            visible: !model.sub;
+                            width: 30;
+                            height: 30;
+                            icon.source: "images/addTask.png";
+                            icon.width: 25;
+                            icon.height: 25;
+                            colors.hovered: "lightblue";
+                            colors.pressed: "blue";
+                            radius: 50;
+                            opacity: 0.4;
+                            onClicked: { listModel.insert(model.index + 1, {"sub":true}) }
+                        }
+                    }
+                    Item {
+                        height: 50;
+                        width: parent.width / 4;                                            
+                            Text {  
+                                anchors.centerIn: parent; // ???                              
                                 text: model.sub ? "Подзадание " : "Задание " + 1;
                             }
                         }
-                    }
+                    
                     Item {
                         height: 50;
                         width: parent.width / 6;
@@ -93,7 +94,7 @@ Item {
                                 height: 20;
                                 color: "black";
                                 min: "2015-01-01";
-                                backgroundColor: "#ffffff";
+                                backgroundColor: "lightgrey";
                                 font.pixelSize: 14;
                             }
                             DateInput {
@@ -101,14 +102,14 @@ Item {
                                 height: 20;
                                 color: "black";
                                 min: "2015-01-01";
-                                backgroundColor: "#ffffff";
+                                backgroundColor: "lightgrey";
                                 font.pixelSize: 14;
                             }
                         }
                     }
                     Item {
                         height: 50;
-                        width: parent.width / 8;
+                        width: parent.width /9;
                         CheckboxInput {
                             id: normalnayaPeremennaya1; anchors.centerIn: parent;
                             // onCheckedChanged: {
@@ -125,14 +126,14 @@ Item {
                     }
                     Item {
                         height: 50;
-                        width: parent.width / 8;
+                        width: parent.width / 9;
                         CheckboxInput { id: normalnayaPeremennaya2; anchors.centerIn: parent; }
                     }
                     Item {
                         height: 50;
-                        width: parent.width / 8;
+                        width: parent.width / 6;
                         TextInputMaterial {
-                            width: 100;
+                            //width: parent.width / 6;
                             anchors.bottom: parent.bottom;
                             color: "green";
                             materialColor: "lightblue";
@@ -141,12 +142,7 @@ Item {
                     }
                     Item {
                         height: 50;
-                        width: parent.width / 8;
-                        CheckboxInput { id: normalnayaPeremennaya3; anchors.centerIn: parent; }
-                    }
-                    Item {
-                        height: 50;
-                        
+                        width: parent.width / 10;
                         AbstractButton {
                             id: normalnayaPeremennaya5;
                             anchors.centerIn: parent;
@@ -247,18 +243,7 @@ Item {
                             wrapMode: Text.Wrap;
                         }
                     }
-                    Item {
-                        height: 50;
-                        width: parent.width / 8;
-                        Text {
-                            anchors.centerIn: parent;
-                            text: "ФОРМАЛЬНАЯ ВЫПОЛНЕННОСТЬ";
-                            color: "#73818e";
-                            font.pixelSize: 13;
-                            font.bold: true;
-                            wrapMode: Text.Wrap;
-                        }
-                    }
+                    
                 }
     }
     
