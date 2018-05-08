@@ -69,7 +69,7 @@ Rectangle {
 
     NetworkRequest {
         id: networkReqAuth;
-        url: "http://localhost:3001/auth";
+        url: "https://marigia.top/api/auth";
         body: "email=" + email.text + "&password=" + password.text;
         method: NetworkRequest.Post;
 

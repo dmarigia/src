@@ -585,7 +585,7 @@ Rectangle {
 
     function getProfile() {
         if (!settings.email) return
-        networkReqPP.url = "http://localhost:3001/profile?email=" + settings.email;
+        networkReqPP.url = "https://marigia.top/api/profile?email=" + settings.email;
         networkReqPP.send()
     }
 }
