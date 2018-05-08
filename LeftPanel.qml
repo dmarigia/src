@@ -72,8 +72,8 @@ Rectangle {
         anchors.top: name.bottom;
         anchors.topMargin: 5;
         //anchors.horizontalCenter: parent.horizontalCenter;
-        text: settings.role === 2 ? qsTr("Администратор") : (settings.role === 1 ?
-                        qsTr("Руководитель") : (settings.role === 0 ? qsTr("Аспирант") : qsTr("загружается")));
+        text: settings.role === GlobalSettings.Admin ? qsTr("Администратор") : (settings.role === GlobalSettings.Head ?
+                        qsTr("Руководитель") : qsTr("Аспирант"));
         font.pixelSize: 15;
         color: "#757575";
         anchors.left: parent.left;

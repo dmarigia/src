@@ -8,7 +8,7 @@ Object {
     property string avatarPath: "загружается";
     property string name: firstName === "загружается" ? "загружается" : lastName + " " + firstName + " " + middleName;
     property string job;
-    property int role: -1;
+    property enum role {User, Head, Admin};
 
     onTokenChanged: {
         psPage.getProfile()
