@@ -56,11 +56,10 @@ Rectangle {
                         width: parent.width / 5;
                         Image {
                             anchors.centerIn: parent;
-                            source: "images/avatarbig.png";
+                            source: "images/avatarbig45.png";
                             height: 45;
                             width: 45;
                             opacity: 0.4;
-                            //smooth: false;
                         }
                     }
                     Item {
@@ -97,7 +96,6 @@ Rectangle {
                             onClicked: { normalnayaPeremennaya4.visible = !normalnayaPeremennaya4.visible }
                         }
                             OptionMenu {
-                                //TODO: сделать по центру
                                 id: normalnayaPeremennaya4;
                                 anchors.top: normalnayaPeremennaya5.bottom;
                                 anchors.topMargin: 20;
