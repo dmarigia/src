@@ -2,6 +2,7 @@ Object {
 	property bool autoLoad; // TODO
 	property enum method { Get, Post };
 	property enum status { Error, Loading, Loaded };
+	property string body;
 	signal loaded;
 	signal error;
 	property string url;
@@ -42,7 +43,11 @@ Object {
 		var method = 'GET'
 		if (this.method === this.Post)
 			method = 'POST'
-		xhr.open(method, this.url);
+
+		xhr.open(method, this.url, true)
+
+		if (this.method === this.Post)
+			xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded')
 
 		//for (var i in request.settings)
 		//	xhr[i] = settings[i]
@@ -51,10 +56,10 @@ Object {
 		//	xhr.setRequestHeader(i, headers[i])
 
 		this.loading = true
-		//if (request.data)
-		//	xhr.send(request.data)
-		//else
-		xhr.send()
+		if (this.body)
+			xhr.send(this.body)
+		else
+			xhr.send()
 	}
 }
 

@@ -4,6 +4,11 @@ Rectangle {
     color: "white";
     opacity: 0.9; // temp
 
+    function clearLoginData() {
+        email.text = ''
+        password.text = ''
+    }
+
     Column {
         anchors.centerIn: parent;
         spacing: 15;
@@ -47,6 +52,7 @@ Rectangle {
         }
 
         AbstractButton {
+            id: loginPageButton;
             anchors.horizontalCenter: password.horizontalCenter;
             width: 100;
             height: 40;
@@ -63,7 +69,10 @@ Rectangle {
 
     NetworkRequest {
         id: networkReqAuth;
-        url: "http://localhost:3001/auth?email=" + email.text + "&password=" + password.text;
+        url: "http://localhost:3001/auth";
+        body: "email=" + email.text + "&password=" + password.text;
+        method: NetworkRequest.Post;
+
         onLoaded: {
             var authJson = this.toJson()
             var auth = authJson["auth"]
@@ -75,11 +84,16 @@ Rectangle {
                 localStorage.qset("email", email.text)
                 settings.email = email.text
                 settings.token = authJson["token"]
-            } else
+                loginPage.clearLoginData()
+            } else {
                 console.warn("auth error: " + error)
+                loginPageButton.enabled = true
+            }
         }
+
         onError: {
             console.warn("Error connection!")
+            loginPageButton.enabled = true
             tempErrorRect.visible = true
         }
     }

@@ -81,7 +81,7 @@ MainItem {
         localStorage.getOrDefault("token", function(arg) { token = arg }, "")
         localStorage.getOrDefault("email", function(arg) { email = arg }, "")
         console.log(token, email, email.length)
-        if (!email.length)
+        if (!email.length || !token.length)
             loginPage.visible = true
         else {
             settings.email = email
