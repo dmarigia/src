@@ -2,6 +2,7 @@
 /*** @using { src.Journal } **/
 /*** @using { src.Employee } **/
 /*** @using { src.OptionMenu } **/
+/*** @using { src.EdContactInfo } **/
 
 MainItem {
     id: app;
@@ -12,6 +13,19 @@ MainItem {
     title: qsTr("Личный кабинет") + " - " + pageName;
     property string page: "PersonalPage";
     property string pageName: qsTr("Личная информация"); // TODO: auto
+
+    // transform.rotateX: 20;
+    // transform.rotateY: 110;
+    // transform.rotateZ: 30;
+    // Behavior on transform { Animation { duration: 4000; } }
+    // Timer {
+    //     running: true;
+    //     onTriggered: {
+    //         this.parent.transform.rotateX = 0
+    //         this.parent.transform.rotateY = 0
+    //         this.parent.transform.rotateZ = 0
+    //     }
+    // }
 
     Rectangle {
         id: insideRect;
@@ -91,7 +105,7 @@ MainItem {
 
     LoginPage {
         z: 600;
-        visible: false;
+        visible: true;
     }
 
     Rectangle {

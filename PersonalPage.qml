@@ -4,6 +4,25 @@ Rectangle {
     height: grid.height;
     color: "#f5f5f5";
 
+    EdContactInfo {
+        id: editContact;
+        anchors.centerIn: parent;
+        visible: false;
+        z: 1;
+    }
+    EdInfo {
+        id: editInfo;
+        anchors.centerIn: parent;
+        visible: false;
+        z: 1;
+    }
+    EdInfoEdu {
+        id: editEdu;
+        anchors.centerIn: parent;
+        visible: false;
+        z: 1;
+    }
+
     Grid {
         id: grid;
         anchors.centerIn: parent;
@@ -196,15 +215,18 @@ Rectangle {
 		    effects.shadow.blur: 10;
 		    effects.shadow.spread: 10;
 
-            Image {
-                source: "images/edit.png";
-                width: 20;
-                height: 20;
+            AbstractButton {
+                icon.source: "images/edit.png";
+                radius: 50;
+                icon.width: 20;
+                icon.height: 20;
                 anchors.right: parent.right;
                 anchors.top: parent.top;
                 anchors.topMargin: 15;
                 anchors.rightMargin: 15;
                 opacity: 0.6;
+                colors.hovered: "#A8AEEC";
+                onClicked: { editEdu.visible = !editEdu.visible }
             }
             Column {                
                 anchors.verticalCenter: parent.verticalCenter;
@@ -275,15 +297,18 @@ Rectangle {
 		    effects.shadow.blur: 10;
 		    effects.shadow.spread: 10;
 
-            Image {
-                source: "images/edit.png";
-                width: 20;
-                height: 20;
+            AbstractButton {
+                icon.source: "images/edit.png";
+                radius: 50;
+                icon.width: 20;
+                icon.height: 20;
                 anchors.right: parent.right;
                 anchors.top: parent.top;
                 anchors.topMargin: 15;
                 anchors.rightMargin: 15;
                 opacity: 0.6;
+                colors.hovered: "#A8AEEC";
+                onClicked: { editInfo.visible = !editInfo.visible }
             }
             Column {                
                 anchors.verticalCenter: parent.verticalCenter;
@@ -340,15 +365,18 @@ Rectangle {
 		    effects.shadow.blur: 10;
 		    effects.shadow.spread: 10;
 
-            Image {
-                source: "images/edit.png";
-                width: 20;
-                height: 20;
+            AbstractButton {
+                icon.source: "images/edit.png";
+                radius: 50;
+                icon.width: 20;
+                icon.height: 20;
                 anchors.right: parent.right;
                 anchors.top: parent.top;
                 anchors.topMargin: 15;
                 anchors.rightMargin: 15;
                 opacity: 0.6;
+                colors.hovered: "#A8AEEC";
+                onClicked: { editContact.visible = !editContact.visible }
             }
             Column {      
                 id: contactText;          

@@ -1,68 +1,85 @@
 Rectangle {
     id: loginPage;
     anchors.fill: parent;
-    color: "white";
-    opacity: 0.9; // temp
+    color: "#9e9e9e";
+    //opacity: 0.9; // temp
 
     function clearLoginData() {
         email.text = ''
         password.text = ''
     }
 
-    Column {
+    Rectangle {
+        id: rect;
+        height: 300;
+        width: 325;
         anchors.centerIn: parent;
-        spacing: 15;
+        color: "white";
+            
+    
+        Column {
+            anchors.centerIn: parent;
+            spacing: 15;
 
-        Text {
-            anchors.horizontalCenter: parent.horizontalCenter;
-            text: qsTr("Авторизация");
-            font.pixelSize: 22;
-            color: "#757575";
-            //color: "#8BC34A";
-        }
-
-        TextInputMaterial {
-            id: email;
-            width: 250;
-            //materialColor: "#8BC34A";
-            materialColor: valid || !text ? "#757575" : "#F44336"; // NEW
-            Behavior on materialColor { ColorAnimation { duration: 500; } }
-            font.pixelSize: 18;
-            placeholder.text: "e-mail";
-            text: "test@test.net";
-            //textInput.horizontalAlignment: TextInput.AlignHCenter; // NEW
-
-            property bool valid; // NEW
-            onTextChanged: { // NEW
-                if (!this.re)
-                    this.re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-                this.valid = this.re.test(value)
+            Text {
+                anchors.horizontalCenter: parent.horizontalCenter;
+                text: qsTr("Авторизация");
+                font.pixelSize: 22;
+                color: "#757575";
+                //color: "#8BC34A";
             }
-        }
 
-        TextInputMaterial {
-            id: password;
-            materialColor: "#757575";
-            width: 250;
-            font.pixelSize: 18;
-            placeholder.text: qsTr("пароль");
-            echoMode: TextInput.Password; // NEW
-            text: "test";
-            //textInput.horizontalAlignment: TextInput.AlignHCenter; // NEW
-        }
+            TextInputMaterial {
+                id: email;                
+                width: 250;  
+                //materialColor: "#8BC34A";
+                materialColor: valid || !text ? "#757575" : "#F44336"; // NEW
+                Behavior on materialColor { ColorAnimation { duration: 500; } }
+                font.pixelSize: 18;
+                font.style: "century gothic";
+                placeholder.text: "e-mail";
+                text: "test@test.net";
+                //textInput.horizontalAlignment: TextInput.AlignHCenter; // NEW
 
-        AbstractButton {
-            id: loginPageButton;
-            anchors.horizontalCenter: password.horizontalCenter;
-            width: 100;
-            height: 40;
-            text: qsTr("Войти");
-            font.pixelSize: 18;
-            //colors.text: "white";
-            //colors.default: "#757575";
-            onClicked: {
-                this.enabled = false
-                networkReqAuth.send()
+                property bool valid; // NEW
+                onTextChanged: { // NEW
+                    if (!this.re)
+                        this.re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                    this.valid = this.re.test(value)
+                }
+            }
+
+            Text {
+                text: qsTr("Неверный e-mail");
+                font.pixelSize: 14;
+                color: "#F44336";
+                //visible: email.valid ? true : false;
+            }
+
+            TextInputMaterial {
+                id: password;
+                materialColor: "#757575";
+                width: 250;
+                font.pixelSize: 18;
+                placeholder.text: qsTr("пароль");
+                echoMode: TextInput.Password; // NEW
+                text: "test";
+                //textInput.horizontalAlignment: TextInput.AlignHCenter; // NEW
+            }
+
+            AbstractButton {
+                id: loginPageButton;
+                anchors.horizontalCenter: password.horizontalCenter;
+                width: 100;
+                height: 40;
+                text: qsTr("Войти");
+                font.pixelSize: 18;
+                //colors.text: "white";
+                //colors.default: "#757575";
+                onClicked: {
+                    this.enabled = false
+                    networkReqAuth.send()
+                }
             }
         }
     }
