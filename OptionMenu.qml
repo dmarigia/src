@@ -13,6 +13,22 @@ Item {
             id: columnMenu;        
             anchors.centerIn: parent;
             spacing: 15;
+            // AbstractButton {
+            //     width: optionMenu.width;
+            //     height: 20;
+            //     Row {
+            //         spacing: 10;
+            //             Image {
+            //             source: "images/edit.png";
+            //             width: 20;
+            //             height: 20;
+            //             opacity: 0.4;
+            //         }
+            //         Text {
+            //         text: "Редактировать";
+            //         }
+            //     }
+            // }
             Row {
                 spacing: 10;
                 Image {

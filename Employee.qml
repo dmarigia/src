@@ -4,19 +4,58 @@ Rectangle {
     color: "#f5f5f5";
     height: listik.height + 50 * 3 + addButton.height + listRect.height;
 
-    Button {
+    Rectangle {
+        id: search;
+        border.width: 1;
+        border.color: "lightgray"; 
+        anchors.top: parent.top;
+        anchors.left: parent.left;
+        anchors.topMargin: 40;
+        anchors.leftMargin: 40;
+        radius: 50;
+        height: 40;
+        width: 200;
+        color: "#FBFCFD";
+        Row {
+            spacing: 10;
+            Rectangle {  
+                id: image;              
+                anchors.verticalCenter: parent.verticalCenter;
+                anchors.left: parent.left;
+                anchors.leftMargin: 10;
+                color: "lightgray";
+                radius: 100;
+                height: 20;
+                width: 20;
+            }
+            Rectangle {
+                anchors.verticalCenter: parent.verticalCenter;
+                anchors.left: image.right;
+                anchors.leftMargin: 10;
+                height: 20;
+                width: 1;
+                color: "lightgray";
+            }
+            TextInputMaterial {
+                materialColor: "#A8AEEC";
+                //anchors.bottom: parent.bottom;
+                font.family: "century gothic";
+                placeholder.text: "Поиск";
+            }
+        }
+    }
+
+    AbstractButton {
         id: addButton;
         anchors.top: parent.top;
         anchors.right: parent.right;
         anchors.topMargin: 40;
         anchors.rightMargin: 40;
+        colors.default: "#C9D1EC";
         text: "Добавить";
-        textColor: "#757575";
-        width: 85;
-        height: 35;
         radius: 50;
-        border.width: 1;
-        border.color: "#EAEAEA";
+        height: 40;
+        width: 120;
         onClicked: {
             listModel.insert(0, {})
         }

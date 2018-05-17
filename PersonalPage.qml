@@ -2,7 +2,7 @@ Rectangle {
     id: psPage;
     width: 100%;
     height: grid.height;
-    color: "#f5f5f5";
+    color: "#f5f5f9";
 
     EdContactInfo {
         id: editContact;
@@ -36,11 +36,11 @@ Rectangle {
             anchors.topMargin: 60;
             height: 220;
             width: grid.width > 820 ? insideRect.width * 0.7 : grid.width;
-            color: "#ffffff";
+            color: "#FBFCFD";
             clip: true;
-            effects.shadow.color: "#efefef";
-		    effects.shadow.blur: 10;
-		    effects.shadow.spread: 10;
+            // effects.shadow.color: "#efefef";
+		    // effects.shadow.blur: 10;
+		    // effects.shadow.spread: 10;
 
             Column {
                 id: mainAvatar;
@@ -210,10 +210,10 @@ Rectangle {
             anchors.topMargin: 60;
             width: grid.width > 750 ? mainInfo.width / 3 : grid.width;
             height: contactText.height + 40;
-            color: "#ffffff";
-            effects.shadow.color: "#efefef";
-		    effects.shadow.blur: 10;
-		    effects.shadow.spread: 10;
+            color: "#FBFCFD";
+            // effects.shadow.color: "#efefef";
+		    // effects.shadow.blur: 10;
+		    // effects.shadow.spread: 10;
 
             AbstractButton {
                 icon.source: "images/edit.png";
@@ -224,7 +224,7 @@ Rectangle {
                 anchors.top: parent.top;
                 anchors.topMargin: 15;
                 anchors.rightMargin: 15;
-                opacity: 0.6;
+                opacity: 0.4;
                 colors.hovered: "#A8AEEC";
                 onClicked: { editEdu.visible = !editEdu.visible }
             }
@@ -292,10 +292,10 @@ Rectangle {
             anchors.topMargin: 60;
             width: grid.width > 750 ? mainInfo.width / 3 - 20 : grid.width;
             height: contactText.height + 40;
-            color: "#ffffff";
-            effects.shadow.color: "#efefef";
-		    effects.shadow.blur: 10;
-		    effects.shadow.spread: 10;
+            color: "#FBFCFD";
+            // effects.shadow.color: "#efefef";
+		    // effects.shadow.blur: 10;
+		    // effects.shadow.spread: 10;
 
             AbstractButton {
                 icon.source: "images/edit.png";
@@ -306,7 +306,7 @@ Rectangle {
                 anchors.top: parent.top;
                 anchors.topMargin: 15;
                 anchors.rightMargin: 15;
-                opacity: 0.6;
+                opacity: 0.4;
                 colors.hovered: "#A8AEEC";
                 onClicked: { editInfo.visible = !editInfo.visible }
             }
@@ -360,10 +360,10 @@ Rectangle {
             anchors.topMargin: 60;
             width: grid.width > 750 ? mainInfo.width / 3 : grid.width;
             height: contactText.height + 40;
-            color: "#ffffff";
-            effects.shadow.color: "#efefef";
-		    effects.shadow.blur: 10;
-		    effects.shadow.spread: 10;
+            color: "#FBFCFD";
+            // effects.shadow.color: "#efefef";
+		    // effects.shadow.blur: 10;
+		    // effects.shadow.spread: 10;
 
             AbstractButton {
                 icon.source: "images/edit.png";
@@ -374,7 +374,7 @@ Rectangle {
                 anchors.top: parent.top;
                 anchors.topMargin: 15;
                 anchors.rightMargin: 15;
-                opacity: 0.6;
+                opacity: 0.4;
                 colors.hovered: "#A8AEEC";
                 onClicked: { editContact.visible = !editContact.visible }
             }

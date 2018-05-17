@@ -9,7 +9,7 @@ MainItem {
     anchors.fill: parent;
     property bool disableBackend: false;
 
-    color: "#BDBDBD";
+    color: "#e7eaef";
     title: qsTr("Личный кабинет") + " - " + pageName;
     property string page: "PersonalPage";
     property string pageName: qsTr("Личная информация"); // TODO: auto
@@ -29,7 +29,7 @@ MainItem {
 
     Rectangle {
         id: insideRect;
-        color: "#f5f5f5";
+        color: "#f5f5f9";
         anchors.centerIn: parent;
         width: app.mobile ? app.width : (app.width <= 1280 ? app.width * 0.9 : (app.width <= 1600 && app.width >= 1280  ? app.width * 0.82 : app.width * 0.72)); //TODO
         height: app.height;
