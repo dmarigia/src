@@ -1,7 +1,7 @@
 Rectangle {
     id: loginPage;
     anchors.fill: parent;
-    color: "#9e9e9e";
+    color: "#e7eaef";
     //opacity: 0.9; // temp
 
     function clearLoginData() {
@@ -14,7 +14,7 @@ Rectangle {
         height: 300;
         width: 325;
         anchors.centerIn: parent;
-        color: "white";
+        color: "#FBFCFD";
             
     
         Column {
@@ -25,7 +25,7 @@ Rectangle {
                 anchors.horizontalCenter: parent.horizontalCenter;
                 text: qsTr("Авторизация");
                 font.pixelSize: 22;
-                color: "#757575";
+                color: "#A7B0C4";
                 //color: "#8BC34A";
             }
 
@@ -33,10 +33,10 @@ Rectangle {
                 id: email;                
                 width: 250;  
                 //materialColor: "#8BC34A";
-                materialColor: valid || !text ? "#757575" : "#F44336"; // NEW
+                materialColor: valid || !text ? "#A8AEEC" : "#F44336"; // NEW
                 Behavior on materialColor { ColorAnimation { duration: 500; } }
                 font.pixelSize: 18;
-                font.style: "century gothic";
+                font.family: "century gothic";
                 placeholder.text: "e-mail";
                 text: "test@test.net";
                 //textInput.horizontalAlignment: TextInput.AlignHCenter; // NEW
@@ -50,18 +50,20 @@ Rectangle {
             }
 
             Text {
+                id: emailCheck;
+                //visible: false;
                 text: qsTr("Неверный e-mail");
                 font.pixelSize: 14;
                 color: "#F44336";
-                //visible: email.valid ? true : false;
             }
 
             TextInputMaterial {
                 id: password;
-                materialColor: "#757575";
+                materialColor: "#A8AEEC";
                 width: 250;
                 font.pixelSize: 18;
                 placeholder.text: qsTr("пароль");
+                font.family: "century gothic";
                 echoMode: TextInput.Password; // NEW
                 text: "test";
                 //textInput.horizontalAlignment: TextInput.AlignHCenter; // NEW
@@ -74,14 +76,26 @@ Rectangle {
                 height: 40;
                 text: qsTr("Войти");
                 font.pixelSize: 18;
-                //colors.text: "white";
-                //colors.default: "#757575";
+                colors.text: "white";
+                colors.default: "#A7B0C4";
                 onClicked: {
                     this.enabled = false
                     networkReqAuth.send()
                 }
             }
         }
+        AbstractButton {
+        anchors.right: password.right;
+        //anchors.verticalCenter: password.verticalCenter;
+        anchors.rightMargin: 15;
+        icon.source: "images/watch.png";
+        icon.width: 20;
+        icon.height: 20;
+        colors.hovered: "#A7B0C4";
+        radius: 100;
+        opacity: 0.5;
+        onClicked: {  }
+    }
     }
 
     NetworkRequest {

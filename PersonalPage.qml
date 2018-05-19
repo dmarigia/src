@@ -38,9 +38,9 @@ Rectangle {
             width: grid.width > 820 ? insideRect.width * 0.7 : grid.width;
             color: "#FBFCFD";
             clip: true;
-            // effects.shadow.color: "#efefef";
-		    // effects.shadow.blur: 10;
-		    // effects.shadow.spread: 10;
+            effects.shadow.color: "#efeff7";
+		    effects.shadow.blur: 15;
+		    effects.shadow.spread: 15;
 
             Column {
                 id: mainAvatar;
@@ -211,9 +211,9 @@ Rectangle {
             width: grid.width > 750 ? mainInfo.width / 3 : grid.width;
             height: contactText.height + 40;
             color: "#FBFCFD";
-            // effects.shadow.color: "#efefef";
-		    // effects.shadow.blur: 10;
-		    // effects.shadow.spread: 10;
+            effects.shadow.color: "#f2f2f9";
+		    effects.shadow.blur: 10;
+		    effects.shadow.spread: 10;
 
             AbstractButton {
                 icon.source: "images/edit.png";
@@ -293,9 +293,9 @@ Rectangle {
             width: grid.width > 750 ? mainInfo.width / 3 - 20 : grid.width;
             height: contactText.height + 40;
             color: "#FBFCFD";
-            // effects.shadow.color: "#efefef";
-		    // effects.shadow.blur: 10;
-		    // effects.shadow.spread: 10;
+            effects.shadow.color: "#f2f2f9";
+		    effects.shadow.blur: 10;
+		    effects.shadow.spread: 10;
 
             AbstractButton {
                 icon.source: "images/edit.png";
@@ -361,9 +361,9 @@ Rectangle {
             width: grid.width > 750 ? mainInfo.width / 3 : grid.width;
             height: contactText.height + 40;
             color: "#FBFCFD";
-            // effects.shadow.color: "#efefef";
-		    // effects.shadow.blur: 10;
-		    // effects.shadow.spread: 10;
+            effects.shadow.color: "#f2f2f9";
+		    effects.shadow.blur: 10;
+		    effects.shadow.spread: 10;
 
             AbstractButton {
                 icon.source: "images/edit.png";
