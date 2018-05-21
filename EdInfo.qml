@@ -81,7 +81,7 @@ Item {
                 radius: 50;
                 height: 40;
                 width: 120;
-                onClicked: { }
+                onClicked: {edInfo.visible = !edInfo.visible}
             }
             AbstractButton {
                 colors.default: "#B0C5EF";
