@@ -2,47 +2,72 @@ Rectangle {
     id: employee;
     width: 100%;
     color: "#f5f5f5";
-    height: listik.height + 50 * 3 + addButton.height + listRect.height;
+    height: listik.height + 50 * 3 + addButton.height + listRect.height;    
 
     Rectangle {
         id: search;
-        border.width: 1;
-        border.color: "lightgray"; 
         anchors.top: parent.top;
         anchors.left: parent.left;
         anchors.topMargin: 40;
         anchors.leftMargin: 40;
-        radius: 50;
         height: 40;
-        width: 200;
-        color: "#FBFCFD";
-        Row {
+        width: 60 + tSearch.width;
+        radius: 50;
+        color: "white";
+
+        Row {            
+            anchors.verticalCenter: parent.verticalCenter;
             spacing: 10;
-            Rectangle {  
-                id: image;              
+            AbstractButton {
                 anchors.verticalCenter: parent.verticalCenter;
-                anchors.left: parent.left;
-                anchors.leftMargin: 10;
-                color: "lightgray";
+                id: searchButton;
+                anchors.left: search.left;
+                anchors.leftMargin: 5;
+                opacity: 0.6;
+                icon.source: "images/search.png";
+                height: 37;
+                width: 37;
+                icon.width: 30;
+                icon.height: 30;
+                colors.hovered: "#A8AEEC";
                 radius: 100;
-                height: 20;
-                width: 20;
+                onClicked: {
+                    textSearch.width = 180; 
+                    search.width = search.width === (67 + textSearch.width) ? (60 + tSearch.width) : (67 + textSearch.width);
+                    textSearch.visible = !textSearch.visible;
+                    tSearch.visible = !tSearch.visible;
+                }
             }
-            Rectangle {
+            // Rectangle {
+            //     id: line;
+            //     anchors.verticalCenter: parent.verticalCenter;
+            //     height: 30;
+            //     width: 1;
+            //     color: "lightgray";
+            // }
+            Text {
+                id: tSearch;
+                visible: true;
                 anchors.verticalCenter: parent.verticalCenter;
-                anchors.left: image.right;
-                anchors.leftMargin: 10;
-                height: 20;
-                width: 1;
-                color: "lightgray";
+                text: "Пошук";
+                color: "#A7B0C4";
             }
             TextInputMaterial {
+                visible: false;
+                id: textSearch;
+                width: 0;
+                anchors.bottom: search.bottom;
+                anchors.bottomMargin: -4;
                 materialColor: "#A8AEEC";
-                //anchors.bottom: parent.bottom;
                 font.family: "century gothic";
-                placeholder.text: "Поиск";
+                font.pixelSize: 14;
+                placeholder.text: "Пошук";
+                Behavior on x { Animation { duration: 1000; } }
             }
         }
+
+        Behavior on width { Animation { duration: 500; } }
+
     }
 
     AbstractButton {
