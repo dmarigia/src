@@ -2,7 +2,14 @@ Rectangle {
     id: employee;
     width: 100%;
     color: "#f5f5f5";
-    height: listik.height + 50 * 3 + addButton.height + listRect.height;    
+    height: listik.height + 50 * 3 + addButton.height + listRect.height;   
+
+    EditUser {
+        id: editUser;
+        anchors.centerIn: parent;
+        visible: false;
+        z: 1;
+    } 
 
     Rectangle {
         id: search;
@@ -82,7 +89,8 @@ Rectangle {
         height: 40;
         width: 120;
         onClicked: {
-            listModel.insert(0, {})
+            listModel.insert(0, {});
+            editUser.visible = !editUser.visible;
         }
     }
 

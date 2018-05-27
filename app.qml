@@ -3,6 +3,7 @@
 /*** @using { src.Employee } **/
 /*** @using { src.OptionMenu } **/
 /*** @using { src.EdContactInfo } **/
+/*** @using { src.EditUser } **/
 
 MainItem {
     id: app;
