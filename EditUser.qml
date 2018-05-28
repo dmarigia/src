@@ -22,7 +22,6 @@ Item {
         width: 900;
         height: 900;        
         OverflowMixin {}
-
         Column {             
             anchors.centerIn: parent;
             spacing: 60;

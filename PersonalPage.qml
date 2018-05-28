@@ -28,7 +28,7 @@ Rectangle {
         anchors.centerIn: parent;
         width: (psPage.width - 20) > 820 ? insideRect.width * 0.7 : psPage.width - 20;
         //idth: (psPage.width - 20) > 820 ? 410 * 2 + 10 : psPage.width - 20;
-        spacing: 10;
+        spacing: 70;
 
         Rectangle {
             id: mainInfo;            
@@ -81,6 +81,7 @@ Rectangle {
             }
 
             Row {
+                id: mainInfoRow;
                 anchors.left: mainAvatar.right;  
                 anchors.leftMargin: 40;          
                 anchors.top: parent.top;
@@ -204,11 +205,72 @@ Rectangle {
             }
         }
 
+        Row { spacing: 40;
+        Rectangle {
+            clip: true;
+            id: infoEducation;
+            //anchors.topMargin: 60;
+            width: grid.width > 750 ? mainInfo.width / 2.1 : grid.width;
+            height: contactText.height + 40;
+            color: "#FBFCFD";
+            effects.shadow.color: "#f2f2f9";
+		    effects.shadow.blur: 10;
+		    effects.shadow.spread: 10;
+            Column {                
+                anchors.verticalCenter: parent.verticalCenter;
+                anchors.left: parent.left;
+                anchors.leftMargin: 20;
+                spacing: 20;
+                Column {
+                    spacing: 5;
+                    Text {
+                        text: "Факультет";
+                        color: "#757575";
+                    }
+                    Text {
+                        text: qsTr("Факультет технологии и товароведения пищевых продуктов и продовольственного бизнеса");
+                        color: "#212121"; 
+                        width: infoEducation.width - 30;                           
+                        wrapMode: Text.Wrap;
+                        font.pixelSize: 15;
+                    }
+                }
+                Column {
+                    spacing: 5;
+                    Text {
+                        text: "Институт";
+                        color: "#757575";
+                    }
+                    Text {
+                        text: qsTr("Технологический институт пищевой промышленности");
+                        color: "#212121";                            
+                        width: infoEducation.width - 30;                           
+                        wrapMode: Text.Wrap;
+                        font.pixelSize: 15;
+                    }
+                }
+                Column {
+                    spacing: 5;
+                    Text {
+                        text: "Руководитель";
+                        color: "#757575";
+                    }
+                    Text {
+                        text: qsTr("Фамилия Имя Отчество");
+                        color: "#212121";                            
+                        width: infoEducation.width - 30;                           
+                        wrapMode: Text.Wrap;
+                        font.pixelSize: 15;
+                    }
+                }
+            }
+        }
+
         Rectangle {
             clip: true;
             id: infoEdu;
-            anchors.topMargin: 60;
-            width: grid.width > 750 ? mainInfo.width / 3 : grid.width;
+            //anchors.topMargin: 60;
+            width: grid.width > 750 ? mainInfo.width / 2.1 : grid.width;
             height: contactText.height + 40;
             color: "#FBFCFD";
             effects.shadow.color: "#f2f2f9";
@@ -284,13 +346,14 @@ Rectangle {
                     }
                 }
             }
-        }
+        } }
 
-        Rectangle {
+        Row { spacing: 40;
+            Rectangle {
             clip: true;
             id: info;
-            anchors.topMargin: 60;
-            width: grid.width > 750 ? mainInfo.width / 3 - 20 : grid.width;
+            //anchors.topMargin: 60;
+            width: grid.width > 750 ? mainInfo.width / 2.1 : grid.width;
             height: contactText.height + 40;
             color: "#FBFCFD";
             effects.shadow.color: "#f2f2f9";
@@ -352,13 +415,13 @@ Rectangle {
                     }
                 }
             }
-        }
+        } 
 
         Rectangle {
             clip: true;
             id: contactInfo;
-            anchors.topMargin: 60;
-            width: grid.width > 750 ? mainInfo.width / 3 : grid.width;
+            //anchors.topMargin: 60;
+            width: grid.width > 750 ? mainInfo.width / 2.1 : grid.width;
             height: contactText.height + 40;
             color: "#FBFCFD";
             effects.shadow.color: "#f2f2f9";
@@ -433,34 +496,46 @@ Rectangle {
                     }
                 }
             }
-        }
+        } }
 
         Row {
-            height: 80;
+            height: 90;
             spacing: 40;
-            anchors.topMargin: 60;
+            //anchors.topMargin: 60;
             anchors.horizontalCenter: parent.horizontalCenter;
             opacity: 0.6;
-            Image {
-                source: "images/orcid.svg";
-                width: 50;
-                height: 50;
-                
+            AbstractButton {
+                icon.source: "images/orcid.svg";
+                width: 55;
+                height: 55;
+                radius: 100;
+                icon.width: 50;
+                icon.height: 50;
+                //onClicked: { //"https://orcid.org" }
             }
-            Image {
-                source: "images/scopus.svg";
-                width: 50;
-                height: 50;
+            AbstractButton {
+                icon.source: "images/scopus.svg";
+                width: 55;
+                height: 55;
+                radius: 100;
+                icon.width: 50;
+                icon.height: 50;
             }
-            Image {
-                source: "images/ResearcherID.svg";
-                width: 50;
-                height: 50;
+            AbstractButton {
+                icon.source: "images/ResearcherID.svg";
+                width: 55;
+                height: 55;
+                radius: 100;
+                icon.width: 50;
+                icon.height: 50;
             }
-            Image {
-                source: "images/gscholar.png";
-                width: 50;
-                height: 50;
+            AbstractButton {
+                icon.source: "images/gscholar.png";
+                width: 55;
+                height: 55;
+                radius: 100;
+                icon.width: 50;
+                icon.height: 50;
             }
         }
         // Rectangle {
@@ -569,29 +644,29 @@ Rectangle {
         // }        
     }
      Text {
-        anchors.bottom: infoEdu.top;
-        anchors.bottomMargin: 5;
-        anchors.left: infoEdu.left;
+        anchors.bottom: infoEducation.top;
+        anchors.bottomMargin: 10;
+        anchors.left: infoEducation.left;
         text: qsTr("ОБУЧЕНИЕ");
         color: "#757575";
-        //font.bold: true;
+        font.bold: true;
     }
     Text {
         anchors.bottom: info.top;
-        anchors.bottomMargin: 5;
+        anchors.bottomMargin: 10;
         anchors.left: info.left;
         text: qsTr("О СЕБЕ");
         color: "#757575";
-        //font.bold: true;
+        font.bold: true;
     }
-    Text {
-        anchors.bottom: contactInfo.top;
-        anchors.bottomMargin: 5;                
-        anchors.left: contactInfo.left;
-        text: qsTr("КОНТАКТНАЯ ИНФОРМАЦИЯ");
-        color: "#757575";
-        //font.bold: true;
-    }
+    // Text {
+    //     anchors.bottom: contactInfo.top;
+    //     anchors.bottomMargin: 5;                
+    //     anchors.left: contactInfo.left;
+    //     text: qsTr("КОНТАКТНАЯ ИНФОРМАЦИЯ");
+    //     color: "#757575";
+    //     //font.bold: true;
+    // }
 
     NetworkRequest {
         id: networkReqPP;
