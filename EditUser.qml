@@ -23,13 +23,18 @@ Item {
         height: 900;        
         OverflowMixin {}
         Column {             
-            anchors.centerIn: parent;
+            anchors.horizontalCenter: parent;
             spacing: 60;
             Rectangle { 
                 anchors.horizontalCenter: parent.horizontalCenter;
+                anchors.top: edInfoRect;
+                anchors.topMargin: 60;
                 width: 650;
                 height: 250;
                 color: "#FBFCFD";
+                effects.shadow.color: "#F5F5F5";
+                effects.shadow.blur: 10;
+                effects.shadow.spread: 2;
                     Row {
                         anchors.centerIn: parent;
                         spacing: 60;
@@ -109,9 +114,10 @@ Item {
             Rectangle {
                 anchors.horizontalCenter: parent.horizontalCenter;
                 width: 650;
-                height: 900;
+                height: col2.height + 60;
                 color: "#FBFCFD";
                 Column {
+                    id: col2;
                     spacing: 15;            
                     anchors.centerIn: parent;                    
                     Column {
@@ -268,6 +274,157 @@ Item {
                             width: 500;
                         }
                     }
+                }
+            }
+
+            Rectangle {
+                id: rect3;
+                anchors.horizontalCenter: parent.horizontalCenter;
+                width: 650;
+                height: col3.height + 60;
+                color: "#FBFCFD";
+                Column {
+                    id: col3;
+                    spacing: 15;            
+                    anchors.centerIn: parent;                    
+                    Column {
+                        spacing: 10;
+                        Text {
+                            color: "#A7B0C4";
+                            text: "Телефон";
+                        }
+                        TextInputMaterial {
+                            placeholder.text: "+38 (063) ";
+                            materialColor: "#A8AEEC";
+                            font.family: "century gothic";
+                            font.pixelSize: 15;
+                            width: 500;
+                        }
+                    }
+                    Column {
+                        spacing: 10;
+                        Text {
+                            color: "#A7B0C4";
+                            text: "e-mail";
+                        }
+                        TextInputMaterial {
+                            placeholder.text: "e-mail";
+                            materialColor: "#A8AEEC";
+                            font.family: "century gothic";
+                            font.pixelSize: 15;
+                            width: 500;
+                        }
+                    }
+                    Column {
+                        spacing: 10;
+                        Text {
+                            color: "#A7B0C4";
+                            text: "Місце роботи";
+                        }
+                        TextInputMaterial {
+                            placeholder.text: "Місце роботи";
+                            materialColor: "#A8AEEC";
+                            font.family: "century gothic";
+                            font.pixelSize: 15;
+                            width: 500;
+                        }
+                    }
+                    Column {
+                        spacing: 10;
+                        Text {
+                            color: "#A7B0C4";
+                            text: "Адреса проживання";
+                        }
+                        TextInputMaterial {
+                            placeholder.text: "Адреса проживання";
+                            materialColor: "#A8AEEC";
+                            font.family: "century gothic";
+                            font.pixelSize: 15;
+                            width: 500;
+                        }
+                    }
+                    Column {
+                        spacing: 10;
+                        Text {
+                            color: "#A7B0C4";
+                            text: "ScopusID";
+                        }
+                        TextInputMaterial {
+                            placeholder.text: "ScopusID";
+                            materialColor: "#A8AEEC";
+                            font.family: "century gothic";
+                            font.pixelSize: 15;
+                            width: 500;
+                        }
+                    }
+                    Column {
+                        spacing: 10;
+                        Text {
+                            color: "#A7B0C4";
+                            text: "ResearcherID";
+                        }
+                        TextInputMaterial {
+                            placeholder.text: "ResearcherID";
+                            materialColor: "#A8AEEC";
+                            font.family: "century gothic";
+                            font.pixelSize: 15;
+                            width: 500;
+                        }
+                    }
+                    Column {
+                        spacing: 10;
+                        Text {
+                            color: "#A7B0C4";
+                            text: "Google Scholar";
+                        }
+                        TextInputMaterial {
+                            placeholder.text: "Google Scholar";
+                            materialColor: "#A8AEEC";
+                            font.family: "century gothic";
+                            font.pixelSize: 15;
+                            width: 500;
+                        }
+                    }
+                    Column {
+                        spacing: 10;
+                        Text {
+                            color: "#A7B0C4";
+                            text: "OrcID";
+                        }
+                        TextInputMaterial {
+                            placeholder.text: "OrcID";
+                            materialColor: "#A8AEEC";
+                            font.family: "century gothic";
+                            font.pixelSize: 15;
+                            width: 500;
+                        }
+                    }
+                }
+            }
+
+            Row {
+                height: 100;
+                spacing: 90;
+                // anchors.top: col3.bottom;
+                // anchors.topMargin: 35;
+                anchors.right: rect3.right;
+                //anchors.rightMargin: 35;
+                // anchors.bottom: edInfoRect.bottom;
+                // anchors.bottomMargin: 60;
+                AbstractButton {
+                    colors.default: "#C9D1EC";
+                    text: "Скасувати";
+                    radius: 50;
+                    height: 40;
+                    width: 120;
+                    onClicked:  {editUser.visible = !editUser.visible }
+                }
+                AbstractButton {
+                    colors.default: "#B0C5EF";
+                    text: "Збергти";
+                    radius: 50;
+                    height: 40;
+                    width: 120;
                 }
             }
         }

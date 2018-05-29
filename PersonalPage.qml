@@ -511,7 +511,7 @@ Rectangle {
                 radius: 100;
                 icon.width: 50;
                 icon.height: 50;
-                //onClicked: { //"https://orcid.org" }
+                onClicked: { window.open("https://orcid.org") }
             }
             AbstractButton {
                 icon.source: "images/scopus.svg";
