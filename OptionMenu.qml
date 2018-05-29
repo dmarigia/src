@@ -15,12 +15,12 @@ Item {
         anchors.horizontalCenter: triangle
         visible: true
         itemStyle: shadowEffect1
+        menuMode: false
 
         MenuItem {
             text: "Редактировать"
             onTriggered: {
                 optionMenu.visible = false
-                this.parent.visible = true
             }
         }
 
@@ -28,7 +28,6 @@ Item {
             text: "Удалить"
             onTriggered: {
                 optionMenu.visible = false
-                this.parent.visible = true
             }
         }
     }
