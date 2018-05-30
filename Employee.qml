@@ -89,7 +89,7 @@ Rectangle {
         height: 40;
         width: 120;
         onClicked: {
-            listModel.insert(0, {});
+            //elistModel.insert(0, {});
             editUser.visible = !editUser.visible;
         }
     }
@@ -106,7 +106,7 @@ Rectangle {
         spacing: 2;
 
         model: ListModel {
-            id: listModel;
+            id: elistModel;
         }
 
         delegate: Rectangle {

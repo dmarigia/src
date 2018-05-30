@@ -32,9 +32,9 @@ Item {
                 width: 650;
                 height: 250;
                 color: "#FBFCFD";
-                effects.shadow.color: "#F5F5F5";
+                effects.shadow.color: "#F2F2F6";
                 effects.shadow.blur: 10;
-                effects.shadow.spread: 2;
+                effects.shadow.spread: 10;
                     Row {
                         anchors.centerIn: parent;
                         spacing: 60;
@@ -116,6 +116,9 @@ Item {
                 width: 650;
                 height: col2.height + 60;
                 color: "#FBFCFD";
+                effects.shadow.color: "#EFEFF3";
+                effects.shadow.blur: 10;
+                effects.shadow.spread: 2;
                 Column {
                     id: col2;
                     spacing: 15;            
@@ -126,12 +129,14 @@ Item {
                             color: "#A7B0C4";
                             text: "Інститут";
                         }
-                        TextInputMaterial {
-                            placeholder.text: "Інститут";
-                            materialColor: "#A8AEEC";
-                            font.family: "century gothic";
-                            font.pixelSize: 15;
+                        ComboBox {
+                            textRole: "modelData";
+                            currentText: "Выберите институт";
+                            displayText: currentText;
+                            //font.family: "century gothic";
+                            //font.pixelSize: 15;
                             width: 500;
+                            model: 5;
                         }
                     }
                     Column {
@@ -407,8 +412,8 @@ Item {
                 spacing: 90;
                 // anchors.top: col3.bottom;
                 // anchors.topMargin: 35;
-                anchors.right: rect3.right;
-                //anchors.rightMargin: 35;
+                anchors.right: rect3;
+                anchors.rightMargin: 10;
                 // anchors.bottom: edInfoRect.bottom;
                 // anchors.bottomMargin: 60;
                 AbstractButton {
@@ -417,7 +422,7 @@ Item {
                     radius: 50;
                     height: 40;
                     width: 120;
-                    onClicked:  {editUser.visible = !editUser.visible }
+                    onClicked:  { editUser.visible = !editUser.visible }
                 }
                 AbstractButton {
                     colors.default: "#B0C5EF";
@@ -425,6 +430,9 @@ Item {
                     radius: 50;
                     height: 40;
                     width: 120;
+                    onClicked: { 
+                        elistModel.insert(0, {}); editUser.visible = !editUser.visible;
+                     }
                 }
             }
         }

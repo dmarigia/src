@@ -16,11 +16,23 @@ Item {
         visible: true
         itemStyle: shadowEffect1
         menuMode: false
+        width: 80;
+        textRole: "modelData";
+
+        
 
         MenuItem {
-            text: "Редактировать"
+            Row {
+            Image {
+                source: "images/edit.png";
+                width: 20;
+                height: 20;
+                opacity: 0.4;
+            }
+            Text {text: "Редактировать"
             onTriggered: {
                 optionMenu.visible = false
+            }}
             }
         }
 
