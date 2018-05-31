@@ -1,39 +1,38 @@
 Item {
     id: optionMenu
     anchors.centerIn: parent
+    width: menu.width
 
-    ItemStyle {
-        id: shadowEffect1
+    Menu {
+        id: menu
+        anchors.horizontalCenter: parent
+        visible: true
+        menuMode: false
         effects.shadow.y: -5
         effects.shadow.x: -5
         effects.shadow.color: "#efefef"
         effects.shadow.blur: 5
         effects.shadow.spread: 3
-    }
-
-    Menu {
-        anchors.horizontalCenter: triangle
-        visible: true
-        itemStyle: shadowEffect1
-        menuMode: false
-        width: 80
+        z: 0
 
         MenuItem {
-            Row {
-            Image {
-                source: "images/edit.png";
-                width: 20;
-                height: 20;
-                opacity: 0.4;
-            }
-            Text {text: "Редактировать"
+            position: AbstractButton.Left
+            icon.source: "images/edit.png"
+            icon.height: 25
+            icon.width: 25
+            icon.opacity: 0.4
+            text: "Редактировать"
             onTriggered: {
                 optionMenu.visible = false
-            }}
             }
         }
 
         MenuItem {
+            position: AbstractButton.Left
+            icon.source: "images/delete.png"
+            icon.height: 25
+            icon.width: 25
+            icon.opacity: 0.4
             text: "Удалить"
             onTriggered: {
                 optionMenu.visible = false
@@ -41,15 +40,14 @@ Item {
         }
     }
     
-    Rectangle {
-        id: triangle
-        clip: true
-        anchors.top: parent
-        anchors.topMargin: -8
-        anchors.horizontalCenter: parent
-        width: 16
-        height: 16
-        rotation: 45
-        itemStyle: shadowEffect1
+    Triangle {
+        anchors.top: parent;
+        anchors.topMargin: -8;
+        height: 8;
+        effects.shadow.y: -5;
+        effects.shadow.x: -5;
+        effects.shadow.color: "#efefef";
+        effects.shadow.blur: 5;
+        effects.shadow.spread: 3;
     }
 }

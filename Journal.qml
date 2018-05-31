@@ -202,8 +202,8 @@ Item {
                     OptionMenu {
                         id: normalnayaPeremennaya4;
                         anchors.top: normalnayaPeremennaya5.bottom;
-                        anchors.topMargin: 20;
-                        anchors.horizontalCenter: normalnayaPeremennaya5.horizontalCenter;
+                        anchors.topMargin: 8;
+                        anchors.horizontalCenter: normalnayaPeremennaya5;
                         visible: false;
                         z: 1;
                     }
