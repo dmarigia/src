@@ -130,13 +130,12 @@ Item {
                             text: "Інститут";
                         }
                         ComboBox {
-                            textRole: "modelData";
-                            currentText: "Выберите институт";
-                            displayText: currentText;
-                            //font.family: "century gothic";
-                            //font.pixelSize: 15;
+                            displayText: !currentText ? "Выберите институт" : currentText;
+                            //currentIndex: 1
+                            button.font.family: "century gothic";
+                            button.font.pixelSize: 15;
                             width: 500;
-                            model: 5;
+                            model: ["Інст1", "Інст2", "Інст3", "Інст4", "Інст5"];
                         }
                     }
                     Column {

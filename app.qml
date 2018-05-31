@@ -106,7 +106,7 @@ MainItem {
 
     LoginPage {
         z: 600;
-        visible: true;
+        visible: false;
     }
 
     Rectangle {

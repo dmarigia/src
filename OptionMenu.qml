@@ -16,10 +16,7 @@ Item {
         visible: true
         itemStyle: shadowEffect1
         menuMode: false
-        width: 80;
-        textRole: "modelData";
-
-        
+        width: 80
 
         MenuItem {
             Row {
@@ -47,12 +44,12 @@ Item {
     Rectangle {
         id: triangle
         clip: true
-        anchors.top: parent.top
+        anchors.top: parent
         anchors.topMargin: -8
-        anchors.horizontalCenter: parent.horizontalCenter
+        anchors.horizontalCenter: parent
         width: 16
-        height: 16;
-        rotation: 45;
+        height: 16
+        rotation: 45
         itemStyle: shadowEffect1
     }
 }
