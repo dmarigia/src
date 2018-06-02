@@ -47,6 +47,7 @@ Item {
         delegate:
             Rectangle {
             width: 100%;
+            property bool edit;
             height: (!journal.hideSub && model.sub) ? 55 : (model.sub ? 0 : 55);
             visible: (!journal.hideSub && model.sub) || !model.sub; // TODO
             color: normalnayaPeremennaya1.checked && normalnayaPeremennaya2.checked ? "lightgreen" : "#FBFCFD";
@@ -58,8 +59,8 @@ Item {
                 width: parent.width;
                 Item {
                     height: 50;
-                    width: parent.width / 10;
-
+                    width: parent.width / 13;
+                    visible: !parent.edit;
                     AbstractButton {
                         anchors.centerIn: parent;
                         visible: !model.sub;
@@ -73,6 +74,25 @@ Item {
                         radius: 50;
                         opacity: 0.4;
                         onClicked: { listModel.insert(model.index + 1, {"sub":true}) }
+                    }
+                }
+
+                Item {
+                    height: 50;
+                    width: parent.width / 13;
+                    visible: parent.edit;
+                    AbstractButton {
+                        anchors.centerIn: parent;
+                        width: 30;
+                        height: 30;
+                        icon.source: "images/ok.png";
+                        icon.width: 25;
+                        icon.height: 25;
+                        //colors.hovered: "#A8AEEC";
+                        colors.pressed: "#5D6578";
+                        radius: 50;
+                        opacity: 0.4;
+                        onClicked: {}
                     }
                 }
 
@@ -93,13 +113,13 @@ Item {
                 }
 
                 Item {
-                    visible: false;
+                    visible: parent.edit;
                     height: 50;
                     width: parent.width / 4;
                     Text {   
                         width: parent.width - 10;                     
                         anchors.centerIn: parent;
-                        text: task.Text;
+                        //text: task.Text;
                         font.family: "century gothic";
                         font.pixelSize: 14;
                         wrapMode: Text.Wrap;
@@ -120,12 +140,12 @@ Item {
                             height: 22;
                             color: "black";
                             value: "";
-                            //backgroundColor: "#C9D1EC";
+                            backgroundColor: "#E8E8E9";
                             font.pixelSize: 14;
-                            radius: 50;
-                            border.width: 1;
-                            border.color: "#C9D1EC";
-                            //opacity: 0.5;
+                            radius: 7;
+                            //border.width: 1;
+                            //border.color: "#C9D1EC";
+                            opacity: 0.8;
                         }
 
                         DateInput {
@@ -133,21 +153,23 @@ Item {
                             height: 22;
                             color: "black";
                             min: "";
-                            //backgroundColor: "#A7B0C4";
-                            border.width: 1;
-                            border.color: "#A7B0C4";
+                            backgroundColor: "#E8E8E9";
+                            //border.width: 1;
+                            //border.color: "#A7B0C4";
                             font.pixelSize: 14;
-                            radius: 50;
-                            //opacity: 0.5;
+                            radius: 7;
+                            opacity: 0.8;
                         }
                     }
                 }
 
                 Item {
                     height: 50;
-                    width: parent.width /9;
+                    width: parent.width / 9;
                     CheckboxInput {
                         id: normalnayaPeremennaya1; anchors.centerIn: parent;
+                        width: 18;
+                        height: 18;
                         // onCheckedChanged: {
                         //     log("[normalnayaPeremennaya1]", value)
                         //     if (!model.sub) return
@@ -164,12 +186,16 @@ Item {
                 Item {
                     height: 50;
                     width: parent.width / 9;
-                    CheckboxInput { id: normalnayaPeremennaya2; anchors.centerIn: parent; }
+                    CheckboxInput { 
+                        width: 18;
+                        height: 18;
+                        id: normalnayaPeremennaya2; anchors.centerIn: parent; 
+                    }
                 }
 
                 Item {
                     height: 50;
-                    width: parent.width / 6;
+                    width: parent.width / 5.5;
 
                     TextInputMaterial {
                         width: parent.width;
@@ -182,7 +208,7 @@ Item {
                 }
                 Item {
                     height: 50;
-                    width: parent.width / 10;
+                    width: parent.width / 9;
 
                     AbstractButton {
                         id: normalnayaPeremennaya5;
@@ -238,7 +264,7 @@ Item {
 
             Item {
                 height: 50;
-                width: parent.width / 10;
+                width: parent.width / 13;
             }
 
             Item {
@@ -294,7 +320,7 @@ Item {
 
             Item {
                 height: 50;
-                width: parent.width / 6;
+                width: parent.width / 5.5;
                 Text {
                     anchors.centerIn: parent;
                     text: "ССЫЛКА";
@@ -304,7 +330,6 @@ Item {
                     wrapMode: Text.Wrap;
                 }
             }
-
         }
     }
 }

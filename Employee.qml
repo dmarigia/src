@@ -113,6 +113,7 @@ Rectangle {
             width: 100%;
             height: 100;
             x: -300;
+            radius: 5;
             Behavior on x { Animation { duration: 150; } }
             onCompleted: { this.x = 0 }
 
@@ -188,6 +189,7 @@ Rectangle {
         anchors.horizontalCenter: parent.horizontalCenter;
         width: parent.width * 0.85;
         height: 50;
+        radius: 5;
         effects.shadow.color: "#efefef";
         effects.shadow.blur: 10;
         effects.shadow.spread: 2;

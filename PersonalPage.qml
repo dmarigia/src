@@ -520,6 +520,7 @@ Rectangle {
                 radius: 100;
                 icon.width: 50;
                 icon.height: 50;
+                onClicked: { window.open("https://scopus.com") }
             }
             AbstractButton {
                 icon.source: "images/ResearcherID.svg";
@@ -528,6 +529,7 @@ Rectangle {
                 radius: 100;
                 icon.width: 50;
                 icon.height: 50;
+                onClicked: { window.open("https://researcherid.com") }
             }
             AbstractButton {
                 icon.source: "images/gscholar.png";
@@ -536,6 +538,7 @@ Rectangle {
                 radius: 100;
                 icon.width: 50;
                 icon.height: 50;
+                onClicked: { window.open("https://scholar.google.com") }
             }
         }
         // Rectangle {

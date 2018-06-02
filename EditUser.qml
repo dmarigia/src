@@ -19,8 +19,8 @@ Item {
         effects.shadow.color: "#5D6578";
         effects.shadow.blur: 10;
         effects.shadow.spread: 2;
-        width: 900;
-        height: 900;        
+        width: 850;
+        height: 700;        
         OverflowMixin {}
         Column {             
             anchors.horizontalCenter: parent;
@@ -34,7 +34,7 @@ Item {
                 color: "#FBFCFD";
                 effects.shadow.color: "#F2F2F6";
                 effects.shadow.blur: 10;
-                effects.shadow.spread: 10;
+                effects.shadow.spread: 2;
                     Row {
                         anchors.centerIn: parent;
                         spacing: 60;
@@ -110,8 +110,8 @@ Item {
                         }
                     }            
             }
-
             Rectangle {
+                id: rect2;
                 anchors.horizontalCenter: parent.horizontalCenter;
                 width: 650;
                 height: col2.height + 60;
@@ -130,26 +130,32 @@ Item {
                             text: "Інститут";
                         }
                         ComboBox {
-                            displayText: !currentText ? "Выберите институт" : currentText;
+                            displayText: !currentText ? "Оберіть інститут" : currentText;
                             //currentIndex: 1
                             button.font.family: "century gothic";
                             button.font.pixelSize: 15;
                             width: 500;
+                            effects.shadow.color: "#A8AEEC";
+                            effects.shadow.blur: 1;
+                            //effects.shadow.spread: 1;
+                            
                             model: ["Інст1", "Інст2", "Інст3", "Інст4", "Інст5"];
                         }
-                    }
+                    } 
                     Column {
                         spacing: 10;
                         Text {
                             color: "#A7B0C4";
                             text: "Факультет";
                         }
-                        TextInputMaterial {
-                            placeholder.text: "Факультет";
-                            materialColor: "#A8AEEC";
-                            font.family: "century gothic";
-                            font.pixelSize: 15;
+                        ComboBox {
+                            displayText: !currentText ? "Оберіть факультет" : currentText;
+                            effects.shadow.color: "#A8AEEC";
+                            effects.shadow.blur: 1;
+                            button.font.family: "century gothic";
+                            button.font.pixelSize: 15;
                             width: 500;
+                            model: ["Факультет", "Факультет"];
                         }
                     }
                     Column {
@@ -158,12 +164,14 @@ Item {
                             color: "#A7B0C4";
                             text: "Звання";
                         }
-                        TextInputMaterial {
-                            placeholder.text: "Звання";
-                            materialColor: "#A8AEEC";
-                            font.family: "century gothic";
-                            font.pixelSize: 15;
+                        ComboBox {
+                            displayText: !currentText ? "Оберіть звання" : currentText;
+                            effects.shadow.color: "#A8AEEC";
+                            effects.shadow.blur: 1;
+                            button.font.family: "century gothic";
+                            button.font.pixelSize: 15;
                             width: 500;
+                            model: ["Звання 1", "Звання 2"];
                         }
                     }
                     Column {
@@ -172,26 +180,30 @@ Item {
                             color: "#A7B0C4";
                             text: "Ступінь";
                         }
-                        TextInputMaterial {
-                            placeholder.text: "Ступінь";
-                            materialColor: "#A8AEEC";
-                            font.family: "century gothic";
-                            font.pixelSize: 15;
+                        ComboBox {
+                            displayText: !currentText ? "Оберіть ступінь" : currentText;
+                            effects.shadow.color: "#A8AEEC";
+                            effects.shadow.blur: 1;
+                            button.font.family: "century gothic";
+                            button.font.pixelSize: 15;
                             width: 500;
+                            model: ["Ступінь", "Ступінь"];
                         }
                     }
                     Column {
                         spacing: 10;
                         Text {
                             color: "#A7B0C4";
-                            text: "Спеціальность";
+                            text: "Спеціальність";
                         }
-                        TextInputMaterial {
-                            placeholder.text: "Спеціальність";
-                            materialColor: "#A8AEEC";
-                            font.family: "century gothic";
-                            font.pixelSize: 15;
+                        ComboBox {
+                            displayText: !currentText ? "Оберіть спеціальність" : currentText;
+                            effects.shadow.color: "#A8AEEC";
+                            effects.shadow.blur: 1;
+                            button.font.family: "century gothic";
+                            button.font.pixelSize: 15;
                             width: 500;
+                            model: ["Спеціальність 1", "Спеціальність 2"];
                         }
                     }
                     Column {
@@ -200,12 +212,14 @@ Item {
                             color: "#A7B0C4";
                             text: "Кафедра";
                         }
-                        TextInputMaterial {
-                            placeholder.text: "Кафедра";
-                            materialColor: "#A8AEEC";
-                            font.family: "century gothic";
-                            font.pixelSize: 15;
+                        ComboBox {
+                            displayText: !currentText ? "Оберіть кафедру" : currentText;
+                            effects.shadow.color: "#A8AEEC";
+                            effects.shadow.blur: 1;
+                            button.font.family: "century gothic";
+                            button.font.pixelSize: 15;
                             width: 500;
+                            model: ["Кафедра 1", "Кафедра 2"];
                         }
                     }
                     Column {
@@ -214,12 +228,14 @@ Item {
                             color: "#A7B0C4";
                             text: "Рік навчання";
                         }
-                        TextInputMaterial {
-                            placeholder.text: "2";
-                            materialColor: "#A8AEEC";
-                            font.family: "century gothic";
-                            font.pixelSize: 15;
+                        ComboBox {
+                            displayText: !currentText ? "Оберіть рік навчання" : currentText;
+                            effects.shadow.color: "#A8AEEC";
+                            effects.shadow.blur: 1;
+                            button.font.family: "century gothic";
+                            button.font.pixelSize: 15;
                             width: 500;
+                            model: ["1", "2"];
                         }
                     }
                     Column {
@@ -228,12 +244,14 @@ Item {
                             color: "#A7B0C4";
                             text: "Основа навчання";
                         }
-                        TextInputMaterial {
-                            placeholder.text: "Основа навчання";
-                            materialColor: "#A8AEEC";
-                            font.family: "century gothic";
-                            font.pixelSize: 15;
+                        ComboBox {
+                            displayText: !currentText ? "Оберіть основу навчання" : currentText;
+                            effects.shadow.color: "#A8AEEC";
+                            effects.shadow.blur: 1;
+                            button.font.family: "century gothic";
+                            button.font.pixelSize: 15;
                             width: 500;
+                            model: ["Денна", "Заочна"];
                         }
                     }
                     Column {
@@ -242,12 +260,14 @@ Item {
                             color: "#A7B0C4";
                             text: "Форма навчання";
                         }
-                        TextInputMaterial {
-                            placeholder.text: "Форма навчання";
-                            materialColor: "#A8AEEC";
-                            font.family: "century gothic";
-                            font.pixelSize: 15;
+                        ComboBox {
+                            displayText: !currentText ? "Оберіть форму навчання" : currentText;
+                            effects.shadow.color: "#A8AEEC";
+                            effects.shadow.blur: 1;
+                            button.font.family: "century gothic";
+                            button.font.pixelSize: 15;
                             width: 500;
+                            model: ["Бюджет", "Контракт"];
                         }
                     }
                     Column {
@@ -256,12 +276,14 @@ Item {
                             color: "#A7B0C4";
                             text: "Керівник";
                         }
-                        TextInputMaterial {
-                            placeholder.text: "Керівник";
-                            materialColor: "#A8AEEC";
-                            font.family: "century gothic";
-                            font.pixelSize: 15;
+                        ComboBox {
+                            displayText: !currentText ? "Оберіть керівника" : currentText;
+                            effects.shadow.color: "#A8AEEC";
+                            effects.shadow.blur: 1;
+                            button.font.family: "century gothic";
+                            button.font.pixelSize: 15;
                             width: 500;
+                            model: ["Керівник 1", "Керівник 2"];
                         }
                     }
                     Column {
@@ -287,6 +309,9 @@ Item {
                 width: 650;
                 height: col3.height + 60;
                 color: "#FBFCFD";
+                effects.shadow.color: "#F2F2F6";
+                effects.shadow.blur: 10;
+                effects.shadow.spread: 2;
                 Column {
                     id: col3;
                     spacing: 15;            
@@ -405,13 +430,103 @@ Item {
                     }
                 }
             }
+            Rectangle {
+                id: rect4;
+                anchors.horizontalCenter: parent.horizontalCenter;
+                width: 650;
+                height: col4.height + 60;
+                color: "#FBFCFD";
+                effects.shadow.color: "#F2F2F6";
+                effects.shadow.blur: 10;
+                effects.shadow.spread: 2;
+                Column {
+                    id: col4;
+                    spacing: 15;            
+                    anchors.centerIn: parent;                    
+                    Column {
+                        spacing: 10;
+                        Text {
+                            color: "#A7B0C4";
+                            text: "Сімейний стан";
+                        }
+                        ComboBox {
+                            displayText: !currentText ? "Оберіть сімейний стан" : currentText;
+                            effects.shadow.color: "#A8AEEC";
+                            effects.shadow.blur: 1;
+                            button.font.family: "century gothic";
+                            button.font.pixelSize: 15;
+                            width: 500;
+                            model: ["1", "2"];
+                        }
+                    }
+                    Column {
+                        spacing: 10;
+                        Text {
+                            color: "#A7B0C4";
+                            text: "Діти";
+                        }
+                        ComboBox {
+                            displayText: !currentText ? "Оберіть відповідний пункт" : currentText;
+                            effects.shadow.color: "#A8AEEC";
+                            effects.shadow.blur: 1;
+                            button.font.family: "century gothic";
+                            button.font.pixelSize: 15;
+                            width: 500;
+                            model: ["Немає", "1"];
+                        }
+                    }
+                }
+            }
+            Rectangle {
+                id: rect5;
+                anchors.horizontalCenter: parent.horizontalCenter;
+                width: 650;
+                height: col5.height + 60;
+                color: "#FBFCFD";
+                effects.shadow.color: "#F2F2F6";
+                effects.shadow.blur: 10;
+                effects.shadow.spread: 2;
+                Column {
+                    id: col5;
+                    spacing: 15;            
+                    anchors.centerIn: parent;                    
+                    Column {
+                        spacing: 10;
+                        Text {
+                            color: "#A7B0C4";
+                            text: "Вкажіть логін для користувача";
+                        }
+                        TextInputMaterial {
+                            placeholder.text: "Логін";
+                            materialColor: "#A8AEEC";
+                            font.family: "century gothic";
+                            font.pixelSize: 15;
+                            width: 500;
+                        }
+                    }
+                    Column {
+                        spacing: 10;
+                        Text {
+                            color: "#A7B0C4";
+                            text: "Вкажіть пароль для користувача";
+                        }
+                        TextInputMaterial {
+                            placeholder.text: "Пароль";
+                            materialColor: "#A8AEEC";
+                            font.family: "century gothic";
+                            font.pixelSize: 15;
+                            width: 500;
+                        }
+                    }
+                }
+            }
 
             Row {
                 height: 100;
                 spacing: 90;
                 // anchors.top: col3.bottom;
                 // anchors.topMargin: 35;
-                anchors.right: rect3;
+                anchors.right: rect5;
                 anchors.rightMargin: 10;
                 // anchors.bottom: edInfoRect.bottom;
                 // anchors.bottomMargin: 60;
@@ -435,6 +550,15 @@ Item {
                 }
             }
         }
+        Text {
+            z: 100;
+            anchors.bottom: rect2.top;
+            anchors.bottomMargin: 10;
+            anchors.left: rect2.left;
+            text: "Інформація про навчання";
+            color: "#A7B0C4";
+            font.pixelSize: 14;
+            font.bold: true;
+        }        
     }
-
 }
