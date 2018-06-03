@@ -38,7 +38,6 @@ Item {
                     width: edContactRect.width - 70;
                     placeholder.text: "Телефон";
                     materialColor: "#A8AEEC";
-                    font.family: "century gothic";
                 }
             }
             Column {
@@ -51,7 +50,6 @@ Item {
                     width: edContactRect.width - 70;
                     placeholder.text: "e-mail";
                     materialColor: "#A8AEEC";
-                    font.family: "century gothic";
                 }
             }
             Column {
@@ -64,7 +62,6 @@ Item {
                     width: edContactRect.width - 70;
                     placeholder.text: "Место работы";
                     materialColor: "#A8AEEC";
-                    font.family: "century gothic";
                 }
             }
             
@@ -78,7 +75,6 @@ Item {
                     width: edContactRect.width - 70;
                     placeholder.text: "Адрес проживания";
                     materialColor: "#A8AEEC";
-                    font.family: "century gothic";
                 }
             }
         }

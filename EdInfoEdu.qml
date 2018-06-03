@@ -38,7 +38,6 @@ Item {
                     width: edEduRect.width - 70;
                     placeholder.text: "Год обучения";
                     materialColor: "#A8AEEC";
-                    font.family: "century gothic";
                 }
             }
             Column {
@@ -51,7 +50,6 @@ Item {
                     width: edEduRect.width - 70;
                     placeholder.text: "Тема научной работы";
                     materialColor: "#A8AEEC";
-                    font.family: "century gothic";
                 }
             }
             Column {
@@ -64,7 +62,6 @@ Item {
                     width: edEduRect.width - 70;
                     placeholder.text: "Основа обучения";
                     materialColor: "#A8AEEC";
-                    font.family: "century gothic";
                 }
             }
             
@@ -78,7 +75,6 @@ Item {
                     width: edEduRect.width - 70;
                     placeholder.text: "Форма обучения";
                     materialColor: "#A8AEEC";
-                    font.family: "century gothic";
                 }
             }
         }

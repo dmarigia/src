@@ -36,7 +36,6 @@ Rectangle {
                 materialColor: valid || !text ? "#A8AEEC" : "#F44336"; // NEW
                 Behavior on materialColor { ColorAnimation { duration: 500; } }
                 font.pixelSize: 18;
-                font.family: "century gothic";
                 placeholder.text: "e-mail";
                 text: "test@test.net";
                 //textInput.horizontalAlignment: TextInput.AlignHCenter; // NEW
@@ -63,7 +62,6 @@ Rectangle {
                 width: 250;
                 font.pixelSize: 18;
                 placeholder.text: qsTr("пароль");
-                font.family: "century gothic";
                 echoMode: TextInput.Password; // NEW
                 text: "test";
                 //textInput.horizontalAlignment: TextInput.AlignHCenter; // NEW

@@ -38,7 +38,6 @@ Item {
                     width: edInfoRect.width - 70;
                     placeholder.text: "Дата рождения";
                     materialColor: "#A8AEEC";
-                    font.family: "century gothic";
                 }
             }
             Column {
@@ -51,7 +50,6 @@ Item {
                     width: edInfoRect.width - 70;
                     placeholder.text: "Семейное положение";
                     materialColor: "#A8AEEC";
-                    font.family: "century gothic";
                 }
             }
             Column {
@@ -64,7 +62,6 @@ Item {
                     width: edInfoRect.width - 70;
                     placeholder.text: "Дети";
                     materialColor: "#A8AEEC";
-                    font.family: "century gothic";
                 }
             }
         }

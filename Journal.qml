@@ -107,7 +107,6 @@ Item {
                         anchors.bottom: parent.bottom;
                         placeholder.text: model.sub ? "Подзадание ": "Задание ";
                         materialColor: "#A8AEEC";
-                        font.family: "century gothic";
                         font.pixelSize: 14;
                     }
                 }
@@ -120,7 +119,6 @@ Item {
                         width: parent.width - 10;                     
                         anchors.centerIn: parent;
                         //text: task.Text;
-                        font.family: "century gothic";
                         font.pixelSize: 14;
                         wrapMode: Text.Wrap;
                     }
@@ -201,7 +199,6 @@ Item {
                         width: parent.width;
                         anchors.bottom: parent.bottom;
                         materialColor: "#A8AEEC";
-                        font.family: "century gothic";
                         font.pixelSize: 14;
                     }
 

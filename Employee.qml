@@ -1,7 +1,7 @@
 Rectangle {
     id: employee;
     width: 100%;
-    color: "#f5f5f5";
+    color: "#f5f5f9";
     height: listik.height + 50 * 3 + addButton.height + listRect.height;   
 
     EditUser {
@@ -60,16 +60,17 @@ Rectangle {
                 color: "#A7B0C4";
             }
             TextInputMaterial {
+                clip: true;
                 visible: false;
                 id: textSearch;
                 width: 0;
                 anchors.bottom: search.bottom;
                 anchors.bottomMargin: -4;
                 materialColor: "#A8AEEC";
-                font.family: "century gothic";
                 font.pixelSize: 14;
                 placeholder.text: "Пошук";
                 Behavior on x { Animation { duration: 1000; } }
+                Behavior on width { Animation { duration: 1000; } }
             }
         }
 

@@ -74,7 +74,6 @@ Item {
                                 TextInputMaterial {
                                     placeholder.text: "Прізвище Ім'я По батькові";
                                     materialColor: "#A8AEEC";
-                                    font.family: "century gothic";
                                     font.pixelSize: 15;
                                     width: 400;
                                 }
@@ -88,7 +87,6 @@ Item {
                                 TextInputMaterial {
                                     placeholder.text: "Name Surname";
                                     materialColor: "#A8AEEC";
-                                    font.family: "century gothic";
                                     font.pixelSize: 15;
                                     width: 400;
                                 }
@@ -102,7 +100,6 @@ Item {
                                 TextInputMaterial {
                                     placeholder.text: "20.02.1989";
                                     materialColor: "#A8AEEC";
-                                    font.family: "century gothic";
                                     font.pixelSize: 15;
                                     width: 400;
                                 }
@@ -132,7 +129,6 @@ Item {
                         ComboBox {
                             displayText: !currentText ? "Оберіть інститут" : currentText;
                             //currentIndex: 1
-                            button.font.family: "century gothic";
                             button.font.pixelSize: 15;
                             width: 500;
                             effects.shadow.color: "#A8AEEC";
@@ -152,7 +148,6 @@ Item {
                             displayText: !currentText ? "Оберіть факультет" : currentText;
                             effects.shadow.color: "#A8AEEC";
                             effects.shadow.blur: 1;
-                            button.font.family: "century gothic";
                             button.font.pixelSize: 15;
                             width: 500;
                             model: ["Факультет", "Факультет"];
@@ -168,7 +163,6 @@ Item {
                             displayText: !currentText ? "Оберіть звання" : currentText;
                             effects.shadow.color: "#A8AEEC";
                             effects.shadow.blur: 1;
-                            button.font.family: "century gothic";
                             button.font.pixelSize: 15;
                             width: 500;
                             model: ["Звання 1", "Звання 2"];
@@ -184,7 +178,6 @@ Item {
                             displayText: !currentText ? "Оберіть ступінь" : currentText;
                             effects.shadow.color: "#A8AEEC";
                             effects.shadow.blur: 1;
-                            button.font.family: "century gothic";
                             button.font.pixelSize: 15;
                             width: 500;
                             model: ["Ступінь", "Ступінь"];
@@ -200,7 +193,6 @@ Item {
                             displayText: !currentText ? "Оберіть спеціальність" : currentText;
                             effects.shadow.color: "#A8AEEC";
                             effects.shadow.blur: 1;
-                            button.font.family: "century gothic";
                             button.font.pixelSize: 15;
                             width: 500;
                             model: ["Спеціальність 1", "Спеціальність 2"];
@@ -216,7 +208,6 @@ Item {
                             displayText: !currentText ? "Оберіть кафедру" : currentText;
                             effects.shadow.color: "#A8AEEC";
                             effects.shadow.blur: 1;
-                            button.font.family: "century gothic";
                             button.font.pixelSize: 15;
                             width: 500;
                             model: ["Кафедра 1", "Кафедра 2"];
@@ -232,7 +223,6 @@ Item {
                             displayText: !currentText ? "Оберіть рік навчання" : currentText;
                             effects.shadow.color: "#A8AEEC";
                             effects.shadow.blur: 1;
-                            button.font.family: "century gothic";
                             button.font.pixelSize: 15;
                             width: 500;
                             model: ["1", "2"];
@@ -248,7 +238,6 @@ Item {
                             displayText: !currentText ? "Оберіть основу навчання" : currentText;
                             effects.shadow.color: "#A8AEEC";
                             effects.shadow.blur: 1;
-                            button.font.family: "century gothic";
                             button.font.pixelSize: 15;
                             width: 500;
                             model: ["Денна", "Заочна"];
@@ -264,7 +253,6 @@ Item {
                             displayText: !currentText ? "Оберіть форму навчання" : currentText;
                             effects.shadow.color: "#A8AEEC";
                             effects.shadow.blur: 1;
-                            button.font.family: "century gothic";
                             button.font.pixelSize: 15;
                             width: 500;
                             model: ["Бюджет", "Контракт"];
@@ -280,7 +268,6 @@ Item {
                             displayText: !currentText ? "Оберіть керівника" : currentText;
                             effects.shadow.color: "#A8AEEC";
                             effects.shadow.blur: 1;
-                            button.font.family: "century gothic";
                             button.font.pixelSize: 15;
                             width: 500;
                             model: ["Керівник 1", "Керівник 2"];
@@ -295,7 +282,6 @@ Item {
                         TextInputMaterial {
                             placeholder.text: "Тема наукової роботи";
                             materialColor: "#A8AEEC";
-                            font.family: "century gothic";
                             font.pixelSize: 15;
                             width: 500;
                         }
@@ -325,7 +311,6 @@ Item {
                         TextInputMaterial {
                             placeholder.text: "+38 (063) ";
                             materialColor: "#A8AEEC";
-                            font.family: "century gothic";
                             font.pixelSize: 15;
                             width: 500;
                         }
@@ -339,7 +324,6 @@ Item {
                         TextInputMaterial {
                             placeholder.text: "e-mail";
                             materialColor: "#A8AEEC";
-                            font.family: "century gothic";
                             font.pixelSize: 15;
                             width: 500;
                         }
@@ -353,7 +337,6 @@ Item {
                         TextInputMaterial {
                             placeholder.text: "Місце роботи";
                             materialColor: "#A8AEEC";
-                            font.family: "century gothic";
                             font.pixelSize: 15;
                             width: 500;
                         }
@@ -367,7 +350,6 @@ Item {
                         TextInputMaterial {
                             placeholder.text: "Адреса проживання";
                             materialColor: "#A8AEEC";
-                            font.family: "century gothic";
                             font.pixelSize: 15;
                             width: 500;
                         }
@@ -381,7 +363,6 @@ Item {
                         TextInputMaterial {
                             placeholder.text: "ScopusID";
                             materialColor: "#A8AEEC";
-                            font.family: "century gothic";
                             font.pixelSize: 15;
                             width: 500;
                         }
@@ -395,7 +376,6 @@ Item {
                         TextInputMaterial {
                             placeholder.text: "ResearcherID";
                             materialColor: "#A8AEEC";
-                            font.family: "century gothic";
                             font.pixelSize: 15;
                             width: 500;
                         }
@@ -409,7 +389,6 @@ Item {
                         TextInputMaterial {
                             placeholder.text: "Google Scholar";
                             materialColor: "#A8AEEC";
-                            font.family: "century gothic";
                             font.pixelSize: 15;
                             width: 500;
                         }
@@ -423,7 +402,6 @@ Item {
                         TextInputMaterial {
                             placeholder.text: "OrcID";
                             materialColor: "#A8AEEC";
-                            font.family: "century gothic";
                             font.pixelSize: 15;
                             width: 500;
                         }
@@ -453,7 +431,6 @@ Item {
                             displayText: !currentText ? "Оберіть сімейний стан" : currentText;
                             effects.shadow.color: "#A8AEEC";
                             effects.shadow.blur: 1;
-                            button.font.family: "century gothic";
                             button.font.pixelSize: 15;
                             width: 500;
                             model: ["1", "2"];
@@ -469,7 +446,6 @@ Item {
                             displayText: !currentText ? "Оберіть відповідний пункт" : currentText;
                             effects.shadow.color: "#A8AEEC";
                             effects.shadow.blur: 1;
-                            button.font.family: "century gothic";
                             button.font.pixelSize: 15;
                             width: 500;
                             model: ["Немає", "1"];
@@ -499,7 +475,6 @@ Item {
                         TextInputMaterial {
                             placeholder.text: "Логін";
                             materialColor: "#A8AEEC";
-                            font.family: "century gothic";
                             font.pixelSize: 15;
                             width: 500;
                         }
@@ -513,7 +488,6 @@ Item {
                         TextInputMaterial {
                             placeholder.text: "Пароль";
                             materialColor: "#A8AEEC";
-                            font.family: "century gothic";
                             font.pixelSize: 15;
                             width: 500;
                         }

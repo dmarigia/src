@@ -7,15 +7,12 @@ Item {
         id: menu
         visible: true
         menuMode: false
-        //effects.shadow.y: -5
-        //effects.shadow.x: -5
         effects.shadow.color: "#efefef"
         effects.shadow.blur: 5
         effects.shadow.spread: 3
         z: 0
 
         MenuItem {
-            id: editMenu
             position: AbstractButton.Left
             icon.source: "images/edit.png"
             icon.height: 20
@@ -28,7 +25,6 @@ Item {
         }
 
         MenuItem {
-            id: deleteMenu
             position: AbstractButton.Left
             icon.source: "images/delete.png"
             icon.height: 20
