@@ -678,9 +678,9 @@ Rectangle {
             log("current profile", json, json.email)
             if (!json.email) return
             
-            settings.firstName = json.firstname
-            settings.lastName = json.lastname
-            settings.middleName = json.middlename
+            settings.firstName = "Ім`я"//json.firstname
+            settings.lastName = "Прізвище"//json.lastname
+            settings.middleName = "По батькові"//json.middlename
             settings.role = json.role
         }
         onError: {

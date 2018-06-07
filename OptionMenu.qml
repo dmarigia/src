@@ -18,7 +18,7 @@ Item {
             icon.height: 20
             icon.width: 20
             icon.opacity: 0.4
-            text: "Редактировать"
+            text: "Редагувати"
             onTriggered: {
                 optionMenu.visible = false
             }
@@ -30,11 +30,25 @@ Item {
             icon.height: 20
             icon.width: 20
             icon.opacity: 0.4
-            text: "Удалить"
+            text: "Видалити"
             onTriggered: {
                 optionMenu.visible = false
             }
         }
+
+        // MenuItem {
+        //     id: menuItem3
+        //     visible: false
+        //     position: AbstractButton.Left
+        //     icon.source: "images/delete.png"
+        //     icon.height: 20
+        //     icon.width: 20
+        //     icon.opacity: 0.4
+        //     text: "Перегляд завдань"
+        //     onTriggered: {
+        //         optionMenu.visible = false
+        //     }
+        // }
     }
     
     Triangle {

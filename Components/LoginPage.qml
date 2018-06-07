@@ -48,13 +48,13 @@ Rectangle {
                 }
             }
 
-            Text {
-                id: emailCheck;
-                //visible: false;
-                text: qsTr("Неверный e-mail");
-                font.pixelSize: 14;
-                color: "#F44336";
-            }
+            // Text {
+            //     id: emailCheck;
+            //     //visible: false;
+            //     text: qsTr("Неверный e-mail");
+            //     font.pixelSize: 14;
+            //     color: "#F44336";
+            // }
 
             TextInputMaterial {
                 id: password;

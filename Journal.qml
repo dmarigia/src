@@ -219,7 +219,10 @@ Item {
                         colors.pressed: "#5D6578";
                         radius: 50;
                         opacity: 0.5;
-                        onClicked: { normalnayaPeremennaya4.visible = !normalnayaPeremennaya4.visible }
+                        onClicked: { 
+                            normalnayaPeremennaya4.visible = !normalnayaPeremennaya4.visible;
+                            //menuItem3.visible = !menuItem3.visible;
+                        }
                     }
 
                     OptionMenu {
@@ -269,7 +272,8 @@ Item {
                 width: parent.width / 4;
                 Text {
                     anchors.centerIn: parent;
-                    text: "ЗАДАНИЕ";
+                    text: "ЗАВДАННЯ";
+                    font.pixelSize: 12;
                     color: "#73818e";
                     font.bold: true;
                     wrapMode: Text.Wrap;
@@ -281,10 +285,10 @@ Item {
                 width: parent.width / 6;
                 Text {
                     anchors.centerIn: parent;
-                    text: "СРОК ВЫПОЛНЕНИЯ";
+                    text: "ТЕРМІНИ";
+                    font.pixelSize: 12;
                     color: "#73818e";
                     font.bold: true;
-                    font.pixelSize: 13;
                     wrapMode: Text.Wrap;
                 }
             }
@@ -294,10 +298,10 @@ Item {
                 width: parent.width / 9;
                 Text {
                     anchors.centerIn: parent;
-                    text: "ВЫПОЛ-<br>НЕННОСТЬ";
+                    text: "ВИПОВ-<br>НЕНІСТЬ";
+                    font.pixelSize: 12;
                     color: "#73818e";
                     font.bold: true;
-                    font.pixelSize: 13;
                     wrapMode: Text.Wrap;
                 }
             }
@@ -307,10 +311,10 @@ Item {
                 width: parent.width / 9;
                 Text {
                     anchors.centerIn: parent;
-                    text: "МОДЕ-<br>РАЦИЯ";
+                    text: "МОДЕ-<br>РАЦІЯ";
+                    font.pixelSize: 12;
                     color: "#73818e";
                     font.bold: true;
-                    font.pixelSize: 13;
                     wrapMode: Text.Wrap;
                 }
             }
@@ -320,9 +324,9 @@ Item {
                 width: parent.width / 5.5;
                 Text {
                     anchors.centerIn: parent;
-                    text: "ССЫЛКА";
+                    text: "ПОСИЛАННЯ";
+                    font.pixelSize: 12;
                     color: "#73818e";
-                    font.pixelSize: 13;
                     font.bold: true;
                     wrapMode: Text.Wrap;
                 }

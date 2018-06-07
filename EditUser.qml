@@ -492,6 +492,21 @@ Item {
                             width: 500;
                         }
                     }
+                    Column {
+                        spacing: 10;
+                        Text {
+                            color: "#A7B0C4";
+                            text: "Вкажіть роль користувача у системі";
+                        }
+                        ComboBox {
+                            displayText: !currentText ? "Оберіть роль" : currentText;
+                            effects.shadow.color: "#A8AEEC";
+                            effects.shadow.blur: 1;
+                            button.font.pixelSize: 15;
+                            width: 500;
+                            model: ["Аспірант", "Докторант", "Керівник", "Адміністратор"];
+                        }
+                    }
                 }
             }
 

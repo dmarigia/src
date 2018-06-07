@@ -78,6 +78,18 @@ Rectangle {
 
     }
 
+    // AbstractButton {
+    //     id: sortButton;
+    //     anchors.top: parent.top;
+    //     anchors.topMargin: 40;
+    //     anchors.horizontalCenter: parent;
+    //     colors.default: "white";
+    //     text: "Сортування";
+    //     radius: 50;
+    //     height: 40;
+    //     width: 120;
+    // }
+
     AbstractButton {
         id: addButton;
         anchors.top: parent.top;
@@ -85,7 +97,7 @@ Rectangle {
         anchors.topMargin: 40;
         anchors.rightMargin: 40;
         colors.default: "#C9D1EC";
-        text: "Добавить";
+        text: "Додати";
         radius: 50;
         height: 40;
         width: 120;
@@ -162,8 +174,8 @@ Rectangle {
                         icon.source: "images/options.png";
                         icon.width: 25;
                         icon.height: 25;
-                        colors.hovered: "lightblue";
-                        colors.pressed: "blue";
+                        colors.hovered: "#A8AEEC";
+                        colors.pressed: "#5D6578";
                         radius: 50;
                         opacity: 0.5;
                         onClicked: { normalnayaPeremennaya4.visible = !normalnayaPeremennaya4.visible }
@@ -207,7 +219,8 @@ Rectangle {
                 width: parent.width / 2.7;
                 Text {
                     anchors.centerIn: parent;
-                    text: "ИМЯ";
+                    text: "ІМ'Я";
+                    font.pixelSize: 14;
                     color: "#73818e";
                     font.bold: true;
                 }
@@ -218,7 +231,8 @@ Rectangle {
                 width: parent.width / 4;
                 Text {
                     anchors.centerIn: parent;
-                    text: "ДОЛЖНОСТЬ";
+                    text: "ПРАВА ДОСТУПУ";
+                    font.pixelSize: 14;
                     color: "#73818e";
                     font.bold: true;
                 }
@@ -229,7 +243,8 @@ Rectangle {
                 width: parent.width / 5;
                 Text {
                     anchors.centerIn: parent;
-                    text: "ОПЦИИ";
+                    text: "ОПЦІЇ";
+                    font.pixelSize: 14;
                     color: "#73818e";
                     font.bold: true;
                 }
