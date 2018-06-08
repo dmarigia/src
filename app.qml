@@ -4,11 +4,13 @@
 /*** @using { src.OptionMenu } **/
 /*** @using { src.EdContactInfo } **/
 /*** @using { src.EditUser } **/
+/*** @using { src.Statistics } **/
+/*** @using { src.Reports } **/
 
 MainItem {
     id: app;
     anchors.fill: parent;
-    property bool disableBackend: false;
+    property bool disableBackend: true;
 
     color: "#e7eaef";
     title: qsTr("Личный кабинет") + " - " + pageName;

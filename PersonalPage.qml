@@ -181,7 +181,6 @@ Rectangle {
                             color: "#757575";
                         }
                         Text {
-                            anchors.centerIn: parent;
                             text: "9";
                             color: "#f48fb1";
                             font.pixelSize: 24;
@@ -195,7 +194,6 @@ Rectangle {
                             color: "#757575";
                         }
                         Text {
-                            anchors.centerIn: parent;
                             text: "2";
                             color: "#f48fb1";
                             font.pixelSize: 24;

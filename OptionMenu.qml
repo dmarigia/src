@@ -18,8 +18,9 @@ Item {
             icon.height: 20
             icon.width: 20
             icon.opacity: 0.4
-            text: "Редагувати"
+            text: qsTr("Редактировать");
             onTriggered: {
+                deleg.edit = !deleg.edit
                 optionMenu.visible = false
             }
         }
@@ -30,8 +31,9 @@ Item {
             icon.height: 20
             icon.width: 20
             icon.opacity: 0.4
-            text: "Видалити"
+            text: qsTr("Удалить");
             onTriggered: {
+                deleg.remove()
                 optionMenu.visible = false
             }
         }

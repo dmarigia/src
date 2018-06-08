@@ -145,7 +145,7 @@ Rectangle {
         LeftPanelButton {
             name: qsTr("Отчеты pdf");
             image: "docs.png";
-            page: "Docs";
+            page: "Reports";
         }
 
         Rectangle {

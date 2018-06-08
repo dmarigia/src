@@ -44,10 +44,10 @@ Item {
             id: listModel;
         }
 
-        delegate:
-            Rectangle {
+        delegate: Rectangle {
+            id: deleg;
             width: 100%;
-            property bool edit;
+            property bool edit: true;
             height: (!journal.hideSub && model.sub) ? 55 : (model.sub ? 0 : 55);
             visible: (!journal.hideSub && model.sub) || !model.sub; // TODO
             color: normalnayaPeremennaya1.checked && normalnayaPeremennaya2.checked ? "lightgreen" : "#FBFCFD";
@@ -55,12 +55,16 @@ Item {
             Behavior on x { Animation { duration: 150; } }
             onCompleted: { this.x = 0 }
 
+            function remove() {
+                listModel.remove(model.index)
+            }
+
             Row {
                 width: parent.width;
                 Item {
                     height: 50;
                     width: parent.width / 13;
-                    visible: !parent.edit;
+                    visible: !deleg.edit;
                     AbstractButton {
                         anchors.centerIn: parent;
                         visible: !model.sub;
@@ -80,7 +84,7 @@ Item {
                 Item {
                     height: 50;
                     width: parent.width / 13;
-                    visible: parent.edit;
+                    visible: deleg.edit;
                     AbstractButton {
                         anchors.centerIn: parent;
                         width: 30;
@@ -92,7 +96,7 @@ Item {
                         colors.pressed: "#5D6578";
                         radius: 50;
                         opacity: 0.4;
-                        onClicked: {}
+                        onClicked: { deleg.edit = false }
                     }
                 }
 
@@ -103,6 +107,7 @@ Item {
 
                     TextInputMaterial {   
                         id: task;
+                        enabled: deleg.edit;
                         width: parent.width - 20;                     
                         anchors.bottom: parent.bottom;
                         placeholder.text: model.sub ? "Подзадание ": "Задание ";
@@ -144,19 +149,24 @@ Item {
                             //border.width: 1;
                             //border.color: "#C9D1EC";
                             opacity: 0.8;
+                            max: secondDate.value;
+                            enabled: deleg.edit;
                         }
 
                         DateInput {
+                            id: secondDate;
                             width: 130;
                             height: 22;
                             color: "black";
-                            min: "";
+                            visible: !!firstDate.value;
+                            min: firstDate.value;
                             backgroundColor: "#E8E8E9";
                             //border.width: 1;
                             //border.color: "#A7B0C4";
                             font.pixelSize: 14;
                             radius: 7;
                             opacity: 0.8;
+                            enabled: deleg.edit;
                         }
                     }
                 }
@@ -168,6 +178,7 @@ Item {
                         id: normalnayaPeremennaya1; anchors.centerIn: parent;
                         width: 18;
                         height: 18;
+                        enabled: deleg.edit;
                         // onCheckedChanged: {
                         //     log("[normalnayaPeremennaya1]", value)
                         //     if (!model.sub) return
@@ -187,7 +198,8 @@ Item {
                     CheckboxInput { 
                         width: 18;
                         height: 18;
-                        id: normalnayaPeremennaya2; anchors.centerIn: parent; 
+                        id: normalnayaPeremennaya2; anchors.centerIn: parent;
+                        enabled: deleg.edit;
                     }
                 }
 
@@ -200,6 +212,7 @@ Item {
                         anchors.bottom: parent.bottom;
                         materialColor: "#A8AEEC";
                         font.pixelSize: 14;
+                        enabled: deleg.edit;
                     }
 
                 }

@@ -218,7 +218,9 @@ Rectangle {
                 height: 50;
                 width: parent.width / 2.7;
                 Text {
-                    anchors.centerIn: parent;
+                    anchors.fill: parent;
+                    verticalAlignment: Text.AlignVCenter;
+                    horizontalAlignment: Text.AlignHCenter;
                     text: "ІМ'Я";
                     font.pixelSize: 14;
                     color: "#73818e";
@@ -230,7 +232,9 @@ Rectangle {
                 height: 50;
                 width: parent.width / 4;
                 Text {
-                    anchors.centerIn: parent;
+                    anchors.fill: parent;
+                    verticalAlignment: Text.AlignVCenter;
+                    horizontalAlignment: Text.AlignHCenter;
                     text: "ПРАВА ДОСТУПУ";
                     font.pixelSize: 14;
                     color: "#73818e";
@@ -242,7 +246,9 @@ Rectangle {
                 height: 50;
                 width: parent.width / 5;
                 Text {
-                    anchors.centerIn: parent;
+                    anchors.fill: parent;
+                    verticalAlignment: Text.AlignVCenter;
+                    horizontalAlignment: Text.AlignHCenter;
                     text: "ОПЦІЇ";
                     font.pixelSize: 14;
                     color: "#73818e";
