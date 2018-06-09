@@ -3,7 +3,6 @@ Rectangle {
 
     ChartBar {
         anchors.fill: parent
-        legend: true
         categories: ['Аспирант 1', 'Аспирант 2', 'Аспирант 3']
         title: 'Статистика'
 
