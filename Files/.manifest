@@ -2,6 +2,6 @@
 	"platforms": ["web"],
 	"languages": ["uk"],
 	"properties": {
-		"style.font": { "family": "century gothic", "pixelSize": 14 }
+		"style.font": { "family": "Montserrat", "pixelSize": 14 }
 	}
 }
