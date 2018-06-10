@@ -32,7 +32,7 @@ MainItem {
 
     Rectangle {
         id: insideRect;
-        color: "#f5f5f9";
+        color: "#fbfcfd";
         anchors.centerIn: parent;
         width: app.mobile ? app.width : (app.width <= 1280 ? app.width * 0.9 : (app.width <= 1600 && app.width >= 1280  ? app.width * 0.82 : app.width * 0.72)); //TODO
         height: app.height;
@@ -46,7 +46,7 @@ MainItem {
 
         InfoPanel {
             id: infoPanel;
-            effects.shadow.blur: 6;
+            effects.shadow.blur: 4;
             LanguageButton {}
         }
 

@@ -88,9 +88,9 @@ Rectangle {
         width: 100%;
 
         Rectangle {
-            height: 1;
+            height: 2;
             width: panel.width;
-            color: "#f5f5f5";
+            color: "#FBFCFD";
         }
 
         LeftPanelButton {
@@ -101,21 +101,21 @@ Rectangle {
         }
 
         Rectangle {
-            height: 1;
+            height: 2;
             width: panel.width;
-            color: "#f5f5f5";
+            color: "#FBFCFD";
         }
 
-        LeftPanelButton {
+        LeftPanelButton {                 
             name: qsTr("Список аспирантов");
             image: "users.png";
             page: "Employee";
         }       
 
         Rectangle {
-            height: 1;
+            height: 2;
             width: panel.width;
-            color: "#f5f5f5";
+            color: "#FBFCFD";
         }
 
         LeftPanelButton {
@@ -125,9 +125,9 @@ Rectangle {
         }
 
         Rectangle {
-            height: 1;
+            height: 2;
             width: panel.width;
-            color: "#f5f5f5";
+            color: "#FBFCFD";
         }
 
         LeftPanelButton {
@@ -137,9 +137,9 @@ Rectangle {
         }
 
         Rectangle {
-            height: 1;
+            height:2;
             width: panel.width;
-            color: "#f5f5f5";
+            color: "#FBFCFD";
         }
 
         LeftPanelButton {
@@ -149,9 +149,16 @@ Rectangle {
         }
 
         Rectangle {
-            height: 1;
+            height: 2;
             width: panel.width;
-            color: "#f5f5f5";
+            color: "#FBFCFD";
         }
+    }
+
+    Rectangle {
+        width: 2;
+        height: 100%
+        color: "#f5f5f9"
+        anchors.right: parent.right
     }
 }

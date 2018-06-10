@@ -1,7 +1,7 @@
 Rectangle {
     id: employee;
     width: 100%;
-    color: "#f5f5f9";
+    color: "#fbfcfd";
     height: listik.height + 50 * 3 + addButton.height + listRect.height;   
 
     EditUser {
@@ -20,6 +20,8 @@ Rectangle {
         height: 40;
         width: 60 + tSearch.width;
         radius: 50;
+        border.width: 1;
+        border.color: "#f5f5f9";
         color: "white";
 
         Row {            
@@ -39,7 +41,7 @@ Rectangle {
                 colors.hovered: "#A8AEEC";
                 radius: 100;
                 onClicked: {
-                    textSearch.width = 180; 
+                    textSearch.width = textSearch.width === 180 ? 40 : 180;
                     search.width = search.width === (67 + textSearch.width) ? (60 + tSearch.width) : (67 + textSearch.width);
                     textSearch.visible = !textSearch.visible;
                     tSearch.visible = !tSearch.visible;
@@ -110,11 +112,12 @@ Rectangle {
     ListView {
         id: listik;
         anchors.top: listRect.bottom;
+        anchors.topMargin: 20
         anchors.horizontalCenter: parent.horizontalCenter;
         width: parent.width * 0.85;
-        effects.shadow.color: "#efefef";
-        effects.shadow.blur: 10;
-        effects.shadow.spread: 10;
+        // effects.shadow.color: "#efefef";
+        // effects.shadow.blur: 10;
+        // effects.shadow.spread: 10;
         height: contentHeight;
         spacing: 2;
 
@@ -127,6 +130,10 @@ Rectangle {
             height: 100;
             x: -300;
             radius: 5;
+            //color: "#FBFCFD";
+            border.width: 2;
+            border.color: "#f5f5f9"
+            color: (model.index % 2) ? "#FBFCFD" : "#f5f5f9";
             Behavior on x { Animation { duration: 150; } }
             onCompleted: { this.x = 0 }
 
@@ -167,7 +174,7 @@ Rectangle {
                     height: 100;
                     width: parent.width / 5;
                     AbstractButton {
-                        id: normalnayaPeremennaya5;
+                        id: opt;
                         anchors.centerIn: parent;
                         width: 30;
                         height: 30;
@@ -178,14 +185,14 @@ Rectangle {
                         colors.pressed: "#5D6578";
                         radius: 50;
                         opacity: 0.5;
-                        onClicked: { normalnayaPeremennaya4.visible = !normalnayaPeremennaya4.visible }
+                        onClicked: { optMenu.visible = !optMenu.visible; menuItem3.visible = !menuItem3.visible }
                     }
 
                     OptionMenu {
-                        id: normalnayaPeremennaya4;
-                        anchors.top: normalnayaPeremennaya5.bottom;
+                        id: optMenu;
+                        anchors.top: opt.bottom;
                         anchors.topMargin: 20;
-                        anchors.horizontalCenter: normalnayaPeremennaya5.horizontalCenter;
+                        anchors.horizontalCenter: opt.horizontalCenter;
                         visible: false;
                         z: 1;
                     }
@@ -198,14 +205,20 @@ Rectangle {
         id: listRect;
         anchors.top: addButton.bottom;
         anchors.topMargin: 40;
-        color: "#d9e2e7";
+        color: "#FBFCFD";
         anchors.horizontalCenter: parent.horizontalCenter;
         width: parent.width * 0.85;
         height: 50;
-        radius: 5;
-        effects.shadow.color: "#efefef";
-        effects.shadow.blur: 10;
-        effects.shadow.spread: 2;
+        // radius: 5;
+        // effects.shadow.color: "#efefef";
+        // effects.shadow.blur: 10;
+        // effects.shadow.spread: 2;
+        Rectangle {
+            width: 100%;
+            height: 2;
+            anchors.bottom: parent;
+            color: "#f5f5f9"
+        }
         Row {
             anchors.fill: parent;
 

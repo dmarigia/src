@@ -28,16 +28,17 @@ Item {
     
     ListView {
         id: listView;
-        anchors.top: line.bottom;
+        anchors.top: listRect.bottom;
+        anchors.topMargin: 20
         anchors.horizontalCenter: parent.horizontalCenter;
         width: parent.width * 0.9;
-        effects.shadow.color: "#efefef";
-        effects.shadow.blur: 10;
-        effects.shadow.spread: 10;
+        // effects.shadow.color: "#efefef";
+        // effects.shadow.blur: 10;
+        // effects.shadow.spread: 10;
         height: contentHeight;
         keyNavigationWraps: false;
         handleNavigationKeys: false;
-        //spacing: 2;
+        spacing: 2;
         //var subPar: false;
 
         model: ListModel {
@@ -47,10 +48,14 @@ Item {
         delegate: Rectangle {
             id: deleg;
             width: 100%;
+            radius: 5;
+            border.width: 2;
+            border.color: "#f5f5f9"
+            //color: model.sub ? "#FBFCFD" : "#f5f5f9";
             property bool edit: true;
             height: (!journal.hideSub && model.sub) ? 55 : (model.sub ? 0 : 55);
             visible: (!journal.hideSub && model.sub) || !model.sub; // TODO
-            color: normalnayaPeremennaya1.checked && normalnayaPeremennaya2.checked ? "lightgreen" : "#FBFCFD";
+            color: checkBox1.checked && checkBox2.checked ? "#b9f6ca" : (model.sub ? "#FBFCFD" : "#f5f5f9");
             x: -300;
             Behavior on x { Animation { duration: 150; } }
             onCompleted: { this.x = 0 }
@@ -76,7 +81,7 @@ Item {
                         //colors.hovered: "#A8AEEC";
                         colors.pressed: "#5D6578";
                         radius: 50;
-                        opacity: 0.4;
+                        opacity: (checkBox1.checked && checkBox2.checked) ? 0.6 : 0.4;
                         onClicked: { listModel.insert(model.index + 1, {"sub":true}) }
                     }
                 }
@@ -95,7 +100,7 @@ Item {
                         //colors.hovered: "#A8AEEC";
                         colors.pressed: "#5D6578";
                         radius: 50;
-                        opacity: 0.4;
+                        opacity: (checkBox1.checked && checkBox2.checked) ? 0.6 : 0.4;
                         onClicked: { deleg.edit = false }
                     }
                 }
@@ -175,12 +180,13 @@ Item {
                     height: 50;
                     width: parent.width / 9;
                     CheckboxInput {
-                        id: normalnayaPeremennaya1; anchors.centerIn: parent;
+                        id: checkBox1; 
+                        anchors.centerIn: parent;
                         width: 18;
                         height: 18;
                         enabled: deleg.edit;
                         // onCheckedChanged: {
-                        //     log("[normalnayaPeremennaya1]", value)
+                        //     log("[checkBox1]", value)
                         //     if (!model.sub) return
                         //     for (var i = model.index; i != 0; --i) {
                         //         console.log("цикл", listModel.get(i).sub)
@@ -198,7 +204,7 @@ Item {
                     CheckboxInput { 
                         width: 18;
                         height: 18;
-                        id: normalnayaPeremennaya2; anchors.centerIn: parent;
+                        id: checkBox2; anchors.centerIn: parent;
                         enabled: deleg.edit;
                     }
                 }
@@ -221,7 +227,7 @@ Item {
                     width: parent.width / 9;
 
                     AbstractButton {
-                        id: normalnayaPeremennaya5;
+                        id: opt;
                         anchors.centerIn: parent;
                         width: 30;
                         height: 30;
@@ -231,18 +237,18 @@ Item {
                         colors.hovered: "#A8AECC";
                         colors.pressed: "#5D6578";
                         radius: 50;
-                        opacity: 0.5;
+                        opacity: (checkBox1.checked && checkBox2.checked) ? 0.6 : 0.4;
                         onClicked: { 
-                            normalnayaPeremennaya4.visible = !normalnayaPeremennaya4.visible;
+                            optMenu.visible = !optMenu.visible;
                             //menuItem3.visible = !menuItem3.visible;
                         }
                     }
 
                     OptionMenu {
-                        id: normalnayaPeremennaya4;
-                        anchors.top: normalnayaPeremennaya5.bottom;
+                        id: optMenu;
+                        anchors.top: opt.bottom;
                         anchors.topMargin: 8;
-                        anchors.horizontalCenter: normalnayaPeremennaya5;
+                        anchors.horizontalCenter: opt;
                         visible: false;
                         z: 1;
                     }
@@ -251,26 +257,33 @@ Item {
         }
     }
 
-    Rectangle { // TODO
-                id: line;
-                color: "#FBFCFD";                
-                anchors.horizontalCenter: parent.horizontalCenter;
-                height: 5;
-                width: parent.width * 0.9;
-                anchors.top: listRect.bottom;
-            }
+    // Rectangle { // TODO
+    //             id: line;
+    //             color: "#FBFCFD";                
+    //             anchors.horizontalCenter: parent.horizontalCenter;
+    //             height: 5;
+    //             width: parent.width * 0.9;
+    //             anchors.top: listRect.bottom;
+    //         }
 
     Rectangle {
         id: listRect;
         anchors.top: addTaskButton.bottom;
         anchors.topMargin: 40;
-        color: "#d9e2e7";
+        color: "#FBFCFD";
         anchors.horizontalCenter: parent.horizontalCenter;
         width: parent.width * 0.9;
         height: 50;
-        effects.shadow.color: "#efefef";
-        effects.shadow.blur: 10;
-        effects.shadow.spread: 2;
+        // effects.shadow.color: "#efefef";
+        // effects.shadow.blur: 10;
+        // effects.shadow.spread: 2;
+
+        Rectangle {
+            width: 100%;
+            height: 2;
+            anchors.bottom: parent;
+            color: "#f5f5f9"
+        }
 
         Row {
             anchors.fill: parent;

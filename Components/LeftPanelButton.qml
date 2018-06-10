@@ -5,7 +5,7 @@ Rectangle {
     property string name;
     property string image;
     property string page;
-    color: hover.value ? (pressMixin.pressed ? "darkgray" : "lightgray") : "transparent";
+    color: hover.value ? (pressMixin.pressed ? "#f5f5f9" : "#FBFCFD") : "#f5f5f9";
     property alias rowWidth: row.width;
 
     MousePressMixin {

@@ -2,7 +2,7 @@ Rectangle {
     id: psPage;
     width: 100%;
     height: grid.height;
-    color: "#f5f5f9";
+    color: "#FBFCFD";
 
     EdContactInfo {
         id: editContact;
@@ -36,11 +36,13 @@ Rectangle {
             anchors.topMargin: 60;
             height: 220;
             width: grid.width > 820 ? insideRect.width * 0.7 : grid.width;
-            color: "#FBFCFD";
+            color: "#ffffff";
             clip: true;
-            effects.shadow.color: "#efeff7";
-		    effects.shadow.blur: 15;
-		    effects.shadow.spread: 15;
+            border.width: 1;
+            border.color: "#f5f5f9";
+            // effects.shadow.color: "#f5f5f9";
+		    // effects.shadow.blur: 15;
+		    // effects.shadow.spread: 15;
 
             Column {
                 id: mainAvatar;
@@ -181,7 +183,9 @@ Rectangle {
                             color: "#757575";
                         }
                         Text {
+                            anchors.centerIn: parent;
                             text: "9";
+                            //font.bold: true;
                             color: "#f48fb1";
                             font.pixelSize: 24;
                             //font.bold: true;
@@ -194,7 +198,9 @@ Rectangle {
                             color: "#757575";
                         }
                         Text {
+                            anchors.centerIn: parent;
                             text: "2";
+                            //font.bold:true;
                             color: "#f48fb1";
                             font.pixelSize: 24;
                         }
@@ -210,10 +216,12 @@ Rectangle {
             //anchors.topMargin: 60;
             width: grid.width > 750 ? mainInfo.width / 2.1 : grid.width;
             height: contactText.height + 40;
-            color: "#FBFCFD";
-            effects.shadow.color: "#f2f2f9";
-		    effects.shadow.blur: 10;
-		    effects.shadow.spread: 10;
+            color: "#ffffff";
+            border.width: 1;
+            border.color: "#f5f5f9";
+            // effects.shadow.color: "#f5f5f9";
+		    // effects.shadow.blur: 15;
+		    // effects.shadow.spread: 15;
             Column {                
                 anchors.verticalCenter: parent.verticalCenter;
                 anchors.left: parent.left;
@@ -270,10 +278,12 @@ Rectangle {
             //anchors.topMargin: 60;
             width: grid.width > 750 ? mainInfo.width / 2.1 : grid.width;
             height: contactText.height + 40;
-            color: "#FBFCFD";
-            effects.shadow.color: "#f2f2f9";
-		    effects.shadow.blur: 10;
-		    effects.shadow.spread: 10;
+            color: "#ffffff";
+            border.width: 1;
+            border.color: "#f5f5f9";
+            // effects.shadow.color: "#f5f5f9";
+		    // effects.shadow.blur: 15;
+		    // effects.shadow.spread: 15;
 
             AbstractButton {
                 icon.source: "images/edit.png";
@@ -353,10 +363,12 @@ Rectangle {
             //anchors.topMargin: 60;
             width: grid.width > 750 ? mainInfo.width / 2.1 : grid.width;
             height: contactText.height + 40;
-            color: "#FBFCFD";
-            effects.shadow.color: "#f2f2f9";
-		    effects.shadow.blur: 10;
-		    effects.shadow.spread: 10;
+            color: "#ffffff";
+            border.width: 1;
+            border.color: "#f5f5f9";
+            // effects.shadow.color: "#f5f5f9";
+		    // effects.shadow.blur: 15;
+		    // effects.shadow.spread: 15;
 
             AbstractButton {
                 icon.source: "images/edit.png";
@@ -421,10 +433,12 @@ Rectangle {
             //anchors.topMargin: 60;
             width: grid.width > 750 ? mainInfo.width / 2.1 : grid.width;
             height: contactText.height + 40;
-            color: "#FBFCFD";
-            effects.shadow.color: "#f2f2f9";
-		    effects.shadow.blur: 10;
-		    effects.shadow.spread: 10;
+            color: "#ffffff";
+            border.width: 1;
+            border.color: "#f5f5f9";
+            // effects.shadow.color: "#f5f5f9";
+		    // effects.shadow.blur: 15;
+		    // effects.shadow.spread: 15;
 
             AbstractButton {
                 icon.source: "images/edit.png";
@@ -668,6 +682,22 @@ Rectangle {
     //     color: "#757575";
     //     //font.bold: true;
     // }
+
+    Rectangle {
+        width: panel.width
+        height: psPage.height - panel.height
+        color: "#FBFCFD"
+        anchors.top: panel.bottom
+        anchors.right: parent.left
+
+        Rectangle {
+        width: 2;
+        height: 100%
+        color: "#f5f5f9"
+        anchors.right: parent.right
+    }
+
+    }
 
     NetworkRequest {
         id: networkReqPP;

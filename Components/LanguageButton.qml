@@ -17,7 +17,7 @@ WebItem {
 
     Text {
         id: textLang;
-        text: parent.lang === "uk" ? "украинский" : "русский";
+        text: parent.lang === "uk" ? "українська" : "русский";
         color: "#adb1ba";
         z: -1;
     }

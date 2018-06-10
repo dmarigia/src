@@ -1,13 +1,13 @@
 Item {
     id: editUser;
     anchors.fill: insideRect;
-    effects.shadow.blur: 6;  
+    effects.shadow.blur: 4;  
     effects.shadow.color: "#5D6578";
     
     Rectangle {
         anchors.fill: parent;  
         color: "#5D6578";
-        opacity: 0.7;
+        opacity: 0.6;
     }
 
     Rectangle {

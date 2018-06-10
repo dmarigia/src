@@ -45,7 +45,7 @@ Rectangle {
         }
         Text {
             text: qsTr("Выход");
-            font.pixelSize: 16;
+            font.pixelSize: 15;
             color: "#adb1ba";
         }
     }
