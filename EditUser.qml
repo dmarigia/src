@@ -520,16 +520,20 @@ Item {
                 // anchors.bottom: edInfoRect.bottom;
                 // anchors.bottomMargin: 60;
                 AbstractButton {
+                    id: cButton;
                     colors.default: "#C9D1EC";
                     text: "Скасувати";
+                    colors.hovered: "lightgrey";
                     radius: 50;
                     height: 40;
                     width: 120;
                     onClicked:  { editUser.visible = !editUser.visible }
                 }
                 AbstractButton {
+                    id: sButton;
                     colors.default: "#B0C5EF";
                     text: "Збергти";
+                    colors.hovered: "lightgrey";                    
                     radius: 50;
                     height: 40;
                     width: 120;
@@ -538,6 +542,20 @@ Item {
                      }
                 }
             }
+            // Rectangle {
+            //     anchors.top: cButton.bottom;
+            //     anchors.horizontalCenter: cButton;
+            //     width: cButton.width;
+            //     height: 2;
+            //     color: "#B0C5EF";
+            // }
+            // Rectangle {
+            //     anchors.top: sButton.bottom;
+            //     anchors.horizontalCenter: sButton;
+            //     width: sButton.width;
+            //     height: 2;
+            //     color: "#D6A7DF";
+            // }
         }
         Text {
             z: 100;

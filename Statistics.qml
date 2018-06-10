@@ -14,7 +14,7 @@ Rectangle {
     ChartBar {       
         id: chartBar
         anchors.verticalCenter: parent
-        height: parent.height / 1.3
+        height: parent.height / 1.4
         categories: ['Аспирант 1', 'Аспирант 2', 'Аспирант 3']
         opacity: 0.8
 

@@ -98,15 +98,24 @@ Rectangle {
         anchors.right: parent.right;
         anchors.topMargin: 40;
         anchors.rightMargin: 40;
-        colors.default: "#C9D1EC";
-        text: "Додати";
+        colors.default: "transparent";
+        //colors.hovered: "lightgrey";
+        colors.hovered: "#eff3fb";
+        text: "Додати користувача";
         radius: 50;
         height: 40;
-        width: 120;
+        width: 180;
         onClicked: {
             //elistModel.insert(0, {});
             editUser.visible = !editUser.visible;
         }
+    }
+    Rectangle {
+        anchors.bottom: addButton.bottom;
+        anchors.horizontalCenter: addButton;
+        width: addButton.width - 36;
+        height: 1;
+        color: "#B0C5EF";
     }
 
     ListView {
@@ -157,7 +166,7 @@ Rectangle {
                     width: parent.width / 2.7;
                     Text {
                         anchors.centerIn: parent;
-                        text: "Фамилия Имя Отчество";
+                        text: "Прізвище Ім'я По Батькові";
                     }
                 }
 
@@ -166,7 +175,7 @@ Rectangle {
                     width: parent.width / 4;
                     Text {
                         anchors.centerIn: parent;
-                        text: "Аспирант";
+                        text: "Аспірант";
                     }
                 }
 

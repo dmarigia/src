@@ -20,6 +20,7 @@ Rectangle {
             onClicked: { leftPanel.active ? leftPanel.close() :  leftPanel.open() }
             Behavior on background { ColorAnimation { duration: 200; } }
         }
+       
         Text {
             text: qsTr(app.pageName);
             font.pixelSize: 18;
@@ -28,10 +29,13 @@ Rectangle {
     }
 
     Row {
-        spacing: 10;
+        spacing: 6;
         anchors.right: infoPanel.right;
         anchors.rightMargin: 30;
         anchors.verticalCenter: parent.verticalCenter;
+        LanguageButton {
+            opacity: 0.7;            
+        }
         Image {
             source: "images/exit.png";
             height: 25;
@@ -44,6 +48,7 @@ Rectangle {
             }
         }
         Text {
+            anchors.verticalCenter: parent
             text: qsTr("Выход");
             font.pixelSize: 15;
             color: "#adb1ba";

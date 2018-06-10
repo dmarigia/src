@@ -47,7 +47,6 @@ MainItem {
         InfoPanel {
             id: infoPanel;
             effects.shadow.blur: 4;
-            LanguageButton {}
         }
 
         Loader { // TODO: change container-like

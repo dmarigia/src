@@ -115,7 +115,7 @@ Rectangle {
                     Row {
                         spacing: 5;
                         Text {
-                            text: "Степень: ";
+                            text: "Ступінь: ";
                             color: "#757575";
                         }
                         Text {
@@ -143,7 +143,7 @@ Rectangle {
                             color: "#757575";
                         }
                         Text {
-                            text: ("специальность");
+                            text: ("спеціальність");
                             color: "#212121";
                         }
                     }
@@ -244,7 +244,7 @@ Rectangle {
                 Column {
                     spacing: 5;
                     Text {
-                        text: "Институт";
+                        text: "Інститут";
                         color: "#757575";
                     }
                     Text {
@@ -258,7 +258,7 @@ Rectangle {
                 Column {
                     spacing: 5;
                     Text {
-                        text: "Руководитель";
+                        text: "Керівник";
                         color: "#757575";
                     }
                     Text {
@@ -287,7 +287,9 @@ Rectangle {
 
             AbstractButton {
                 icon.source: "images/edit.png";
-                radius: 50;
+                radius: 100;
+                width: 35;
+                height: 35;
                 icon.width: 20;
                 icon.height: 20;
                 anchors.right: parent.right;
@@ -295,7 +297,7 @@ Rectangle {
                 anchors.topMargin: 15;
                 anchors.rightMargin: 15;
                 opacity: 0.4;
-                colors.hovered: "#A8AEEC";
+                colors.hovered: "#f5f5f9";
                 onClicked: { editEdu.visible = !editEdu.visible }
             }
             Column {                
@@ -372,7 +374,9 @@ Rectangle {
 
             AbstractButton {
                 icon.source: "images/edit.png";
-                radius: 50;
+                radius: 100;
+                width: 35;
+                height: 35;
                 icon.width: 20;
                 icon.height: 20;
                 anchors.right: parent.right;
@@ -380,7 +384,7 @@ Rectangle {
                 anchors.topMargin: 15;
                 anchors.rightMargin: 15;
                 opacity: 0.4;
-                colors.hovered: "#A8AEEC";
+                colors.hovered: "#f5f5f9";
                 onClicked: { editInfo.visible = !editInfo.visible }
             }
             Column {                
@@ -442,7 +446,9 @@ Rectangle {
 
             AbstractButton {
                 icon.source: "images/edit.png";
-                radius: 50;
+               radius: 100;
+                width: 35;
+                height: 35;
                 icon.width: 20;
                 icon.height: 20;
                 anchors.right: parent.right;
@@ -450,7 +456,7 @@ Rectangle {
                 anchors.topMargin: 15;
                 anchors.rightMargin: 15;
                 opacity: 0.4;
-                colors.hovered: "#A8AEEC";
+                colors.hovered: "#f5f5f9";
                 onClicked: { editContact.visible = !editContact.visible }
             }
             Column {      
@@ -518,6 +524,7 @@ Rectangle {
             opacity: 0.6;
             AbstractButton {
                 icon.source: "images/orcid.svg";
+                colors.hovered: "#DCDCE0";
                 width: 55;
                 height: 55;
                 radius: 100;
@@ -527,6 +534,7 @@ Rectangle {
             }
             AbstractButton {
                 icon.source: "images/scopus.svg";
+                colors.hovered: "#DCDCE0";
                 width: 55;
                 height: 55;
                 radius: 100;
@@ -536,6 +544,7 @@ Rectangle {
             }
             AbstractButton {
                 icon.source: "images/ResearcherID.svg";
+                colors.hovered: "#DCDCE0";
                 width: 55;
                 height: 55;
                 radius: 100;
@@ -545,6 +554,7 @@ Rectangle {
             }
             AbstractButton {
                 icon.source: "images/gscholar.png";
+                colors.hovered: "#DCDCE0";
                 width: 55;
                 height: 55;
                 radius: 100;

@@ -1,6 +1,6 @@
 WebItem {
-    anchors.right: parent.right;
-    anchors.rightMargin: 20;
+    //anchors.right: parent.right;
+    //anchors.rightMargin: 20;
     width: textLang.width;
     height: 14;
     property string lang;
@@ -15,10 +15,13 @@ WebItem {
         this.lang = lang
     }
 
-    Text {
+    Image {
         id: textLang;
-        text: parent.lang === "uk" ? "українська" : "русский";
-        color: "#adb1ba";
+        source: parent.lang === "uk" ? "images/ukr.png" : "images/ukr.png";
+        height: 25;
+        width: 35;
+        //text: parent.lang === "uk" ? "українська" : "русский";
+        //color: "#adb1ba";
         z: -1;
     }
 }

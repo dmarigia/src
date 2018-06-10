@@ -11,6 +11,7 @@ Item {
         effects.shadow.blur: 5
         effects.shadow.spread: 3
         z: 0
+        Behavior on width { Animation { duration: 200; } }
 
         MenuItem {
             position: AbstractButton.Left

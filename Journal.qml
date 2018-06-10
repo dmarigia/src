@@ -5,9 +5,30 @@ Item {
     height: parent.height;
     property bool hideSub: false;
 
+    
+
     AbstractButton {
-        text: parent.hideSub;
+        id: subButton;
+        anchors.top: parent.top;
+        anchors.left: parent.left;
+        anchors.topMargin: 40;
+        anchors.leftMargin: 40;
+        height: 40;
+        radius: 50;
+        colors.hovered: "#faf6fb";
+        colors.default: "transparent";
+        text: "Приховати підпункти";
+        width: 180;
+        //text: parent.hideSub;
         onClicked: { journal.hideSub = !journal.hideSub }
+    }
+
+    Rectangle {
+        anchors.bottom: subButton.bottom;
+        anchors.horizontalCenter: subButton;
+        width: subButton.width - 36;
+        height: 1;
+        color: "#D6A7DF";
     }
 
     AbstractButton {
@@ -16,14 +37,23 @@ Item {
         anchors.right: parent.right;
         anchors.topMargin: 40;
         anchors.rightMargin: 40;
-        colors.default: "#C9D1EC";
-        text: "Добавить";
+        colors.hovered: "#eff3fb";
+        colors.default: "transparent";
+        text: "Додати завдання";
         radius: 50;
         height: 40;
-        width: 120;
+        width: 160;
         onClicked: {
             listModel.insert(0, {"sub": false})
         }
+    }
+
+    Rectangle {
+        anchors.bottom: addTaskButton.bottom;
+        anchors.horizontalCenter: addTaskButton;
+        width: addTaskButton.width - 34;
+        height: 1;
+        color: "#B0C5EF";
     }
     
     ListView {
@@ -115,7 +145,7 @@ Item {
                         enabled: deleg.edit;
                         width: parent.width - 20;                     
                         anchors.bottom: parent.bottom;
-                        placeholder.text: model.sub ? "Подзадание ": "Задание ";
+                        placeholder.text: model.sub ? "Назва підпункту": "Назва завдання";
                         materialColor: "#A8AEEC";
                         font.pixelSize: 14;
                     }
@@ -147,7 +177,6 @@ Item {
                             width: 130;
                             height: 22;
                             color: "black";
-                            value: "";
                             backgroundColor: "#E8E8E9";
                             font.pixelSize: 14;
                             radius: 7;
