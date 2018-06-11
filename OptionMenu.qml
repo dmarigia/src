@@ -56,13 +56,13 @@ Item {
     }
 
     Triangle {
-        anchors.top: menu;
-        anchors.topMargin: -8;
-        height: 8;
-        effects.shadow.y: -5;
-        effects.shadow.x: -5;
-        effects.shadow.color: '#efefef';
-        effects.shadow.blur: 5;
-        effects.shadow.spread: 3;
+        anchors.top: menu
+        anchors.topMargin: -8
+        height: 8
+        effects.shadow.y: -5
+        effects.shadow.x: -5
+        effects.shadow.color: '#efefef'
+        effects.shadow.blur: 5
+        effects.shadow.spread: 3
     }
 }

@@ -5,10 +5,10 @@ Rectangle {
         anchors.horizontalCenter: parent
         text: 'Статистика виконання завдань'
         color: '#2b3857'
-        anchors.bottom: chartBar.top;
-        font.pixelSize: 16;
-        font.bold: true;
-        anchors.bottomMargin: 25;
+        anchors.bottom: chartBar.top
+        font.pixelSize: 16
+        font.bold: true
+        anchors.bottomMargin: 25
     }
 
     NetworkRequest {
@@ -35,14 +35,14 @@ Rectangle {
         opacity: 0.8
 
         BarData {
-            id: barData1;
+            id: barData1
             values: 5 // это не надо копировать (мы будем values с сервера ТИПА ТЯГАТЬ)
             color: '#B0C5EF'
             label: 'Завдань у процесі'
         }
 
         BarData {
-            id: barData2;
+            id: barData2
             values: 5 // это не надо копировать
             color: '#D6A7DF'
             label: 'Завдань виповнено'
