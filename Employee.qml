@@ -3,7 +3,7 @@
 Rectangle {
     id: employee;
     width: 100%;
-    color: "#fbfcfd";
+    color: '#fbfcfd';
     height: listik.height + 50 * 3 + addButton.height + listRect.height;
 
     Loader {
@@ -23,8 +23,8 @@ Rectangle {
         width: 60 + tSearch.width;
         radius: 50;
         border.width: 1;
-        border.color: "#f5f5f9";
-        color: "white";
+        border.color: '#f5f5f9';
+        color: 'white';
 
         Row {
             anchors.verticalCenter: parent.verticalCenter;
@@ -36,12 +36,12 @@ Rectangle {
                 anchors.left: search.left;
                 anchors.leftMargin: 5;
                 opacity: 0.6;
-                icon.source: "images/search.png";
+                icon.source: 'images/search.png';
                 height: 37;
                 width: 37;
                 icon.width: 30;
                 icon.height: 30;
-                colors.hovered: "#A8AEEC";
+                colors.hovered: '#A8AEEC';
                 radius: 100;
 
                 onClicked: {
@@ -57,15 +57,15 @@ Rectangle {
             //     anchors.verticalCenter: parent.verticalCenter;
             //     height: 30;
             //     width: 1;
-            //     color: "lightgray";
+            //     color: 'lightgray';
             // }
 
             Text {
                 id: tSearch;
                 visible: true;
                 anchors.verticalCenter: parent.verticalCenter;
-                text: "Пошук";
-                color: "#A7B0C4";
+                text: 'Пошук';
+                color: '#A7B0C4';
             }
 
             TextInputMaterial {
@@ -75,9 +75,9 @@ Rectangle {
                 width: 0;
                 anchors.bottom: search.bottom;
                 anchors.bottomMargin: -4;
-                materialColor: "#A8AEEC";
+                materialColor: '#A8AEEC';
                 font.pixelSize: 14;
-                placeholder.text: "Пошук";
+                placeholder.text: 'Пошук';
                 Behavior on x { Animation { duration: 1000; } }
                 Behavior on width { Animation { duration: 1000; } }
 
@@ -96,8 +96,8 @@ Rectangle {
     //     anchors.top: parent.top;
     //     anchors.topMargin: 40;
     //     anchors.horizontalCenter: parent;
-    //     colors.default: "white";
-    //     text: "Сортування";
+    //     colors.default: 'white';
+    //     text: 'Сортування';
     //     radius: 50;
     //     height: 40;
     //     width: 120;
@@ -109,10 +109,10 @@ Rectangle {
         anchors.right: parent.right;
         anchors.topMargin: 40;
         anchors.rightMargin: 40;
-        colors.default: "transparent";
-        //colors.hovered: "lightgrey";
-        colors.hovered: "#eff3fb";
-        text: "Додати користувача";
+        colors.default: 'transparent';
+        //colors.hovered: 'lightgrey';
+        colors.hovered: '#eff3fb';
+        text: 'Додати користувача';
         radius: 50;
         height: 40;
         width: 180;
@@ -127,7 +127,7 @@ Rectangle {
         anchors.horizontalCenter: addButton;
         width: addButton.width - 36;
         height: 1;
-        color: "#B0C5EF";
+        color: '#B0C5EF';
     }
 
     ListView {
@@ -136,7 +136,7 @@ Rectangle {
         anchors.topMargin: 20
         anchors.horizontalCenter: parent.horizontalCenter;
         width: parent.width * 0.85;
-        // effects.shadow.color: "#efefef";
+        // effects.shadow.color: '#efefef';
         // effects.shadow.blur: 10;
         // effects.shadow.spread: 10;
         height: contentHeight;
@@ -168,10 +168,10 @@ Rectangle {
             height: 100;
             x: -300;
             radius: 5;
-            //color: "#FBFCFD";
+            //color: '#FBFCFD';
             border.width: 2;
-            border.color: "#f5f5f9"
-            color: (model.index % 2) ? "#FBFCFD" : "#f5f5f9";
+            border.color: '#f5f5f9'
+            color: (model.index % 2) ? '#FBFCFD' : '#f5f5f9';
             Behavior on x { Animation { duration: 150; } }
             onCompleted: { this.x = 0 }
 
@@ -194,7 +194,7 @@ Rectangle {
 
                     Image {
                         anchors.centerIn: parent;
-                        source: "images/avatarbig45.png";
+                        source: 'images/avatarbig45.png';
                         height: 45;
                         width: 45;
                         opacity: 0.4;
@@ -207,7 +207,7 @@ Rectangle {
 
                     Text {
                         anchors.centerIn: parent;
-                        text: model.name; // "Прізвище Ім'я По Батькові";
+                        text: model.name; // 'Прізвище Ім'я По Батькові';
                     }
                 }
 
@@ -217,7 +217,7 @@ Rectangle {
 
                     Text {
                         anchors.centerIn: parent;
-                        text: model.role; // "Аспірант";
+                        text: model.role; // 'Аспірант';
                     }
                 }
 
@@ -231,11 +231,11 @@ Rectangle {
                         anchors.centerIn: parent;
                         width: 30;
                         height: 30;
-                        icon.source: "images/options.png";
+                        icon.source: 'images/options.png';
                         icon.width: 25;
                         icon.height: 25;
-                        colors.hovered: "#A8AEEC";
-                        colors.pressed: "#5D6578";
+                        colors.hovered: '#A8AEEC';
+                        colors.pressed: '#5D6578';
                         radius: 50;
                         opacity: 0.5;
                         onClicked: { optMenu.visible = !optMenu.visible /*; menuItem3.visible = !menuItem3.visible */ }
@@ -254,10 +254,10 @@ Rectangle {
 
             AbstractButton {
                 anchors.fill: parent;
-                colors.hovered: "#dcdce0";
+                colors.hovered: '#dcdce0';
                 opacity: 0.2;
                 onClicked: {
-                    app.page = "Journal";
+                    app.page = 'Journal';
                 }
             }
         }
@@ -267,12 +267,12 @@ Rectangle {
         id: listRect;
         anchors.top: addButton.bottom;
         anchors.topMargin: 40;
-        color: "#FBFCFD";
+        color: '#FBFCFD';
         anchors.horizontalCenter: parent.horizontalCenter;
         width: parent.width * 0.85;
         height: 50;
         // radius: 5;
-        // effects.shadow.color: "#efefef";
+        // effects.shadow.color: '#efefef';
         // effects.shadow.blur: 10;
         // effects.shadow.spread: 2;
 
@@ -280,7 +280,7 @@ Rectangle {
             width: 100%;
             height: 2;
             anchors.bottom: parent;
-            color: "#f5f5f9"
+            color: '#f5f5f9'
         }
 
         Row {
@@ -299,9 +299,9 @@ Rectangle {
                     anchors.fill: parent;
                     verticalAlignment: Text.AlignVCenter;
                     horizontalAlignment: Text.AlignHCenter;
-                    text: "ІМ'Я";
+                    text: 'ІМ\'Я';
                     font.pixelSize: 14;
-                    color: "#73818e";
+                    color: '#73818e';
                     font.bold: true;
                 }
             }
@@ -314,9 +314,9 @@ Rectangle {
                     anchors.fill: parent;
                     verticalAlignment: Text.AlignVCenter;
                     horizontalAlignment: Text.AlignHCenter;
-                    text: "ПРАВА ДОСТУПУ";
+                    text: 'ПРАВА ДОСТУПУ';
                     font.pixelSize: 14;
-                    color: "#73818e";
+                    color: '#73818e';
                     font.bold: true;
                 }
             }
@@ -329,9 +329,9 @@ Rectangle {
                     anchors.fill: parent;
                     verticalAlignment: Text.AlignVCenter;
                     horizontalAlignment: Text.AlignHCenter;
-                    text: "ОПЦІЇ";
+                    text: 'ОПЦІЇ';
                     font.pixelSize: 14;
-                    color: "#73818e";
+                    color: '#73818e';
                     font.bold: true;
                 }
             }

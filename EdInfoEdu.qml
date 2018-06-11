@@ -6,7 +6,7 @@ Item {
 
     Rectangle {
         anchors.fill: parent;
-        color: "#5D6578";
+        color: '#5D6578';
         opacity: 0.7;
         MousePressMixin {
             onPressedChanged: { editLoader.source = '' }
@@ -15,10 +15,10 @@ Item {
 
     Rectangle {
         id: edEduRect;
-        color: "#FBFCFD";
+        color: '#FBFCFD';
         radius: 4;
         anchors.centerIn: parent;
-        effects.shadow.color: "#5D6578";
+        effects.shadow.color: '#5D6578';
         effects.shadow.blur: 10;
         effects.shadow.spread: 2;
         width: 450;
@@ -36,14 +36,14 @@ Item {
                 spacing: 10;
 
                 Text {
-                    color: "#A7B0C4";
-                    text: "Год обучения";
+                    color: '#A7B0C4';
+                    text: 'Год обучения';
                 }
 
                 TextInputMaterial {
                     width: edEduRect.width - 70;
-                    placeholder.text: "Год обучения";
-                    materialColor: "#A8AEEC";
+                    placeholder.text: 'Год обучения';
+                    materialColor: '#A8AEEC';
                 }
             }
 
@@ -51,14 +51,14 @@ Item {
                 spacing: 10;
 
                 Text {
-                    color: "#A7B0C4";
-                    text: "Тема научной работы";
+                    color: '#A7B0C4';
+                    text: 'Тема научной работы';
                 }
 
                 TextInputMaterial {
                     width: edEduRect.width - 70;
-                    placeholder.text: "Тема научной работы";
-                    materialColor: "#A8AEEC";
+                    placeholder.text: 'Тема научной работы';
+                    materialColor: '#A8AEEC';
                 }
             }
 
@@ -66,14 +66,14 @@ Item {
                 spacing: 10;
 
                 Text {
-                    color: "#A7B0C4";
-                    text: "Основа обучения";
+                    color: '#A7B0C4';
+                    text: 'Основа обучения';
                 }
 
                 TextInputMaterial {
                     width: edEduRect.width - 70;
-                    placeholder.text: "Основа обучения";
-                    materialColor: "#A8AEEC";
+                    placeholder.text: 'Основа обучения';
+                    materialColor: '#A8AEEC';
                 }
             }
 
@@ -81,14 +81,14 @@ Item {
                 spacing: 10;
 
                 Text {
-                    color: "#A7B0C4";
-                    text: "Форма обучения";
+                    color: '#A7B0C4';
+                    text: 'Форма обучения';
                 }
 
                 TextInputMaterial {
                     width: edEduRect.width - 70;
-                    placeholder.text: "Форма обучения";
-                    materialColor: "#A8AEEC";
+                    placeholder.text: 'Форма обучения';
+                    materialColor: '#A8AEEC';
                 }
             }
         }
@@ -101,8 +101,8 @@ Item {
             anchors.rightMargin: 35;
 
             AbstractButton {
-                colors.default: "#C9D1EC";
-                text: "Отмена";
+                colors.default: '#C9D1EC';
+                text: 'Отмена';
                 radius: 50;
                 height: 40;
                 width: 120;
@@ -110,8 +110,8 @@ Item {
             }
 
             AbstractButton {
-                colors.default: "#B0C5EF";
-                text: "Сохранить";
+                colors.default: '#B0C5EF';
+                text: 'Сохранить';
                 radius: 50;
                 height: 40;
                 width: 120;

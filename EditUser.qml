@@ -93,7 +93,7 @@ Item {
 
                             TextInputMaterial {
                                 id: inputPib;
-                                placeholder.text: "Прізвище Ім'я По батькові";
+                                placeholder.text: "Прізвище Ім\'я По батькові";
                                 materialColor: "#A8AEEC";
                                 font.pixelSize: 15;
                                 width: 400;

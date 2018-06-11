@@ -9,14 +9,14 @@ MainItem {
     anchors.fill: parent;
     property bool disableBackend: true;
 
-    color: "#e7eaef";
-    title: qsTr("Личный кабинет") + " - " + pageName;
-    property string page: "PersonalPage";
-    property string pageName: qsTr("Личная информация"); // TODO: auto
+    color: '#e7eaef';
+    title: qsTr('Личный кабинет') + ' - ' + pageName;
+    property string page: 'PersonalPage';
+    property string pageName: qsTr('Личная информация'); // TODO: auto
 
     Rectangle {
         id: insideRect;
-        color: "#fbfcfd";
+        color: '#fbfcfd';
         anchors.centerIn: parent;
         width: app.mobile ? app.width : (app.width <= 1280 ? app.width * 0.9 : (app.width <= 1600 && app.width >= 1280  ? app.width * 0.82 : app.width * 0.72)); //TODO
         height: app.height;
@@ -35,7 +35,7 @@ MainItem {
 
         Loader { // TODO: change container-like
             id: loader;
-            source: "src." + app.page;
+            source: 'src.' + app.page;
             anchors.top: infoPanel.bottom;
             anchors.bottom: parent.bottom;
             anchors.left: app.mobile ? parent.left : leftPanel.right;
@@ -46,7 +46,7 @@ MainItem {
     // background for mobile menu
     Rectangle {
         anchors.fill: parent;
-        color: "darkgray";
+        color: 'darkgray';
         opacity: 0.6;
         visible: leftPanel.active;
         fixed: true;
@@ -62,14 +62,14 @@ MainItem {
     // test config
     GlobalSettings {
         id: settings;
-        avatarPath: "https://cameralabs.org/media/camera/avgust/6avgust/53_5c4ee0465a6638d42643ed86cb2de396.jpg";
+        avatarPath: 'https://cameralabs.org/media/camera/avgust/6avgust/53_5c4ee0465a6638d42643ed86cb2de396.jpg';
     }
 
     LocalStorage {
         id: localStorage;
 
         function qset(key, value) {
-            localStorage.set(key, value, function() { log(key + " error") })
+            localStorage.set(key, value, function() { log(key + ' error') })
         }
     }
 
@@ -77,8 +77,8 @@ MainItem {
 //    onCompleted: {
 //        if (this.disableBackend) return
 //        var token, email
-//        localStorage.getOrDefault("token", function(arg) { token = arg }, "")
-//        localStorage.getOrDefault("email", function(arg) { email = arg }, "")
+//        localStorage.getOrDefault('token', function(arg) { token = arg }, '')
+//        localStorage.getOrDefault('email', function(arg) { email = arg }, '')
 //        console.log(token, email, email.length)
 //        if (!email.length || !token.length)
 //            loginPage.visible = true

@@ -6,7 +6,7 @@ Item {
 
     Rectangle {
         anchors.fill: parent;
-        color: "#5D6578";
+        color: '#5D6578';
         opacity: 0.7;
         MousePressMixin {
             onPressedChanged: { editLoader.source = '' }
@@ -15,10 +15,10 @@ Item {
 
     Rectangle {
         id: edInfoRect;
-        color: "#FBFCFD";
+        color: '#FBFCFD';
         radius: 4;
         anchors.centerIn: parent;
-        effects.shadow.color: "#5D6578";
+        effects.shadow.color: '#5D6578';
         effects.shadow.blur: 10;
         effects.shadow.spread: 2;
         width: 450;
@@ -36,14 +36,14 @@ Item {
                 spacing: 10;
 
                 Text {
-                    color: "#A7B0C4";
-                    text: "Дата рождения";
+                    color: '#A7B0C4';
+                    text: 'Дата рождения';
                 }
 
                 TextInputMaterial {
                     width: edInfoRect.width - 70;
-                    placeholder.text: "Дата рождения";
-                    materialColor: "#A8AEEC";
+                    placeholder.text: 'Дата рождения';
+                    materialColor: '#A8AEEC';
                 }
             }
 
@@ -51,14 +51,14 @@ Item {
                 spacing: 10;
 
                 Text {
-                    color: "#A7B0C4";
-                    text: "Семейное положение";
+                    color: '#A7B0C4';
+                    text: 'Семейное положение';
                 }
 
                 TextInputMaterial {
                     width: edInfoRect.width - 70;
-                    placeholder.text: "Семейное положение";
-                    materialColor: "#A8AEEC";
+                    placeholder.text: 'Семейное положение';
+                    materialColor: '#A8AEEC';
                 }
             }
 
@@ -66,14 +66,14 @@ Item {
                 spacing: 10;
 
                 Text {
-                    color: "#A7B0C4";
-                    text: "Дети";
+                    color: '#A7B0C4';
+                    text: 'Дети';
                 }
 
                 TextInputMaterial {
                     width: edInfoRect.width - 70;
-                    placeholder.text: "Дети";
-                    materialColor: "#A8AEEC";
+                    placeholder.text: 'Дети';
+                    materialColor: '#A8AEEC';
                 }
             }
         }
@@ -86,8 +86,8 @@ Item {
             anchors.rightMargin: 35;
 
             AbstractButton {
-                colors.default: "#C9D1EC";
-                text: "Отмена";
+                colors.default: '#C9D1EC';
+                text: 'Отмена';
                 radius: 50;
                 height: 40;
                 width: 120;
@@ -95,8 +95,8 @@ Item {
             }
 
             AbstractButton {
-                colors.default: "#B0C5EF";
-                text: "Сохранить";
+                colors.default: '#B0C5EF';
+                text: 'Сохранить';
                 radius: 50;
                 height: 40;
                 width: 120;

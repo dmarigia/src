@@ -3,8 +3,8 @@ Rectangle {
     color: '#FBFCFD'
     Text {
         anchors.horizontalCenter: parent
-        text: "Статистика виконання завдань"
-        color: "#2b3857"
+        text: 'Статистика виконання завдань'
+        color: '#2b3857'
         anchors.bottom: chartBar.top;
         font.pixelSize: 16;
         font.bold: true;

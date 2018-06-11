@@ -7,7 +7,7 @@ Item {
         id: menu
         visible: true
         menuMode: false
-        effects.shadow.color: "#efefef"
+        effects.shadow.color: '#efefef'
         effects.shadow.blur: 5
         effects.shadow.spread: 3
         z: 0
@@ -15,11 +15,11 @@ Item {
 
         MenuItem {
             position: AbstractButton.Left
-            icon.source: "images/edit.png"
+            icon.source: 'images/edit.png'
             icon.height: 20
             icon.width: 20
             icon.opacity: 0.4
-            text: qsTr("Редактировать");
+            text: qsTr('Редактировать');
             onTriggered: {
                 deleg.edit = !deleg.edit
                 deleg.openEditUser()
@@ -29,11 +29,11 @@ Item {
 
         MenuItem {
             position: AbstractButton.Left
-            icon.source: "images/delete.png"
+            icon.source: 'images/delete.png'
             icon.height: 20
             icon.width: 20
             icon.opacity: 0.4
-            text: qsTr("Удалить");
+            text: qsTr('Удалить');
             onTriggered: {
                 deleg.remove()
                 optionMenu.visible = false
@@ -44,11 +44,11 @@ Item {
         //     id: menuItem3
         //     visible: false
         //     position: AbstractButton.Left
-        //     icon.source: "images/delete.png"
+        //     icon.source: 'images/delete.png'
         //     icon.height: 20
         //     icon.width: 20
         //     icon.opacity: 0.4
-        //     text: "Перегляд завдань"
+        //     text: 'Перегляд завдань'
         //     onTriggered: {
         //         optionMenu.visible = false
         //     }
@@ -61,7 +61,7 @@ Item {
         height: 8;
         effects.shadow.y: -5;
         effects.shadow.x: -5;
-        effects.shadow.color: "#efefef";
+        effects.shadow.color: '#efefef';
         effects.shadow.blur: 5;
         effects.shadow.spread: 3;
     }

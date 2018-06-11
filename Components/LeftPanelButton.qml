@@ -5,7 +5,7 @@ Rectangle {
     property string name;
     property string image;
     property string page;
-    color: hover.value ? (pressMixin.pressed ? "#f5f5f9" : "#FBFCFD") : "#f5f5f9";
+    color: hover.value ? (pressMixin.pressed ? '#f5f5f9' : '#FBFCFD') : '#f5f5f9';
     property alias rowWidth: row.width;
 
     MousePressMixin {
@@ -19,7 +19,7 @@ Rectangle {
 
     HoverMixin {
         id: hover;
-        cursor: "pointer";
+        cursor: 'pointer';
     }
 
     Row {
@@ -35,7 +35,7 @@ Rectangle {
         Image {
             height: 25;
             width: 25;
-            source: "images/" + leftButton.image;
+            source: 'images/' + leftButton.image;
             opacity: 0.4;
         }
 
@@ -43,7 +43,7 @@ Rectangle {
             text: leftButton.name;
             anchors.verticalCenter: parent.verticalCenter;
             font.pixelSize: 16;
-            color: "#212121";
+            color: '#212121';
         }
     }
 }
