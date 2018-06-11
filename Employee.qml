@@ -1,15 +1,17 @@
+/*** @using { src.EditUser} **/
+
 Rectangle {
     id: employee;
     width: 100%;
     color: "#fbfcfd";
-    height: listik.height + 50 * 3 + addButton.height + listRect.height;   
+    height: listik.height + 50 * 3 + addButton.height + listRect.height;
 
-    EditUser {
-        id: editUser;
-        anchors.centerIn: parent;
-        visible: false;
+    Loader {
+        id: emplLoader;
+        anchors.fill: parent
         z: 1;
-    } 
+        mouseEnabled: !!source;
+    }
 
     Rectangle {
         id: search;
@@ -24,9 +26,10 @@ Rectangle {
         border.color: "#f5f5f9";
         color: "white";
 
-        Row {            
+        Row {
             anchors.verticalCenter: parent.verticalCenter;
             spacing: 10;
+
             AbstractButton {
                 anchors.verticalCenter: parent.verticalCenter;
                 id: searchButton;
@@ -40,6 +43,7 @@ Rectangle {
                 icon.height: 30;
                 colors.hovered: "#A8AEEC";
                 radius: 100;
+
                 onClicked: {
                     textSearch.width = textSearch.width === 180 ? 40 : 180;
                     search.width = search.width === (67 + textSearch.width) ? (60 + tSearch.width) : (67 + textSearch.width);
@@ -47,6 +51,7 @@ Rectangle {
                     tSearch.visible = !tSearch.visible;
                 }
             }
+
             // Rectangle {
             //     id: line;
             //     anchors.verticalCenter: parent.verticalCenter;
@@ -54,6 +59,7 @@ Rectangle {
             //     width: 1;
             //     color: "lightgray";
             // }
+
             Text {
                 id: tSearch;
                 visible: true;
@@ -61,6 +67,7 @@ Rectangle {
                 text: "Пошук";
                 color: "#A7B0C4";
             }
+
             TextInputMaterial {
                 clip: true;
                 visible: false;
@@ -73,9 +80,9 @@ Rectangle {
                 placeholder.text: "Пошук";
                 Behavior on x { Animation { duration: 1000; } }
                 Behavior on width { Animation { duration: 1000; } }
-                
+
                 onTextChanged: { // TODO: timer
-                	elistProxy.setFilter(function(item) { return item.name.toLowerCase().indexOf(value.toLowerCase()) > -1 })
+                    elistProxy.setFilter(function(item) { return item.name.toLowerCase().indexOf(value.toLowerCase()) > -1 })
                 }
             }
         }
@@ -109,11 +116,12 @@ Rectangle {
         radius: 50;
         height: 40;
         width: 180;
+
         onClicked: {
-            //elistModel.insert(0, {});
-            editUser.visible = !editUser.visible;
+            emplLoader.source = 'src.EditUser'
         }
     }
+
     Rectangle {
         anchors.bottom: addButton.bottom;
         anchors.horizontalCenter: addButton;
@@ -183,6 +191,7 @@ Rectangle {
                 Item {
                     height: 100;
                     width: parent.width / 5;
+
                     Image {
                         anchors.centerIn: parent;
                         source: "images/avatarbig45.png";
@@ -195,6 +204,7 @@ Rectangle {
                 Item {
                     height: 100;
                     width: parent.width / 2.7;
+
                     Text {
                         anchors.centerIn: parent;
                         text: model.name; // "Прізвище Ім'я По Батькові";
@@ -204,6 +214,7 @@ Rectangle {
                 Item {
                     height: 100;
                     width: parent.width / 4;
+
                     Text {
                         anchors.centerIn: parent;
                         text: model.role; // "Аспірант";
@@ -213,6 +224,7 @@ Rectangle {
                 Item {
                     height: 100;
                     width: parent.width / 5;
+
                     AbstractButton {
                         z: 1;
                         id: opt;
@@ -239,6 +251,7 @@ Rectangle {
                     }
                 }
             }
+
             AbstractButton {
                 anchors.fill: parent;
                 colors.hovered: "#dcdce0";
@@ -262,12 +275,14 @@ Rectangle {
         // effects.shadow.color: "#efefef";
         // effects.shadow.blur: 10;
         // effects.shadow.spread: 2;
+
         Rectangle {
             width: 100%;
             height: 2;
             anchors.bottom: parent;
             color: "#f5f5f9"
         }
+
         Row {
             anchors.fill: parent;
 
@@ -279,6 +294,7 @@ Rectangle {
             Item {
                 height: 50;
                 width: parent.width / 2.7;
+
                 Text {
                     anchors.fill: parent;
                     verticalAlignment: Text.AlignVCenter;
@@ -293,6 +309,7 @@ Rectangle {
             Item {
                 height: 50;
                 width: parent.width / 4;
+
                 Text {
                     anchors.fill: parent;
                     verticalAlignment: Text.AlignVCenter;
@@ -307,6 +324,7 @@ Rectangle {
             Item {
                 height: 50;
                 width: parent.width / 5;
+
                 Text {
                     anchors.fill: parent;
                     verticalAlignment: Text.AlignVCenter;

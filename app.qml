@@ -1,9 +1,6 @@
 /*** @using { src.PersonalPage } **/
 /*** @using { src.Journal } **/
 /*** @using { src.Employee } **/
-/*** @using { src.OptionMenu } **/
-/*** @using { src.EdContactInfo } **/
-/*** @using { src.EditUser } **/
 /*** @using { src.Statistics } **/
 /*** @using { src.Reports } **/
 

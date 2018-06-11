@@ -1,13 +1,16 @@
 Item {
     id: editUser;
-    anchors.fill: insideRect;
-    effects.shadow.blur: 4;  
-    effects.shadow.color: "#5D6578";
-    
+    fixed: true;
+    width: app.width;
+    height: app.height;
+
     Rectangle {
-        anchors.fill: parent;  
+        anchors.fill: parent;
         color: "#5D6578";
-        opacity: 0.6;
+        opacity: 0.7;
+        MousePressMixin {
+            onPressedChanged: { emplLoader.source = '' }
+        }
     }
 
     Form { // добавление. для редактирования по идеи тоже самое, но добавить .Post
@@ -27,12 +30,15 @@ Item {
         effects.shadow.blur: 10;
         effects.shadow.spread: 2;
         width: 850;
-        height: 700;        
+        height: 700;
+
         OverflowMixin {}
-        Column {             
+
+        Column {
             anchors.horizontalCenter: parent;
             spacing: 60;
-            Rectangle { 
+
+            Rectangle {
                 anchors.horizontalCenter: parent.horizontalCenter;
                 anchors.top: edInfoRect;
                 anchors.topMargin: 60;
@@ -42,79 +48,90 @@ Item {
                 effects.shadow.color: "#F2F2F6";
                 effects.shadow.blur: 10;
                 effects.shadow.spread: 2;
-                    Row {
-                        anchors.centerIn: parent;
-                        spacing: 60;
+
+                Row {
+                    anchors.centerIn: parent;
+                    spacing: 60;
+
+                    Column {
+                        anchors.verticalCenter: parent.verticalCenter;
+                        anchors.left: parent.left;
+                        anchors.leftMargin: 15;
+                        spacing: 10;
+                        Rectangle {
+                            radius: 100;
+                            width: 100;
+                            height: 100;
+                            Image {
+                                anchors.fill: parent;
+                                source: "images/avatarbig.png";
+                                opacity: 0.4;
+                            }
+                        }
+
+                        AbstractButton {
+                            anchors.horizontalCenter: parent.horizontalCenter;
+                            text: qsTr("Додати фото");
+                            height: 20;
+                            colors.default: "#A7B0C4";
+                            radius: 50;
+                            colors.text: "white";
+                            onClicked: { this.text += "!" }
+                        }
+                    }
+
+                    Column {
+                        spacing: 15;
+
                         Column {
-                            anchors.verticalCenter: parent.verticalCenter;
-                            anchors.left: parent.left;
-                            anchors.leftMargin: 15;
                             spacing: 10;
-                            Rectangle {
-                                radius: 100;
-                                width: 100;
-                                height: 100;
-                                Image {
-                                    anchors.fill: parent;
-                                    source: "images/avatarbig.png";
-                                    opacity: 0.4;
-                                }
-                            }
-                            OurButton {
-                                anchors.horizontalCenter: parent.horizontalCenter;
-                                text: qsTr("Додати фото");
-                                height: 20;
+
+                            Text {
                                 color: "#A7B0C4";
-                                radius: 50;
-                                textColor: "white";
-                                onClicked: { this.text += "!" }
+                                text: "ПІБ (укр.)";
+                            }
+
+                            TextInputMaterial {
+                                id: inputPib;
+                                placeholder.text: "Прізвище Ім'я По батькові";
+                                materialColor: "#A8AEEC";
+                                font.pixelSize: 15;
+                                width: 400;
                             }
                         }
+
                         Column {
-                            spacing: 15;  
-                            Column {
-                                spacing: 10;
-                                Text {
-                                    color: "#A7B0C4";
-                                    text: "ПІБ (укр.)";
-                                }
-                                TextInputMaterial {
-                                    id: inputPib;
-                                    placeholder.text: "Прізвище Ім'я По батькові";
-                                    materialColor: "#A8AEEC";
-                                    font.pixelSize: 15;
-                                    width: 400;
-                                }
+                            spacing: 10;
+
+                            Text {
+                                color: "#A7B0C4";
+                                text: "Name Surname (eng)";
                             }
-                            Column {
-                                spacing: 10;
-                                Text {
-                                    color: "#A7B0C4";
-                                    text: "Name Surname (eng)";
-                                }
-                                TextInputMaterial {
-                                    placeholder.text: "Name Surname";
-                                    materialColor: "#A8AEEC";
-                                    font.pixelSize: 15;
-                                    width: 400;
-                                }
-                            }
-                            Column {
-                                spacing: 10;
-                                Text {
-                                    color: "#A7B0C4";
-                                    text: "Дата народження";
-                                }
-                                TextInputMaterial {
-                                    placeholder.text: "20.02.1989";
-                                    materialColor: "#A8AEEC";
-                                    font.pixelSize: 15;
-                                    width: 400;
-                                }
+
+                            TextInputMaterial {
+                                placeholder.text: "Name Surname";
+                                materialColor: "#A8AEEC";
+                                font.pixelSize: 15;
+                                width: 400;
                             }
                         }
-                    }            
+
+                        Column {
+                            spacing: 10;
+                            Text {
+                                color: "#A7B0C4";
+                                text: "Дата народження";
+                            }
+
+                            DateInput {
+                                font.pixelSize: 15;
+                                width: 400;
+                            }
+                        }
+                    }
+                }
             }
+
             Rectangle {
                 id: rect2;
                 anchors.horizontalCenter: parent.horizontalCenter;
@@ -124,16 +141,20 @@ Item {
                 effects.shadow.color: "#EFEFF3";
                 effects.shadow.blur: 10;
                 effects.shadow.spread: 2;
+
                 Column {
                     id: col2;
-                    spacing: 15;            
-                    anchors.centerIn: parent;                    
+                    spacing: 15;
+                    anchors.centerIn: parent;
+
                     Column {
                         spacing: 10;
+
                         Text {
                             color: "#A7B0C4";
                             text: "Інститут";
                         }
+
                         ComboBox {
                             displayText: !currentText ? "Оберіть інститут" : currentText;
                             //currentIndex: 1
@@ -142,16 +163,19 @@ Item {
                             effects.shadow.color: "#A8AEEC";
                             effects.shadow.blur: 1;
                             //effects.shadow.spread: 1;
-                            
+
                             model: ["Інст1", "Інст2", "Інст3", "Інст4", "Інст5"];
                         }
-                    } 
+                    }
+
                     Column {
                         spacing: 10;
+
                         Text {
                             color: "#A7B0C4";
                             text: "Факультет";
                         }
+
                         ComboBox {
                             displayText: !currentText ? "Оберіть факультет" : currentText;
                             effects.shadow.color: "#A8AEEC";
@@ -161,12 +185,15 @@ Item {
                             model: ["Факультет", "Факультет"];
                         }
                     }
+
                     Column {
                         spacing: 10;
+
                         Text {
                             color: "#A7B0C4";
                             text: "Звання";
                         }
+
                         ComboBox {
                             displayText: !currentText ? "Оберіть звання" : currentText;
                             effects.shadow.color: "#A8AEEC";
@@ -176,12 +203,15 @@ Item {
                             model: ["Звання 1", "Звання 2"];
                         }
                     }
+
                     Column {
                         spacing: 10;
+
                         Text {
                             color: "#A7B0C4";
                             text: "Ступінь";
                         }
+
                         ComboBox {
                             displayText: !currentText ? "Оберіть ступінь" : currentText;
                             effects.shadow.color: "#A8AEEC";
@@ -191,12 +221,15 @@ Item {
                             model: ["Ступінь", "Ступінь"];
                         }
                     }
+
                     Column {
                         spacing: 10;
+
                         Text {
                             color: "#A7B0C4";
                             text: "Спеціальність";
                         }
+
                         ComboBox {
                             displayText: !currentText ? "Оберіть спеціальність" : currentText;
                             effects.shadow.color: "#A8AEEC";
@@ -206,12 +239,15 @@ Item {
                             model: ["Спеціальність 1", "Спеціальність 2"];
                         }
                     }
+
                     Column {
                         spacing: 10;
+
                         Text {
                             color: "#A7B0C4";
                             text: "Кафедра";
                         }
+
                         ComboBox {
                             displayText: !currentText ? "Оберіть кафедру" : currentText;
                             effects.shadow.color: "#A8AEEC";
@@ -221,12 +257,15 @@ Item {
                             model: ["Кафедра 1", "Кафедра 2"];
                         }
                     }
+
                     Column {
                         spacing: 10;
+
                         Text {
                             color: "#A7B0C4";
                             text: "Рік навчання";
                         }
+
                         ComboBox {
                             displayText: !currentText ? "Оберіть рік навчання" : currentText;
                             effects.shadow.color: "#A8AEEC";
@@ -236,12 +275,15 @@ Item {
                             model: ["1", "2"];
                         }
                     }
+
                     Column {
                         spacing: 10;
+
                         Text {
                             color: "#A7B0C4";
                             text: "Основа навчання";
                         }
+
                         ComboBox {
                             displayText: !currentText ? "Оберіть основу навчання" : currentText;
                             effects.shadow.color: "#A8AEEC";
@@ -251,12 +293,15 @@ Item {
                             model: ["Денна", "Заочна"];
                         }
                     }
+
                     Column {
                         spacing: 10;
+
                         Text {
                             color: "#A7B0C4";
                             text: "Форма навчання";
                         }
+
                         ComboBox {
                             displayText: !currentText ? "Оберіть форму навчання" : currentText;
                             effects.shadow.color: "#A8AEEC";
@@ -266,12 +311,14 @@ Item {
                             model: ["Бюджет", "Контракт"];
                         }
                     }
+
                     Column {
                         spacing: 10;
                         Text {
                             color: "#A7B0C4";
                             text: "Керівник";
                         }
+
                         ComboBox {
                             displayText: !currentText ? "Оберіть керівника" : currentText;
                             effects.shadow.color: "#A8AEEC";
@@ -281,12 +328,15 @@ Item {
                             model: ["Керівник 1", "Керівник 2"];
                         }
                     }
+
                     Column {
                         spacing: 10;
+
                         Text {
                             color: "#A7B0C4";
                             text: "Тема наукової роботи";
                         }
+
                         TextInputMaterial {
                             placeholder.text: "Тема наукової роботи";
                             materialColor: "#A8AEEC";
@@ -306,16 +356,20 @@ Item {
                 effects.shadow.color: "#F2F2F6";
                 effects.shadow.blur: 10;
                 effects.shadow.spread: 2;
+
                 Column {
                     id: col3;
-                    spacing: 15;            
-                    anchors.centerIn: parent;                    
+                    spacing: 15;
+                    anchors.centerIn: parent;
+
                     Column {
                         spacing: 10;
+
                         Text {
                             color: "#A7B0C4";
                             text: "Телефон";
                         }
+
                         TextInputMaterial {
                             placeholder.text: "+38 (063) ";
                             materialColor: "#A8AEEC";
@@ -323,12 +377,15 @@ Item {
                             width: 500;
                         }
                     }
+
                     Column {
                         spacing: 10;
+
                         Text {
                             color: "#A7B0C4";
                             text: "e-mail";
                         }
+
                         TextInputMaterial {
                             placeholder.text: "e-mail";
                             materialColor: "#A8AEEC";
@@ -336,12 +393,15 @@ Item {
                             width: 500;
                         }
                     }
+
                     Column {
                         spacing: 10;
+
                         Text {
                             color: "#A7B0C4";
                             text: "Місце роботи";
                         }
+
                         TextInputMaterial {
                             placeholder.text: "Місце роботи";
                             materialColor: "#A8AEEC";
@@ -349,12 +409,15 @@ Item {
                             width: 500;
                         }
                     }
+
                     Column {
                         spacing: 10;
+
                         Text {
                             color: "#A7B0C4";
                             text: "Адреса проживання";
                         }
+
                         TextInputMaterial {
                             placeholder.text: "Адреса проживання";
                             materialColor: "#A8AEEC";
@@ -362,12 +425,15 @@ Item {
                             width: 500;
                         }
                     }
+
                     Column {
                         spacing: 10;
+
                         Text {
                             color: "#A7B0C4";
                             text: "ScopusID";
                         }
+
                         TextInputMaterial {
                             placeholder.text: "ScopusID";
                             materialColor: "#A8AEEC";
@@ -375,12 +441,15 @@ Item {
                             width: 500;
                         }
                     }
+
                     Column {
                         spacing: 10;
+
                         Text {
                             color: "#A7B0C4";
                             text: "ResearcherID";
                         }
+
                         TextInputMaterial {
                             placeholder.text: "ResearcherID";
                             materialColor: "#A8AEEC";
@@ -388,12 +457,15 @@ Item {
                             width: 500;
                         }
                     }
+
                     Column {
                         spacing: 10;
+
                         Text {
                             color: "#A7B0C4";
                             text: "Google Scholar";
                         }
+
                         TextInputMaterial {
                             placeholder.text: "Google Scholar";
                             materialColor: "#A8AEEC";
@@ -401,12 +473,15 @@ Item {
                             width: 500;
                         }
                     }
+
                     Column {
                         spacing: 10;
+
                         Text {
                             color: "#A7B0C4";
                             text: "OrcID";
                         }
+
                         TextInputMaterial {
                             placeholder.text: "OrcID";
                             materialColor: "#A8AEEC";
@@ -416,6 +491,7 @@ Item {
                     }
                 }
             }
+
             Rectangle {
                 id: rect4;
                 anchors.horizontalCenter: parent.horizontalCenter;
@@ -425,16 +501,20 @@ Item {
                 effects.shadow.color: "#F2F2F6";
                 effects.shadow.blur: 10;
                 effects.shadow.spread: 2;
+
                 Column {
                     id: col4;
-                    spacing: 15;            
-                    anchors.centerIn: parent;                    
+                    spacing: 15;
+                    anchors.centerIn: parent;
+
                     Column {
                         spacing: 10;
+
                         Text {
                             color: "#A7B0C4";
                             text: "Сімейний стан";
                         }
+
                         ComboBox {
                             displayText: !currentText ? "Оберіть сімейний стан" : currentText;
                             effects.shadow.color: "#A8AEEC";
@@ -444,12 +524,15 @@ Item {
                             model: ["1", "2"];
                         }
                     }
+
                     Column {
                         spacing: 10;
+
                         Text {
                             color: "#A7B0C4";
                             text: "Діти";
                         }
+
                         ComboBox {
                             displayText: !currentText ? "Оберіть відповідний пункт" : currentText;
                             effects.shadow.color: "#A8AEEC";
@@ -461,6 +544,7 @@ Item {
                     }
                 }
             }
+
             Rectangle {
                 id: rect5;
                 anchors.horizontalCenter: parent.horizontalCenter;
@@ -470,16 +554,19 @@ Item {
                 effects.shadow.color: "#F2F2F6";
                 effects.shadow.blur: 10;
                 effects.shadow.spread: 2;
+
                 Column {
                     id: col5;
-                    spacing: 15;            
-                    anchors.centerIn: parent;                    
+                    spacing: 15;
+                    anchors.centerIn: parent;
+
                     Column {
                         spacing: 10;
                         Text {
                             color: "#A7B0C4";
                             text: "Вкажіть логін для користувача";
                         }
+
                         TextInputMaterial {
                             placeholder.text: "Логін";
                             materialColor: "#A8AEEC";
@@ -487,12 +574,15 @@ Item {
                             width: 500;
                         }
                     }
+
                     Column {
                         spacing: 10;
+
                         Text {
                             color: "#A7B0C4";
                             text: "Вкажіть пароль для користувача";
                         }
+
                         TextInputMaterial {
                             placeholder.text: "Пароль";
                             materialColor: "#A8AEEC";
@@ -500,12 +590,15 @@ Item {
                             width: 500;
                         }
                     }
+
                     Column {
                         spacing: 10;
+
                         Text {
                             color: "#A7B0C4";
                             text: "Вкажіть роль користувача у системі";
                         }
+
                         ComboBox {
                             id: comboRole;
                             displayText: !currentText ? "Оберіть роль" : currentText;
@@ -528,6 +621,7 @@ Item {
                 anchors.rightMargin: 10;
                 // anchors.bottom: edInfoRect.bottom;
                 // anchors.bottomMargin: 60;
+
                 AbstractButton {
                     id: cButton;
                     colors.default: "#C9D1EC";
@@ -536,28 +630,29 @@ Item {
                     radius: 50;
                     height: 40;
                     width: 120;
-                    onClicked:  { editUser.visible = !editUser.visible }
+                    onClicked:  { emplLoader.source = '' }
                 }
+
                 AbstractButton {
                     id: sButton;
                     colors.default: "#B0C5EF";
                     text: "Збергти";
-                    colors.hovered: "lightgrey";                    
+                    colors.hovered: "lightgrey";
                     radius: 50;
                     height: 40;
                     width: 120;
-                    
+
                     onClicked: {
                         // это надо
                         edInfoRect.send()
 
                         // это не надо копировать
-                        edInfoRect.element.dom.scroll({ left: 0, top: 0 })
                         elistModel.insert(0, {name: inputPib.text, role: comboRole.currentText}) // TODO: replace currentText to index
-                        editUser.visible = !editUser.visible
-                     }
+                        emplLoader.source = ''
+                    }
                 }
             }
+
             // Rectangle {
             //     anchors.top: cButton.bottom;
             //     anchors.horizontalCenter: cButton;
@@ -565,6 +660,7 @@ Item {
             //     height: 2;
             //     color: "#B0C5EF";
             // }
+
             // Rectangle {
             //     anchors.top: sButton.bottom;
             //     anchors.horizontalCenter: sButton;
@@ -572,6 +668,7 @@ Item {
             //     height: 2;
             //     color: "#D6A7DF";
             // }
+
         }
         Text {
             z: 100;
@@ -582,6 +679,6 @@ Item {
             color: "#A7B0C4";
             font.pixelSize: 14;
             font.bold: true;
-        }        
+        }
     }
 }
