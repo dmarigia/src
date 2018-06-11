@@ -17,19 +17,6 @@ MainItem {
     property string page: "PersonalPage";
     property string pageName: qsTr("Личная информация"); // TODO: auto
 
-    // transform.rotateX: 20;
-    // transform.rotateY: 110;
-    // transform.rotateZ: 30;
-    // Behavior on transform { Animation { duration: 4000; } }
-    // Timer {
-    //     running: true;
-    //     onTriggered: {
-    //         this.parent.transform.rotateX = 0
-    //         this.parent.transform.rotateY = 0
-    //         this.parent.transform.rotateZ = 0
-    //     }
-    // }
-
     Rectangle {
         id: insideRect;
         color: "#fbfcfd";
@@ -42,7 +29,7 @@ MainItem {
             z: 1;
             fixed: app.mobile;
         }
-        LeftPanelWhiteBottom {}
+		//LeftPanelWhiteBottom {}
 
         InfoPanel {
             id: infoPanel;
@@ -66,14 +53,13 @@ MainItem {
         opacity: 0.6;
         visible: leftPanel.active;
         fixed: true;
-        MouseArea {
-            anchors.fill: parent;
-            onClicked: { leftPanel.close() }
+        MousePressMixin {
+            onPressedChanged: { if (value) leftPanel.close() }
         }
     }
 
     onMobileChanged: {
-        if (!this.mobile) leftPanel.close()
+        if (!value) leftPanel.close()
     }
 
     // test config
@@ -81,7 +67,6 @@ MainItem {
         id: settings;
         avatarPath: "https://cameralabs.org/media/camera/avgust/6avgust/53_5c4ee0465a6638d42643ed86cb2de396.jpg";
     }
-    MainItemDebug { visible: false; }
 
     LocalStorage {
         id: localStorage;
@@ -91,38 +76,23 @@ MainItem {
         }
     }
 
-    onCompleted: {
-        if (this.disableBackend) return
-        var token, email
-        localStorage.getOrDefault("token", function(arg) { token = arg }, "")
-        localStorage.getOrDefault("email", function(arg) { email = arg }, "")
-        console.log(token, email, email.length)
-        if (!email.length || !token.length)
-            loginPage.visible = true
-        else {
-            settings.email = email
-            settings.token = token
-        }
-    }
+//    MainItemDebug { }
+//    onCompleted: {
+//        if (this.disableBackend) return
+//        var token, email
+//        localStorage.getOrDefault("token", function(arg) { token = arg }, "")
+//        localStorage.getOrDefault("email", function(arg) { email = arg }, "")
+//        console.log(token, email, email.length)
+//        if (!email.length || !token.length)
+//            loginPage.visible = true
+//        else {
+//            settings.email = email
+//            settings.token = token
+//        }
+//    }
 
     LoginPage {
-        z: 600;
+        z: 1;
         visible: false;
-    }
-
-    Rectangle {
-        id: tempErrorRect;
-        anchors.fill: parent;
-        color: "crimson";
-        visible: false;
-        z: 601;
-
-        Text {
-            anchors.centerIn: parent;
-            
-            color: "white";
-            font.pixelSize: 100;
-            text: "Error connection";
-        }
     }
 }

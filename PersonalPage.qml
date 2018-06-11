@@ -1,26 +1,19 @@
+/*** @using { src.EdContactInfo } **/
+/*** @using { src.EdInfo } **/
+/*** @using { src.EdInfo } **/
+/*** @using { src.EdInfoEdu} **/
+
 Rectangle {
     id: psPage;
     width: 100%;
     height: grid.height;
     color: "#FBFCFD";
 
-    EdContactInfo {
-        id: editContact;
-        anchors.centerIn: parent;
-        visible: false;
+    Loader {
+        id: editLoader;
+        anchors.fill: parent
         z: 1;
-    }
-    EdInfo {
-        id: editInfo;
-        anchors.centerIn: parent;
-        visible: false;
-        z: 1;
-    }
-    EdInfoEdu {
-        id: editEdu;
-        anchors.centerIn: parent;
-        visible: false;
-        z: 1;
+        mouseEnabled: !!source;
     }
 
     Grid {
@@ -300,7 +293,7 @@ Rectangle {
                 anchors.rightMargin: 15;
                 opacity: 0.4;
                 colors.hovered: "#f5f5f9";
-                onClicked: { editEdu.visible = !editEdu.visible }
+                onClicked: { editLoader.source = 'src.EdInfoEdu' }
             }
             Column {                
                 anchors.verticalCenter: parent.verticalCenter;
@@ -387,7 +380,7 @@ Rectangle {
                 anchors.rightMargin: 15;
                 opacity: 0.4;
                 colors.hovered: "#f5f5f9";
-                onClicked: { editInfo.visible = !editInfo.visible }
+                onClicked: { editLoader.source = 'src.EdInfo' }
             }
             Column {                
                 anchors.verticalCenter: parent.verticalCenter;
@@ -459,7 +452,7 @@ Rectangle {
                 anchors.rightMargin: 15;
                 opacity: 0.4;
                 colors.hovered: "#f5f5f9";
-                onClicked: { editContact.visible = !editContact.visible }
+                onClicked: { editLoader.source = 'src.EdContactInfo' }
             }
             Column {      
                 id: contactText;          

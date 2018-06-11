@@ -1,13 +1,16 @@
 Item {
     id: edContactInfo;
-    anchors.fill: insideRect;
-    effects.shadow.blur: 6;  
-    effects.shadow.color: "#5D6578";
+    fixed: true;
+    width: app.width;
+    height: parent.parent.height;
     
     Rectangle {
-        anchors.fill: parent;  
+        anchors.fill: parent;
         color: "#5D6578";
         opacity: 0.7;
+        MousePressMixin {
+            onPressedChanged: { editLoader.source = '' }
+        }
     }
 
     Rectangle {   
@@ -142,7 +145,7 @@ Item {
                 radius: 50;
                 height: 40;
                 width: 120;
-                onClicked:  { edContactInfo.visible = !edContactInfo.visible }
+                onClicked:  { editLoader.source = '' }
             }
             AbstractButton {
                 colors.default: "#B0C5EF";
