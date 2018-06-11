@@ -73,6 +73,10 @@ Rectangle {
                 placeholder.text: "Пошук";
                 Behavior on x { Animation { duration: 1000; } }
                 Behavior on width { Animation { duration: 1000; } }
+                
+                onTextChanged: { // TODO: timer
+                	elistProxy.setFilter(function(item) { return item.name.toLowerCase().indexOf(value.toLowerCase()) > -1 })
+                }
             }
         }
 
@@ -130,8 +134,12 @@ Rectangle {
         height: contentHeight;
         spacing: 2;
 
-        model: ListModel {
-            id: elistModel;
+        model: ProxyModel {
+            id: elistProxy;
+
+            target: ListModel {
+                id: elistModel;
+            }
         }
 
         NetworkRequest {
