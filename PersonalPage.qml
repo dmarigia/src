@@ -68,13 +68,13 @@ Rectangle {
                     }
                 }
 
-                OurButton {
+                AbstractButton {
                     anchors.horizontalCenter: parent.horizontalCenter;
                     text: qsTr("Добавить фото");
                     height: 20;
                     color: "#ff5252";
                     radius: 50;
-                    textColor: "white";
+                    colors.text: "white";
                     onClicked: { this.text += "!" }
                 }
             }

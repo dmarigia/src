@@ -66,7 +66,7 @@ Rectangle {
             font.pixelSize: 15;
             color: "transparent";
             font.family: "Montserrat";
-            textColor: "#adb1ba"
+            colors.text: "#adb1ba"
             //font.pixelSize: 16;
             // colors.hovered: "transparent";
             // colors.pressed: "transparent";
