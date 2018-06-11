@@ -6,7 +6,7 @@ Item {
 
     Rectangle {
         anchors.fill: parent;
-        color: "#5D6578";
+        color: '#5D6578';
         opacity: 0.7;
         MousePressMixin {
             onPressedChanged: { emplLoader.source = '' }
@@ -17,16 +17,16 @@ Item {
         id: edInfoRect;
         network.url: 'https://marigia.top/api/user';
         network.method: NetworkRequest.Put;
-        color: "#f5f5f9";
+        color: '#f5f5f9';
         onSendError: {
             employee.error = 1 // или 2 :D
             console.log('Error: add employee for') // или edit (это же один пример для адд и эдита)
         }
 
-        //color: "#FBFCFD";
+        //color: '#FBFCFD';
         radius: 4;
         anchors.centerIn: parent;
-        effects.shadow.color: "#5D6578";
+        effects.shadow.color: '#5D6578';
         effects.shadow.blur: 10;
         effects.shadow.spread: 2;
         width: 850;
@@ -44,8 +44,8 @@ Item {
                 anchors.topMargin: 60;
                 width: 650;
                 height: 250;
-                color: "#FBFCFD";
-                effects.shadow.color: "#F2F2F6";
+                color: '#FBFCFD';
+                effects.shadow.color: '#F2F2F6';
                 effects.shadow.blur: 10;
                 effects.shadow.spread: 2;
 
@@ -64,19 +64,19 @@ Item {
                             height: 100;
                             Image {
                                 anchors.fill: parent;
-                                source: "images/avatarbig.png";
+                                source: 'images/avatarbig.png';
                                 opacity: 0.4;
                             }
                         }
 
                         AbstractButton {
                             anchors.horizontalCenter: parent.horizontalCenter;
-                            text: qsTr("Додати фото");
+                            text: qsTr('Додати фото');
                             height: 20;
-                            colors.default: "#A7B0C4";
+                            colors.default: '#A7B0C4';
                             radius: 50;
-                            colors.text: "white";
-                            onClicked: { this.text += "!" }
+                            colors.text: 'white';
+                            onClicked: { this.text += '!' }
                         }
                     }
 
@@ -87,14 +87,14 @@ Item {
                             spacing: 10;
 
                             Text {
-                                color: "#A7B0C4";
-                                text: "ПІБ (укр.)";
+                                color: '#A7B0C4';
+                                text: 'ПІБ (укр.)';
                             }
 
                             TextInputMaterial {
                                 id: inputPib;
-                                placeholder.text: "Прізвище Ім\'я По батькові";
-                                materialColor: "#A8AEEC";
+                                placeholder.text: 'Прізвище Ім\'я По батькові';
+                                materialColor: '#A8AEEC';
                                 font.pixelSize: 15;
                                 width: 400;
                             }
@@ -104,13 +104,13 @@ Item {
                             spacing: 10;
 
                             Text {
-                                color: "#A7B0C4";
-                                text: "Name Surname (eng)";
+                                color: '#A7B0C4';
+                                text: 'Name Surname (eng)';
                             }
 
                             TextInputMaterial {
-                                placeholder.text: "Name Surname";
-                                materialColor: "#A8AEEC";
+                                placeholder.text: 'Name Surname';
+                                materialColor: '#A8AEEC';
                                 font.pixelSize: 15;
                                 width: 400;
                             }
@@ -119,8 +119,8 @@ Item {
                         Column {
                             spacing: 10;
                             Text {
-                                color: "#A7B0C4";
-                                text: "Дата народження";
+                                color: '#A7B0C4';
+                                text: 'Дата народження';
                             }
 
                             DateInput {
@@ -137,8 +137,8 @@ Item {
                 anchors.horizontalCenter: parent.horizontalCenter;
                 width: 650;
                 height: col2.height + 60;
-                color: "#FBFCFD";
-                effects.shadow.color: "#EFEFF3";
+                color: '#FBFCFD';
+                effects.shadow.color: '#EFEFF3';
                 effects.shadow.blur: 10;
                 effects.shadow.spread: 2;
 
@@ -151,20 +151,20 @@ Item {
                         spacing: 10;
 
                         Text {
-                            color: "#A7B0C4";
-                            text: "Інститут";
+                            color: '#A7B0C4';
+                            text: 'Інститут';
                         }
 
                         ComboBox {
-                            displayText: !currentText ? "Оберіть інститут" : currentText;
+                            displayText: !currentText ? 'Оберіть інститут' : currentText;
                             //currentIndex: 1
                             button.font.pixelSize: 15;
                             width: 500;
-                            effects.shadow.color: "#A8AEEC";
+                            effects.shadow.color: '#A8AEEC';
                             effects.shadow.blur: 1;
                             //effects.shadow.spread: 1;
 
-                            model: ["Інст1", "Інст2", "Інст3", "Інст4", "Інст5"];
+                            model: ['Інст1', 'Інст2', 'Інст3', 'Інст4', 'Інст5'];
                         }
                     }
 
@@ -172,17 +172,17 @@ Item {
                         spacing: 10;
 
                         Text {
-                            color: "#A7B0C4";
-                            text: "Факультет";
+                            color: '#A7B0C4';
+                            text: 'Факультет';
                         }
 
                         ComboBox {
-                            displayText: !currentText ? "Оберіть факультет" : currentText;
-                            effects.shadow.color: "#A8AEEC";
+                            displayText: !currentText ? 'Оберіть факультет' : currentText;
+                            effects.shadow.color: '#A8AEEC';
                             effects.shadow.blur: 1;
                             button.font.pixelSize: 15;
                             width: 500;
-                            model: ["Факультет", "Факультет"];
+                            model: ['Факультет', 'Факультет'];
                         }
                     }
 
@@ -190,17 +190,17 @@ Item {
                         spacing: 10;
 
                         Text {
-                            color: "#A7B0C4";
-                            text: "Звання";
+                            color: '#A7B0C4';
+                            text: 'Звання';
                         }
 
                         ComboBox {
-                            displayText: !currentText ? "Оберіть звання" : currentText;
-                            effects.shadow.color: "#A8AEEC";
+                            displayText: !currentText ? 'Оберіть звання' : currentText;
+                            effects.shadow.color: '#A8AEEC';
                             effects.shadow.blur: 1;
                             button.font.pixelSize: 15;
                             width: 500;
-                            model: ["Звання 1", "Звання 2"];
+                            model: ['Звання 1', 'Звання 2'];
                         }
                     }
 
@@ -208,17 +208,17 @@ Item {
                         spacing: 10;
 
                         Text {
-                            color: "#A7B0C4";
-                            text: "Ступінь";
+                            color: '#A7B0C4';
+                            text: 'Ступінь';
                         }
 
                         ComboBox {
-                            displayText: !currentText ? "Оберіть ступінь" : currentText;
-                            effects.shadow.color: "#A8AEEC";
+                            displayText: !currentText ? 'Оберіть ступінь' : currentText;
+                            effects.shadow.color: '#A8AEEC';
                             effects.shadow.blur: 1;
                             button.font.pixelSize: 15;
                             width: 500;
-                            model: ["Ступінь", "Ступінь"];
+                            model: ['Ступінь', 'Ступінь'];
                         }
                     }
 
@@ -226,17 +226,17 @@ Item {
                         spacing: 10;
 
                         Text {
-                            color: "#A7B0C4";
-                            text: "Спеціальність";
+                            color: '#A7B0C4';
+                            text: 'Спеціальність';
                         }
 
                         ComboBox {
-                            displayText: !currentText ? "Оберіть спеціальність" : currentText;
-                            effects.shadow.color: "#A8AEEC";
+                            displayText: !currentText ? 'Оберіть спеціальність' : currentText;
+                            effects.shadow.color: '#A8AEEC';
                             effects.shadow.blur: 1;
                             button.font.pixelSize: 15;
                             width: 500;
-                            model: ["Спеціальність 1", "Спеціальність 2"];
+                            model: ['Спеціальність 1', 'Спеціальність 2'];
                         }
                     }
 
@@ -244,17 +244,17 @@ Item {
                         spacing: 10;
 
                         Text {
-                            color: "#A7B0C4";
-                            text: "Кафедра";
+                            color: '#A7B0C4';
+                            text: 'Кафедра';
                         }
 
                         ComboBox {
-                            displayText: !currentText ? "Оберіть кафедру" : currentText;
-                            effects.shadow.color: "#A8AEEC";
+                            displayText: !currentText ? 'Оберіть кафедру' : currentText;
+                            effects.shadow.color: '#A8AEEC';
                             effects.shadow.blur: 1;
                             button.font.pixelSize: 15;
                             width: 500;
-                            model: ["Кафедра 1", "Кафедра 2"];
+                            model: ['Кафедра 1', 'Кафедра 2'];
                         }
                     }
 
@@ -262,17 +262,17 @@ Item {
                         spacing: 10;
 
                         Text {
-                            color: "#A7B0C4";
-                            text: "Рік навчання";
+                            color: '#A7B0C4';
+                            text: 'Рік навчання';
                         }
 
                         ComboBox {
-                            displayText: !currentText ? "Оберіть рік навчання" : currentText;
-                            effects.shadow.color: "#A8AEEC";
+                            displayText: !currentText ? 'Оберіть рік навчання' : currentText;
+                            effects.shadow.color: '#A8AEEC';
                             effects.shadow.blur: 1;
                             button.font.pixelSize: 15;
                             width: 500;
-                            model: ["1", "2"];
+                            model: ['1', '2'];
                         }
                     }
 
@@ -280,17 +280,17 @@ Item {
                         spacing: 10;
 
                         Text {
-                            color: "#A7B0C4";
-                            text: "Основа навчання";
+                            color: '#A7B0C4';
+                            text: 'Основа навчання';
                         }
 
                         ComboBox {
-                            displayText: !currentText ? "Оберіть основу навчання" : currentText;
-                            effects.shadow.color: "#A8AEEC";
+                            displayText: !currentText ? 'Оберіть основу навчання' : currentText;
+                            effects.shadow.color: '#A8AEEC';
                             effects.shadow.blur: 1;
                             button.font.pixelSize: 15;
                             width: 500;
-                            model: ["Денна", "Заочна"];
+                            model: ['Денна', 'Заочна'];
                         }
                     }
 
@@ -298,34 +298,34 @@ Item {
                         spacing: 10;
 
                         Text {
-                            color: "#A7B0C4";
-                            text: "Форма навчання";
+                            color: '#A7B0C4';
+                            text: 'Форма навчання';
                         }
 
                         ComboBox {
-                            displayText: !currentText ? "Оберіть форму навчання" : currentText;
-                            effects.shadow.color: "#A8AEEC";
+                            displayText: !currentText ? 'Оберіть форму навчання' : currentText;
+                            effects.shadow.color: '#A8AEEC';
                             effects.shadow.blur: 1;
                             button.font.pixelSize: 15;
                             width: 500;
-                            model: ["Бюджет", "Контракт"];
+                            model: ['Бюджет', 'Контракт'];
                         }
                     }
 
                     Column {
                         spacing: 10;
                         Text {
-                            color: "#A7B0C4";
-                            text: "Керівник";
+                            color: '#A7B0C4';
+                            text: 'Керівник';
                         }
 
                         ComboBox {
-                            displayText: !currentText ? "Оберіть керівника" : currentText;
-                            effects.shadow.color: "#A8AEEC";
+                            displayText: !currentText ? 'Оберіть керівника' : currentText;
+                            effects.shadow.color: '#A8AEEC';
                             effects.shadow.blur: 1;
                             button.font.pixelSize: 15;
                             width: 500;
-                            model: ["Керівник 1", "Керівник 2"];
+                            model: ['Керівник 1', 'Керівник 2'];
                         }
                     }
 
@@ -333,13 +333,13 @@ Item {
                         spacing: 10;
 
                         Text {
-                            color: "#A7B0C4";
-                            text: "Тема наукової роботи";
+                            color: '#A7B0C4';
+                            text: 'Тема наукової роботи';
                         }
 
                         TextInputMaterial {
-                            placeholder.text: "Тема наукової роботи";
-                            materialColor: "#A8AEEC";
+                            placeholder.text: 'Тема наукової роботи';
+                            materialColor: '#A8AEEC';
                             font.pixelSize: 15;
                             width: 500;
                         }
@@ -352,8 +352,8 @@ Item {
                 anchors.horizontalCenter: parent.horizontalCenter;
                 width: 650;
                 height: col3.height + 60;
-                color: "#FBFCFD";
-                effects.shadow.color: "#F2F2F6";
+                color: '#FBFCFD';
+                effects.shadow.color: '#F2F2F6';
                 effects.shadow.blur: 10;
                 effects.shadow.spread: 2;
 
@@ -366,13 +366,13 @@ Item {
                         spacing: 10;
 
                         Text {
-                            color: "#A7B0C4";
-                            text: "Телефон";
+                            color: '#A7B0C4';
+                            text: 'Телефон';
                         }
 
                         TextInputMaterial {
-                            placeholder.text: "+38 (063) ";
-                            materialColor: "#A8AEEC";
+                            placeholder.text: '+38 (063) ';
+                            materialColor: '#A8AEEC';
                             font.pixelSize: 15;
                             width: 500;
                         }
@@ -382,13 +382,13 @@ Item {
                         spacing: 10;
 
                         Text {
-                            color: "#A7B0C4";
-                            text: "e-mail";
+                            color: '#A7B0C4';
+                            text: 'e-mail';
                         }
 
                         TextInputMaterial {
-                            placeholder.text: "e-mail";
-                            materialColor: "#A8AEEC";
+                            placeholder.text: 'e-mail';
+                            materialColor: '#A8AEEC';
                             font.pixelSize: 15;
                             width: 500;
                         }
@@ -398,13 +398,13 @@ Item {
                         spacing: 10;
 
                         Text {
-                            color: "#A7B0C4";
-                            text: "Місце роботи";
+                            color: '#A7B0C4';
+                            text: 'Місце роботи';
                         }
 
                         TextInputMaterial {
-                            placeholder.text: "Місце роботи";
-                            materialColor: "#A8AEEC";
+                            placeholder.text: 'Місце роботи';
+                            materialColor: '#A8AEEC';
                             font.pixelSize: 15;
                             width: 500;
                         }
@@ -414,13 +414,13 @@ Item {
                         spacing: 10;
 
                         Text {
-                            color: "#A7B0C4";
-                            text: "Адреса проживання";
+                            color: '#A7B0C4';
+                            text: 'Адреса проживання';
                         }
 
                         TextInputMaterial {
-                            placeholder.text: "Адреса проживання";
-                            materialColor: "#A8AEEC";
+                            placeholder.text: 'Адреса проживання';
+                            materialColor: '#A8AEEC';
                             font.pixelSize: 15;
                             width: 500;
                         }
@@ -430,13 +430,13 @@ Item {
                         spacing: 10;
 
                         Text {
-                            color: "#A7B0C4";
-                            text: "ScopusID";
+                            color: '#A7B0C4';
+                            text: 'ScopusID';
                         }
 
                         TextInputMaterial {
-                            placeholder.text: "ScopusID";
-                            materialColor: "#A8AEEC";
+                            placeholder.text: 'ScopusID';
+                            materialColor: '#A8AEEC';
                             font.pixelSize: 15;
                             width: 500;
                         }
@@ -446,13 +446,13 @@ Item {
                         spacing: 10;
 
                         Text {
-                            color: "#A7B0C4";
-                            text: "ResearcherID";
+                            color: '#A7B0C4';
+                            text: 'ResearcherID';
                         }
 
                         TextInputMaterial {
-                            placeholder.text: "ResearcherID";
-                            materialColor: "#A8AEEC";
+                            placeholder.text: 'ResearcherID';
+                            materialColor: '#A8AEEC';
                             font.pixelSize: 15;
                             width: 500;
                         }
@@ -462,13 +462,13 @@ Item {
                         spacing: 10;
 
                         Text {
-                            color: "#A7B0C4";
-                            text: "Google Scholar";
+                            color: '#A7B0C4';
+                            text: 'Google Scholar';
                         }
 
                         TextInputMaterial {
-                            placeholder.text: "Google Scholar";
-                            materialColor: "#A8AEEC";
+                            placeholder.text: 'Google Scholar';
+                            materialColor: '#A8AEEC';
                             font.pixelSize: 15;
                             width: 500;
                         }
@@ -478,13 +478,13 @@ Item {
                         spacing: 10;
 
                         Text {
-                            color: "#A7B0C4";
-                            text: "OrcID";
+                            color: '#A7B0C4';
+                            text: 'OrcID';
                         }
 
                         TextInputMaterial {
-                            placeholder.text: "OrcID";
-                            materialColor: "#A8AEEC";
+                            placeholder.text: 'OrcID';
+                            materialColor: '#A8AEEC';
                             font.pixelSize: 15;
                             width: 500;
                         }
@@ -497,8 +497,8 @@ Item {
                 anchors.horizontalCenter: parent.horizontalCenter;
                 width: 650;
                 height: col4.height + 60;
-                color: "#FBFCFD";
-                effects.shadow.color: "#F2F2F6";
+                color: '#FBFCFD';
+                effects.shadow.color: '#F2F2F6';
                 effects.shadow.blur: 10;
                 effects.shadow.spread: 2;
 
@@ -511,17 +511,17 @@ Item {
                         spacing: 10;
 
                         Text {
-                            color: "#A7B0C4";
-                            text: "Сімейний стан";
+                            color: '#A7B0C4';
+                            text: 'Сімейний стан';
                         }
 
                         ComboBox {
-                            displayText: !currentText ? "Оберіть сімейний стан" : currentText;
-                            effects.shadow.color: "#A8AEEC";
+                            displayText: !currentText ? 'Оберіть сімейний стан' : currentText;
+                            effects.shadow.color: '#A8AEEC';
                             effects.shadow.blur: 1;
                             button.font.pixelSize: 15;
                             width: 500;
-                            model: ["1", "2"];
+                            model: ['1', '2'];
                         }
                     }
 
@@ -529,17 +529,17 @@ Item {
                         spacing: 10;
 
                         Text {
-                            color: "#A7B0C4";
-                            text: "Діти";
+                            color: '#A7B0C4';
+                            text: 'Діти';
                         }
 
                         ComboBox {
-                            displayText: !currentText ? "Оберіть відповідний пункт" : currentText;
-                            effects.shadow.color: "#A8AEEC";
+                            displayText: !currentText ? 'Оберіть відповідний пункт' : currentText;
+                            effects.shadow.color: '#A8AEEC';
                             effects.shadow.blur: 1;
                             button.font.pixelSize: 15;
                             width: 500;
-                            model: ["Немає", "1"];
+                            model: ['Немає', '1'];
                         }
                     }
                 }
@@ -563,13 +563,13 @@ Item {
                     Column {
                         spacing: 10;
                         Text {
-                            color: "#A7B0C4";
-                            text: "Вкажіть логін для користувача";
+                            color: '#A7B0C4';
+                            text: 'Вкажіть логін для користувача';
                         }
 
                         TextInputMaterial {
-                            placeholder.text: "Логін";
-                            materialColor: "#A8AEEC";
+                            placeholder.text: 'Логін';
+                            materialColor: '#A8AEEC';
                             font.pixelSize: 15;
                             width: 500;
                         }
@@ -579,13 +579,13 @@ Item {
                         spacing: 10;
 
                         Text {
-                            color: "#A7B0C4";
-                            text: "Вкажіть пароль для користувача";
+                            color: '#A7B0C4';
+                            text: 'Вкажіть пароль для користувача';
                         }
 
                         TextInputMaterial {
-                            placeholder.text: "Пароль";
-                            materialColor: "#A8AEEC";
+                            placeholder.text: 'Пароль';
+                            materialColor: '#A8AEEC';
                             font.pixelSize: 15;
                             width: 500;
                         }
@@ -595,18 +595,18 @@ Item {
                         spacing: 10;
 
                         Text {
-                            color: "#A7B0C4";
-                            text: "Вкажіть роль користувача у системі";
+                            color: '#A7B0C4';
+                            text: 'Вкажіть роль користувача у системі';
                         }
 
                         ComboBox {
                             id: comboRole;
-                            displayText: !currentText ? "Оберіть роль" : currentText;
-                            effects.shadow.color: "#A8AEEC";
+                            displayText: !currentText ? 'Оберіть роль' : currentText;
+                            effects.shadow.color: '#A8AEEC';
                             effects.shadow.blur: 1;
                             button.font.pixelSize: 15;
                             width: 500;
-                            model: ["Аспірант", "Докторант", "Керівник", "Адміністратор"];
+                            model: ['Аспірант', 'Докторант', 'Керівник', 'Адміністратор'];
                         }
                     }
                 }
@@ -624,9 +624,9 @@ Item {
 
                 AbstractButton {
                     id: cButton;
-                    colors.default: "#C9D1EC";
-                    text: "Скасувати";
-                    colors.hovered: "lightgrey";
+                    colors.default: '#C9D1EC';
+                    text: 'Скасувати';
+                    colors.hovered: 'lightgrey';
                     radius: 50;
                     height: 40;
                     width: 120;
@@ -635,9 +635,9 @@ Item {
 
                 AbstractButton {
                     id: sButton;
-                    colors.default: "#B0C5EF";
-                    text: "Збергти";
-                    colors.hovered: "lightgrey";
+                    colors.default: '#B0C5EF';
+                    text: 'Збергти';
+                    colors.hovered: 'lightgrey';
                     radius: 50;
                     height: 40;
                     width: 120;
@@ -658,7 +658,7 @@ Item {
             //     anchors.horizontalCenter: cButton;
             //     width: cButton.width;
             //     height: 2;
-            //     color: "#B0C5EF";
+            //     color: '#B0C5EF';
             // }
 
             // Rectangle {
@@ -666,7 +666,7 @@ Item {
             //     anchors.horizontalCenter: sButton;
             //     width: sButton.width;
             //     height: 2;
-            //     color: "#D6A7DF";
+            //     color: '#D6A7DF';
             // }
 
         }
@@ -675,8 +675,8 @@ Item {
             anchors.bottom: rect2.top;
             anchors.bottomMargin: 10;
             anchors.left: rect2.left;
-            text: "Інформація про навчання";
-            color: "#A7B0C4";
+            text: 'Інформація про навчання';
+            color: '#A7B0C4';
             font.pixelSize: 14;
             font.bold: true;
         }
