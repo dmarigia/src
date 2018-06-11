@@ -23,7 +23,6 @@ Item {
             onTriggered: {
                 deleg.edit = !deleg.edit
                 deleg.openEditUser()
-                
                 optionMenu.visible = false
             }
         }
@@ -55,7 +54,7 @@ Item {
         //     }
         // }
     }
-    
+
     Triangle {
         anchors.top: menu;
         anchors.topMargin: -8;

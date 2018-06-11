@@ -1,7 +1,7 @@
 Rectangle {
     anchors.fill: parent
     color: '#FBFCFD'
-    Text {        
+    Text {
         anchors.horizontalCenter: parent
         text: "Статистика виконання завдань"
         color: "#2b3857"
@@ -26,7 +26,7 @@ Rectangle {
         networkStat.send()
     }
 
-    ChartBar {       
+    ChartBar {
         id: chartBar
         anchors.verticalCenter: parent
         height: parent.height / 1.4

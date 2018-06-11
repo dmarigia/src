@@ -5,8 +5,6 @@ Item {
     height: parent.height;
     property bool hideSub: false;
 
-    
-
     AbstractButton {
         id: subButton;
         anchors.top: parent.top;
@@ -55,7 +53,7 @@ Item {
         height: 1;
         color: "#B0C5EF";
     }
-    
+
     ListView {
         id: listView;
         anchors.top: listRect.bottom;
@@ -140,10 +138,10 @@ Item {
                     height: 50;
                     width: parent.width / 4;
 
-                    TextInputMaterial {   
+                    TextInputMaterial {
                         id: task;
                         enabled: deleg.edit;
-                        width: parent.width - 20;                     
+                        width: parent.width - 20;
                         anchors.bottom: parent.bottom;
                         placeholder.text: model.sub ? "Назва підпункту": "Назва завдання";
                         materialColor: "#A8AEEC";
@@ -155,8 +153,8 @@ Item {
                     visible: parent.edit;
                     height: 50;
                     width: parent.width / 4;
-                    Text {   
-                        width: parent.width - 10;                     
+                    Text {
+                        width: parent.width - 10;
                         anchors.centerIn: parent;
                         //text: task.Text;
                         font.pixelSize: 14;
@@ -209,7 +207,7 @@ Item {
                     height: 50;
                     width: parent.width / 9;
                     CheckboxInput {
-                        id: checkBox1; 
+                        id: checkBox1;
                         anchors.centerIn: parent;
                         width: 18;
                         height: 18;
@@ -230,7 +228,7 @@ Item {
                 Item {
                     height: 50;
                     width: parent.width / 9;
-                    CheckboxInput { 
+                    CheckboxInput {
                         width: 18;
                         height: 18;
                         id: checkBox2; anchors.centerIn: parent;
@@ -267,7 +265,7 @@ Item {
                         colors.pressed: "#5D6578";
                         radius: 50;
                         opacity: (checkBox1.checked && checkBox2.checked) ? 0.6 : 0.4;
-                        onClicked: { 
+                        onClicked: {
                             optMenu.visible = !optMenu.visible;
                             //menuItem3.visible = !menuItem3.visible;
                         }
@@ -288,7 +286,7 @@ Item {
 
     // Rectangle { // TODO
     //             id: line;
-    //             color: "#FBFCFD";                
+    //             color: "#FBFCFD";
     //             anchors.horizontalCenter: parent.horizontalCenter;
     //             height: 5;
     //             width: parent.width * 0.9;

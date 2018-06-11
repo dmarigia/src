@@ -32,7 +32,7 @@ Rectangle {
         anchors.top: parent.top;
         anchors.topMargin: 50;
         source: "images/avatarbig.png";
-        opacity: 0.4; 
+        opacity: 0.4;
         height: 50;
         width: 50;
         anchors.left: parent.left;
@@ -45,7 +45,7 @@ Rectangle {
         visible: settings.avatarPath !== "";
         RadiusMixin { leftTop: parent.height / 2; leftBottom: parent.height / 2;  rightTop: 0;  rightBottom: parent.height / 2;  }
         fillMode: Image.PreserveAspectCrop;
-        
+
         Border {
             width: 2;
             color: "#5d6578";
@@ -107,11 +107,11 @@ Rectangle {
             color: "#FBFCFD";
         }
 
-        LeftPanelButton {                 
+        LeftPanelButton {
             name: qsTr("Список аспирантов");
             image: "users.png";
             page: "Employee";
-        }       
+        }
 
         Rectangle {
             height: 2;

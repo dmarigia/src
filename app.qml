@@ -29,7 +29,7 @@ MainItem {
             z: 1;
             fixed: app.mobile;
         }
-		//LeftPanelWhiteBottom {}
+        //LeftPanelWhiteBottom {}
 
         InfoPanel {
             id: infoPanel;
