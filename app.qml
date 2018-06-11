@@ -81,7 +81,7 @@ MainItem {
         id: settings;
         avatarPath: "https://cameralabs.org/media/camera/avgust/6avgust/53_5c4ee0465a6638d42643ed86cb2de396.jpg";
     }
-    MainItemDebug { visible: true; }
+    MainItemDebug { visible: false; }
 
     LocalStorage {
         id: localStorage;

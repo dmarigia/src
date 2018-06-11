@@ -10,9 +10,16 @@ Item {
         opacity: 0.6;
     }
 
-    Rectangle {
+    Form { // добавление. для редактирования по идеи тоже самое, но добавить .Post
         id: edInfoRect;
+        network.url: 'https://marigia.top/api/user';
+        network.method: NetworkRequest.Put;
         color: "#f5f5f9";
+        onSendError: {
+            employee.error = 1 // или 2 :D
+            console.log('Error: add employee for') // или edit (это же один пример для адд и эдита)
+        }
+
         //color: "#FBFCFD";
         radius: 4;
         anchors.centerIn: parent;
@@ -72,6 +79,7 @@ Item {
                                     text: "ПІБ (укр.)";
                                 }
                                 TextInputMaterial {
+                                    id: inputPib;
                                     placeholder.text: "Прізвище Ім'я По батькові";
                                     materialColor: "#A8AEEC";
                                     font.pixelSize: 15;
@@ -499,6 +507,7 @@ Item {
                             text: "Вкажіть роль користувача у системі";
                         }
                         ComboBox {
+                            id: comboRole;
                             displayText: !currentText ? "Оберіть роль" : currentText;
                             effects.shadow.color: "#A8AEEC";
                             effects.shadow.blur: 1;
@@ -537,8 +546,15 @@ Item {
                     radius: 50;
                     height: 40;
                     width: 120;
-                    onClicked: { 
-                        elistModel.insert(0, {}); editUser.visible = !editUser.visible;
+                    
+                    onClicked: {
+                        // это надо
+                        edInfoRect.send()
+
+                        // это не надо копировать
+                        edInfoRect.element.dom.scroll({ left: 0, top: 0 })
+                        elistModel.insert(0, {name: inputPib.text, role: comboRole.currentText}) // TODO: replace currentText to index
+                        editUser.visible = !editUser.visible
                      }
                 }
             }

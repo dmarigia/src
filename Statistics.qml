@@ -11,23 +11,41 @@ Rectangle {
         anchors.bottomMargin: 25;
     }
 
+    NetworkRequest {
+        id: networkStat
+        url: 'https://marigia.top/api/stat'
+        onLoaded: {
+            let json = this.toJson()
+            barData1.categories = json['emplList']
+            barData1.values = json['values']
+            barData2.values = json['valuesFinal']
+        }
+    }
+
+    onCompleted: {
+        networkStat.send()
+    }
+
     ChartBar {       
         id: chartBar
         anchors.verticalCenter: parent
         height: parent.height / 1.4
-        categories: ['Аспирант 1', 'Аспирант 2', 'Аспирант 3']
+        categories: ['Аспірант 1', 'Аспірант 2', 'Аспірант 3', 'Аспірант 4', 'Аспірант 5']
+        // ['Фамілія Ім`я По батькові', 'Фамілія Ім`я По батькові', 'Фамілія Ім`я По батькові'] // тоже не надо
         opacity: 0.8
 
         BarData {
-            values: [6, 3, 1]
+            id: barData1;
+            values: 5 // это не надо копировать (мы будем values с сервера ТИПА ТЯГАТЬ)
             color: '#B0C5EF'
-            label: 'Заданий в процессе'
+            label: 'Завдань у процесі'
         }
 
         BarData {
-            values: [10, 5, 8]
+            id: barData2;
+            values: 5 // это не надо копировать
             color: '#D6A7DF'
-            label: 'Заданий выполнено'
+            label: 'Завдань виповнено'
         }
     }
 }

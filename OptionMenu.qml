@@ -22,6 +22,8 @@ Item {
             text: qsTr("Редактировать");
             onTriggered: {
                 deleg.edit = !deleg.edit
+                deleg.openEditUser()
+                
                 optionMenu.visible = false
             }
         }

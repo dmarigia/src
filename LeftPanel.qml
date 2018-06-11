@@ -73,8 +73,9 @@ Rectangle {
         anchors.top: name.bottom;
         anchors.topMargin: 5;
         //anchors.horizontalCenter: parent.horizontalCenter;
-        text: settings.role === GlobalSettings.Admin ? qsTr("Администратор") : (settings.role === GlobalSettings.Head ?
-                        qsTr("Руководитель") : qsTr("Аспирант"));
+        text: "Адміністратор";
+        // text: settings.role === GlobalSettings.Admin ? qsTr("Адміністратор") : (settings.role === GlobalSettings.Head ?
+        //                 qsTr("Керівник") : qsTr("Аспірант"));
         font.pixelSize: 15;
         color: "#757575";
         anchors.left: parent.left;
@@ -142,17 +143,17 @@ Rectangle {
             color: "#FBFCFD";
         }
 
-        LeftPanelButton {
-            name: qsTr("Отчеты pdf");
-            image: "docs.png";
-            page: "Reports";
-        }
+        // LeftPanelButton {
+        //     name: qsTr("Отчеты pdf");
+        //     image: "docs.png";
+        //     page: "Reports";
+        // }
 
-        Rectangle {
-            height: 2;
-            width: panel.width;
-            color: "#FBFCFD";
-        }
+        // Rectangle {
+        //     height: 2;
+        //     width: panel.width;
+        //     color: "#FBFCFD";
+        // }
     }
 
     Rectangle {

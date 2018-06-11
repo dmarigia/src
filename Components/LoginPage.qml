@@ -11,8 +11,8 @@ Rectangle {
 
     Rectangle {
         id: rect;
-        height: 300;
-        width: 325;
+        height: 375;
+        width: 360;
         anchors.centerIn: parent;
         color: "#FBFCFD";
             
@@ -22,6 +22,8 @@ Rectangle {
             spacing: 15;
 
             Text {
+                anchors.top: rect;
+                anchors.topMargin: 20;
                 anchors.horizontalCenter: parent.horizontalCenter;
                 text: qsTr("Авторизация");
                 font.pixelSize: 22;
@@ -67,6 +69,18 @@ Rectangle {
                 //textInput.horizontalAlignment: TextInput.AlignHCenter; // NEW
             }
 
+            Image {
+                id: captcha;
+                anchors.horizontalCenter: parent;
+                source: Math.random() >= 0.5 ? "images/xyz.svg" : "images/zyx.svg";
+            }
+            TextInputMaterial {
+                //anchors.top: captcha.bottom;
+                materialColor: "#A8AEEC";
+                anchors.horizontalCenter: parent;
+                width: captcha.width;
+            }
+
             AbstractButton {
                 id: loginPageButton;
                 anchors.horizontalCenter: password.horizontalCenter;
@@ -79,21 +93,22 @@ Rectangle {
                 onClicked: {
                     this.enabled = false
                     networkReqAuth.send()
+                    loginPage.visible = false
                 }
             }
         }
-        AbstractButton {
-        anchors.right: password.right;
-        //anchors.verticalCenter: password.verticalCenter;
-        anchors.rightMargin: 15;
-        icon.source: "images/watch.png";
-        icon.width: 20;
-        icon.height: 20;
-        colors.hovered: "#A7B0C4";
-        radius: 100;
-        opacity: 0.5;
-        onClicked: {  }
-    }
+    //     AbstractButton {
+    //     anchors.right: password.right;
+    //     //anchors.verticalCenter: password.verticalCenter;
+    //     anchors.rightMargin: 15;
+    //     icon.source: "images/watch.png";
+    //     icon.width: 20;
+    //     icon.height: 20;
+    //     colors.hovered: "#A7B0C4";
+    //     radius: 100;
+    //     opacity: 0.5;
+    //     onClicked: {  }
+    // }
     }
 
     NetworkRequest {

@@ -134,7 +134,20 @@ Rectangle {
             id: elistModel;
         }
 
-        delegate: Rectangle {
+        NetworkRequest {
+            id: networkEmplRemove;
+            url: 'https://marigia.top/api/user?id=' + emplId;
+            property int emplId;
+            method: NetworkRequest.Delete;
+
+            onError: {
+                employee.error = true
+                log('Error: remove for employee for ' + this.emplId)
+            }
+        }
+
+        delegate: Rectangle { //
+            id: deleg;
             width: 100%;
             height: 100;
             x: -300;
@@ -145,6 +158,16 @@ Rectangle {
             color: (model.index % 2) ? "#FBFCFD" : "#f5f5f9";
             Behavior on x { Animation { duration: 150; } }
             onCompleted: { this.x = 0 }
+
+            function remove() {
+                networkEmplRemove.emplId = model.index
+                networkEmplRemove.send()
+                elistModel.remove(model.index)
+            }
+
+            function openEditUser() {
+                editUser.visible = !editUser.visible;
+            }
 
             Row {
                 width: parent.width;
@@ -166,7 +189,7 @@ Rectangle {
                     width: parent.width / 2.7;
                     Text {
                         anchors.centerIn: parent;
-                        text: "Прізвище Ім'я По Батькові";
+                        text: model.name; // "Прізвище Ім'я По Батькові";
                     }
                 }
 
@@ -175,7 +198,7 @@ Rectangle {
                     width: parent.width / 4;
                     Text {
                         anchors.centerIn: parent;
-                        text: "Аспірант";
+                        text: model.role; // "Аспірант";
                     }
                 }
 
@@ -183,6 +206,7 @@ Rectangle {
                     height: 100;
                     width: parent.width / 5;
                     AbstractButton {
+                        z: 1;
                         id: opt;
                         anchors.centerIn: parent;
                         width: 30;
@@ -194,7 +218,7 @@ Rectangle {
                         colors.pressed: "#5D6578";
                         radius: 50;
                         opacity: 0.5;
-                        onClicked: { optMenu.visible = !optMenu.visible; menuItem3.visible = !menuItem3.visible }
+                        onClicked: { optMenu.visible = !optMenu.visible /*; menuItem3.visible = !menuItem3.visible */ }
                     }
 
                     OptionMenu {
@@ -205,6 +229,14 @@ Rectangle {
                         visible: false;
                         z: 1;
                     }
+                }
+            }
+            AbstractButton {
+                anchors.fill: parent;
+                colors.hovered: "#dcdce0";
+                opacity: 0.2;
+                onClicked: {
+                    app.page = "Journal";
                 }
             }
         }

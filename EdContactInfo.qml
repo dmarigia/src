@@ -18,8 +18,9 @@ Item {
         effects.shadow.color: "#5D6578";
         effects.shadow.blur: 10;
         effects.shadow.spread: 2;
-        width: 450;
-        height: 490;
+        width: 500;
+        height: 550;
+        OverflowMixin {}
 
         Column {
             id: column;
@@ -36,7 +37,7 @@ Item {
                 }
                 TextInputMaterial {
                     width: edContactRect.width - 70;
-                    placeholder.text: "Телефон";
+                    placeholder.text: "+38 (xxx)-xxx-хххх";
                     materialColor: "#A8AEEC";
                 }
             }
@@ -56,11 +57,11 @@ Item {
                 spacing: 10;
                 Text {
                     color: "#A7B0C4";
-                    text: "Место работы";
+                    text: "Місце роботи";
                 }
                 TextInputMaterial {
                     width: edContactRect.width - 70;
-                    placeholder.text: "Место работы";
+                    placeholder.text: "Адреса";
                     materialColor: "#A8AEEC";
                 }
             }
@@ -69,25 +70,75 @@ Item {
                 spacing: 10;
                 Text {
                     color: "#A7B0C4";
-                    text: "Адрес проживания";
+                    text: "Адреса проживання";
                 }
                 TextInputMaterial {
                     width: edContactRect.width - 70;
-                    placeholder.text: "Адрес проживания";
+                    placeholder.text: "Адреса";
+                    materialColor: "#A8AEEC";
+                }
+            }
+
+            Column {
+                spacing: 10;
+                Text {
+                    color: "#A7B0C4";
+                    text: "Scopus";
+                }
+                TextInputMaterial {
+                    width: edContactRect.width - 70;
+                    placeholder.text: "Введіть дані";
+                    materialColor: "#A8AEEC";
+                }
+            }
+            Column {
+                spacing: 10;
+                Text {
+                    color: "#A7B0C4";
+                    text: "Researcher";
+                }
+                TextInputMaterial {
+                    width: edContactRect.width - 70;
+                    placeholder.text: "Введіть дані";
+                    materialColor: "#A8AEEC";
+                }
+            }
+            Column {
+                spacing: 10;
+                Text {
+                    color: "#A7B0C4";
+                    text: "Google Scholar";
+                }
+                TextInputMaterial {
+                    width: edContactRect.width - 70;
+                    placeholder.text: "Введіть дані";
+                    materialColor: "#A8AEEC";
+                }
+            }
+            Column {
+                spacing: 10;
+                Text {
+                    color: "#A7B0C4";
+                    text: "OrcID";
+                }
+                TextInputMaterial {
+                    width: edContactRect.width - 70;
+                    placeholder.text: "Введіть дані";
                     materialColor: "#A8AEEC";
                 }
             }
         }
 
         Row {
+            id: rowB;
             spacing: 60;
-            anchors.top: column.bottom;
+            anchors.top: column.bottom;            
             anchors.topMargin: 35;
             anchors.right: edContactRect.right;
             anchors.rightMargin: 35;
             AbstractButton {
                 colors.default: "#C9D1EC";
-                text: "Отмена";
+                text: "Відмінити";
                 radius: 50;
                 height: 40;
                 width: 120;
@@ -95,11 +146,16 @@ Item {
             }
             AbstractButton {
                 colors.default: "#B0C5EF";
-                text: "Сохранить";
+                text: "Зберегти";
                 radius: 50;
                 height: 40;
                 width: 120;
             }
+        }
+        Item {
+            anchors.top: rowB.bottom;
+            height: 50;
+            width: 5;
         }
 
     }

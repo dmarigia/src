@@ -108,7 +108,7 @@ Rectangle {
                             color: "#757575";
                         }
                         Text {
-                            text: qsTr("звание");
+                            text: qsTr("-");
                             color: "#212121";
                         }
                     }
@@ -119,7 +119,7 @@ Rectangle {
                             color: "#757575";
                         }
                         Text {
-                            text: qsTr("степень");
+                            text: qsTr("Кандидат економічних наук");
                             color: "#212121";
                         }
                     }
@@ -143,8 +143,10 @@ Rectangle {
                             color: "#757575";
                         }
                         Text {
-                            text: ("спеціальність");
+                            text: ("Фінансовий контроль і аудит");
                             color: "#212121";
+                            width: mainInfoRow.width - 300; 
+                            wrapMode: Text.Wrap;
                         }
                     }
                     Row {
@@ -154,7 +156,7 @@ Rectangle {
                             color: "#757575";
                         }
                         Text {
-                            text: qsTr("кафедра");
+                            text: qsTr("Кафедра обліку і аудиту");
                             color: "#212121";
                         } //год рождения, год обучения, форма обучения (дневная, заочная), бюджет/контракт, руководитель +ссылка на его профиль
                     }
@@ -184,7 +186,7 @@ Rectangle {
                         }
                         Text {
                             anchors.centerIn: parent;
-                            text: "9";
+                            text: "4";
                             //font.bold: true;
                             color: "#f48fb1";
                             font.pixelSize: 24;
@@ -234,7 +236,7 @@ Rectangle {
                         color: "#757575";
                     }
                     Text {
-                        text: qsTr("Факультет технологии и товароведения пищевых продуктов и продовольственного бизнеса");
+                        text: qsTr("Факультет економіки, бізнесу і контролю");
                         color: "#212121"; 
                         width: infoEducation.width - 30;                           
                         wrapMode: Text.Wrap;
@@ -248,7 +250,7 @@ Rectangle {
                         color: "#757575";
                     }
                     Text {
-                        text: qsTr("Технологический институт пищевой промышленности");
+                        text: qsTr("Навчально-науковий інститут прикладної економіки та менеджменту ім. Г.Е. Вейнштейна");
                         color: "#212121";                            
                         width: infoEducation.width - 30;                           
                         wrapMode: Text.Wrap;
@@ -262,7 +264,7 @@ Rectangle {
                         color: "#757575";
                     }
                     Text {
-                        text: qsTr("Фамилия Имя Отчество");
+                        text: qsTr("Прізвище Ім'я По батькові");
                         color: "#212121";                            
                         width: infoEducation.width - 30;                           
                         wrapMode: Text.Wrap;
@@ -313,7 +315,7 @@ Rectangle {
                     }
                     
                     Text {
-                        text: "2";
+                        text: "1";
                         color: "#212121";
                         font.pixelSize: 15;
                     }
@@ -326,7 +328,7 @@ Rectangle {
                     }
                     
                     Text {
-                        text: qsTr("тема научной работы");
+                        text: qsTr("Відсутня");
                         color: "#212121";
                         font.pixelSize: 15;
                     }

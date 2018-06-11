@@ -28,15 +28,22 @@ Rectangle {
         }
     }
 
+    LanguageButton {
+            anchors.top: parent;
+            anchors.topMargin: 22;
+            opacity: 0.5;  
+            anchors.right: exitButton.left;
+            anchors.rightMargin: 15;          
+        }
+
     Row {
-        spacing: 6;
+        id: exitButton;
+        spacing: 0;
         anchors.right: infoPanel.right;
         anchors.rightMargin: 30;
-        anchors.verticalCenter: parent.verticalCenter;
-        LanguageButton {
-            opacity: 0.7;            
-        }
-        Image {
+        anchors.verticalCenter: parent.verticalCenter;        
+
+        Image {            
             source: "images/exit.png";
             height: 25;
             width: 25;
@@ -47,11 +54,20 @@ Rectangle {
                 color: "white";
             }
         }
-        Text {
-            anchors.verticalCenter: parent
+        
+        Button {
+            opacity: 0.8;
+            anchors.top: parent;
+            anchors.topMargin: 3;
             text: qsTr("Выход");
+            width: 40;
             font.pixelSize: 15;
-            color: "#adb1ba";
+            color: "transparent";
+            font.family: "Montserrat";
+            textColor: "#adb1ba"
+            //font.pixelSize: 16;
+            // colors.hovered: "transparent";
+            // colors.pressed: "transparent";
         }
     }
 }
