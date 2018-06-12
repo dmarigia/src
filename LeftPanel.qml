@@ -108,7 +108,7 @@ Rectangle {
         }
 
         LeftPanelButton {                 
-            name: qsTr("Список аспирантов");
+            name: qsTr("Список користувачів");
             image: "users.png";
             page: "Employee";
         }       

@@ -16,7 +16,7 @@ Rectangle {
         url: 'https://marigia.top/api/stat'
         onLoaded: {
             let json = this.toJson()
-            barData1.categories = json['emplList']
+            chartBar.categories = json['emplList']
             barData1.values = json['values']
             barData2.values = json['valuesFinal']
         }
