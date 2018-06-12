@@ -81,8 +81,16 @@ Rectangle {
                 Behavior on x { Animation { duration: 1000; } }
                 Behavior on width { Animation { duration: 1000; } }
 
-                onTextChanged: { // TODO: timer
-                    elistProxy.setFilter(function(item) { return item.name.toLowerCase().indexOf(value.toLowerCase()) > -1 })
+                onTextChanged: {
+                	searchTimer.restart()
+                }
+
+                Timer {
+                    id: searchTimer
+                    interval: 400
+                    onTriggered: {
+                        elistProxy.setFilter(function(item) { return item.name.toLowerCase().indexOf(textSearch.text.toLowerCase()) > -1 })
+                    }
                 }
             }
         }
@@ -147,6 +155,11 @@ Rectangle {
             target: ListModel {
                 id: elistModel
             }
+        }
+
+        onCompleted: {
+            for(var i = 0; i !== 50; ++i)
+            elistModel.append({name: "Батраков Олександр Олегович" , role: "Аспірант"})
         }
 
         NetworkRequest {
@@ -233,11 +246,11 @@ Rectangle {
                         icon.source: 'images/options.png'
                         icon.width: 25;
                         icon.height: 25;
-                        colors.hovered: '#A8AEEC'
+                        colors.hovered: '#A8AECC'
                         colors.pressed: '#5D6578'
                         radius: 50;
                         opacity: 0.5;
-                        onClicked: { optMenu.visible = !optMenu.visible /* menuItem3.visible = !menuItem3.visible */ }
+                        onClicked: { optMenu.visible = !optMenu.visible; /* menuItem3.visible = !menuItem3.visible */ }
                     }
 
                     OptionMenu {

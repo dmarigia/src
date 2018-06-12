@@ -73,9 +73,9 @@ Rectangle {
         anchors.top: name.bottom
         anchors.topMargin: 5
         //anchors.horizontalCenter: parent.horizontalCenter
-        text: qsTr('Адміністратор');
-        // text: settings.role === GlobalSettings.Admin ? qsTr('Адміністратор') : (settings.role === GlobalSettings.Head ?
-        //                 qsTr('Керівник') : qsTr('Аспірант'));
+        //text: qsTr('Адміністратор');
+        text: settings.role === GlobalSettings.Admin ? qsTr('Адміністратор') : (settings.role === GlobalSettings.Head ?
+                         qsTr('Керівник') : qsTr('Аспірант'));
         font.pixelSize: 15
         color: '#757575'
         anchors.left: parent.left
@@ -108,7 +108,7 @@ Rectangle {
         }
 
         LeftPanelButton {                 
-            name: qsTr("Список користувачів")
+            name: qsTr("Список пользователей");
             image: "users.png"
             page: "Employee"
         }

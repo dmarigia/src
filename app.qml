@@ -62,7 +62,11 @@ MainItem {
     // test config
     GlobalSettings {
         id: settings
-        avatarPath: 'https://cameralabs.org/media/camera/avgust/6avgust/53_5c4ee0465a6638d42643ed86cb2de396.jpg'
+        avatarPath: "https://image.ibb.co/fNOJUd/photo_2018_06_12_22_13_49.jpg"
+        firstName: 'Ольга'
+        lastName: 'Ольшевська'
+        middleName: 'Володимірівна'
+        role: GlobalSettings.Head;
     }
 
     LocalStorage {

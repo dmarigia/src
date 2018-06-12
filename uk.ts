@@ -5,6 +5,11 @@
     <name>EditUser</name>
     <message>
         <location filename="src/EditUser.qml" line="1"/>
+        <source>Добавить фото</source>
+        <translation>Додати фото</translation>
+    </message>
+    <message>
+        <location filename="src/EditUser.qml" line="1"/>
         <source>Додати фото</source>
         <translation type="unfinished"></translation>
     </message>
@@ -30,17 +35,32 @@
     <message>
         <location filename="src/LeftPanel.qml" line="1"/>
         <source>Администратор</source>
+        <translation>Адміністратор</translation>
+    </message>
+    <message>
+        <location filename="src/LeftPanel.qml" line="1"/>
+        <source>Адміністратор</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/LeftPanel.qml" line="1"/>
         <source>Аспирант</source>
+        <translation>Аспірант</translation>
+    </message>
+    <message>
+        <location filename="src/LeftPanel.qml" line="1"/>
+        <source>Аспірант</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/LeftPanel.qml" line="1"/>
         <source>Журнал заданий</source>
         <translation>Журнал завдань</translation>
+    </message>
+    <message>
+        <location filename="src/LeftPanel.qml" line="1"/>
+        <source>Керівник</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/LeftPanel.qml" line="1"/>
@@ -55,12 +75,22 @@
     <message>
         <location filename="src/LeftPanel.qml" line="1"/>
         <source>Руководитель</source>
-        <translation type="unfinished"></translation>
+        <translation>Керівник</translation>
     </message>
     <message>
         <location filename="src/LeftPanel.qml" line="1"/>
         <source>Список аспирантов</source>
-        <translation>Список аспірантів</translation>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/LeftPanel.qml" line="1"/>
+        <source>Список користувачів</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/LeftPanel.qml" line="1"/>
+        <source>Список пользователей</source>
+        <translation>Список користувачів</translation>
     </message>
     <message>
         <location filename="src/LeftPanel.qml" line="1"/>
@@ -73,22 +103,22 @@
     <message>
         <location filename="src/Components/LoginPage.qml" line="1"/>
         <source>Авторизация</source>
-        <translation type="unfinished"></translation>
+        <translation>Авторизація</translation>
     </message>
     <message>
         <location filename="src/Components/LoginPage.qml" line="1"/>
         <source>Войти</source>
-        <translation type="unfinished"></translation>
+        <translation>Увійти</translation>
     </message>
     <message>
         <location filename="src/Components/LoginPage.qml" line="1"/>
         <source>Неверный e-mail</source>
-        <translation type="unfinished"></translation>
+        <translation>Невірний e-mail</translation>
     </message>
     <message>
         <location filename="src/Components/LoginPage.qml" line="1"/>
         <source>пароль</source>
-        <translation type="unfinished"></translation>
+        <translation>пароль</translation>
     </message>
 </context>
 <context>
@@ -153,8 +183,28 @@
     </message>
     <message>
         <location filename="src/PersonalPage.qml" line="1"/>
+        <source>Институт</source>
+        <translation>Інститут</translation>
+    </message>
+    <message>
+        <location filename="src/PersonalPage.qml" line="1"/>
+        <source>Информация отсутствует</source>
+        <translation>Інформація відсутня</translation>
+    </message>
+    <message>
+        <location filename="src/PersonalPage.qml" line="1"/>
         <source>КОНТАКТНАЯ ИНФОРМАЦИЯ</source>
         <translation>КОНТАКТНА ІНФОРМАЦІЯ</translation>
+    </message>
+    <message>
+        <location filename="src/PersonalPage.qml" line="1"/>
+        <source>Кандидат технічних наук</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/PersonalPage.qml" line="1"/>
+        <source>Кафедра інформаційних технологій та кібербезпеки</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/PersonalPage.qml" line="1"/>
@@ -168,8 +218,18 @@
     </message>
     <message>
         <location filename="src/PersonalPage.qml" line="1"/>
+        <source>Навчально-науковий інститут комп\&apos;ютерних систем і технологій «Індустрія 4.0» ім. П. М. Платонова</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/PersonalPage.qml" line="1"/>
         <source>Не замужем</source>
         <translation>Незаміжня</translation>
+    </message>
+    <message>
+        <location filename="src/PersonalPage.qml" line="1"/>
+        <source>Невідоме академічне звання</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/PersonalPage.qml" line="1"/>
@@ -208,6 +268,11 @@
     </message>
     <message>
         <location filename="src/PersonalPage.qml" line="1"/>
+        <source>Ступінь: </source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/PersonalPage.qml" line="1"/>
         <source>Телефон</source>
         <translation>Телефон</translation>
     </message>
@@ -223,13 +288,18 @@
     </message>
     <message>
         <location filename="src/PersonalPage.qml" line="1"/>
+        <source>Факультет комп\&apos;ютерної інженерії, програмування та кіберзахисту</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="src/PersonalPage.qml" line="1"/>
         <source>Факультет технологии и товароведения пищевых продуктов и продовольственного бизнеса</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="src/PersonalPage.qml" line="1"/>
         <source>Фамилия Имя Отчество</source>
-        <translation type="unfinished"></translation>
+        <translation>Фамілія Ім&apos;я По батькові</translation>
     </message>
     <message>
         <location filename="src/PersonalPage.qml" line="1"/>

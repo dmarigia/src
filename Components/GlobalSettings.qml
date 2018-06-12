@@ -1,5 +1,5 @@
 Object {
-    id: global;
+    id: global
     property string token
     property string email
     property string firstName: 'Ім\'я'

@@ -85,11 +85,12 @@ Rectangle {
                 anchors.leftMargin: 40;
                 anchors.top: parent.top;
                 anchors.topMargin: 25;
-                Column {
-                    spacing: 5;
-                    Row {
-                        spacing: 80;
+                spacing: 5;
 
+                Column {
+                    spacing: 10;
+
+                    Row {
                         Text {
                             id: nameSurname;
                             text: settings.name;
@@ -98,9 +99,10 @@ Rectangle {
                             font.bold: true;
                         }
                     }
+
                     Row {
                         anchors.topMargin: 15;
-                        spacing: 5;
+                        spacing: 17;
 
                         Text {
                             text: qsTr('Звание: ');
@@ -108,54 +110,10 @@ Rectangle {
                         }
 
                         Text {
-                            text: qsTr('-');
+                            text: qsTr('Невідоме академічне звання');
                             color: '#212121';
                         }
                     }
-                    Row {
-                        spacing: 5;
-
-                        Text {
-                            text: 'Ступінь: ';
-                            color: '#757575';
-                        }
-
-                        Text {
-                            text: qsTr('Кандидат економічних наук');
-                            color: '#212121';
-                        }
-                    }
-                }
-                Column {
-                    anchors.left: mainAvatar.right;
-                    anchors.leftMargin: (mainInfo.width - mainAvatar.width) * 0.55;
-                    spacing: 5;
-
-                    Text {
-                        id: nameSurnameEng;
-                        text: 'Name Surname';
-                        color: '#212121';
-                        font.pixelSize: 16;
-                        font.bold: true;
-                    }
-
-                    Row {
-                        anchors.topMargin: 15;
-                        spacing: 5;
-
-                        Text {
-                            text: qsTr('Специальность: ');
-                            color: '#757575';
-                        }
-
-                        Text {
-                            text: ('Фінансовий контроль і аудит');
-                            color: '#212121';
-                            width: mainInfoRow.width - 300;
-                            wrapMode: Text.Wrap;
-                        }
-                    }
-
                     Row {
                         spacing: 5;
 
@@ -165,10 +123,59 @@ Rectangle {
                         }
 
                         Text {
-                            text: qsTr('Кафедра обліку і аудиту');
+                            text: qsTr('Кафедра інформаційних технологій та кібербезпеки');
+                            width: mainInfoRow.width - 395;
+                            wrapMode: Text.Wrap;
                             color: '#212121';
                         } //год рождения, год обучения, форма обучения (дневная, заочная), бюджет/контракт, руководитель +ссылка на его профиль
                     }
+                }
+                Column {
+                    anchors.left: mainAvatar.right;
+                    anchors.leftMargin: (mainInfo.width - mainAvatar.width) * 0.51;
+                    spacing: 10;
+
+                    Row {
+                        Text {
+                            id: nameSurnameEng;
+                            text: 'Olshevska Olga';
+                            color: '#212121';
+                            font.pixelSize: 16;
+                            font.bold: true;
+                        }
+                    }
+
+                    Row {
+                        anchors.topMargin: 15;
+                        spacing: 52;
+
+                        Text {
+                            text: qsTr('Ступінь: ');
+                            color: '#757575';
+                        }
+
+                        Text {
+                            text: qsTr('Кандидат технічних наук');
+                            color: '#212121';
+                        }
+                    }
+
+                    Row {
+                        spacing: 5;
+
+                        Text {
+                            text: qsTr('Специальность: ');
+                            color: '#757575';
+                        }
+
+                        Text {
+                            text: ('05.05.14 Холодильна вакуумна, копресорна техніка, системи кондиціонування');
+                            color: '#212121';
+                            width: mainInfoRow.width - 363;
+                            wrapMode: Text.Wrap;
+                        }
+                    }
+
                 }
             }
 
@@ -176,7 +183,8 @@ Rectangle {
                 spacing: 20;
                 anchors.left: mainAvatar.right;
                 anchors.leftMargin: 40;
-                anchors.bottomMargin: 5;
+                anchors.bottomMargin: 50;
+                //anchors.bottomMargin: 5;
                 anchors.bottom: mainInfo.bottom;
 
                 Rectangle {
@@ -185,47 +193,45 @@ Rectangle {
                     height: 1;
                     color: '#EAEAEA';
                 }
-
-                Row {
-                    spacing: 25;
-                    anchors.horizontalCenter: mainLine.horizontalCenter;
-
-                    Column {
-                        spacing: 15;
-
-                        Text {
-                            text: qsTr('Заданий');
-                            color: '#757575';
-                        }
-
-                        Text {
-                            anchors.centerIn: parent;
-                            text: '4';
-                            //font.bold: true;
-                            color: '#f48fb1';
-                            font.pixelSize: 24;
-                            //font.bold: true;
-                        }
-                    }
-                    Column {
-                        spacing: 15;
-                        Text {
-                            text: qsTr('Рейтинг');
-                            color: '#757575';
-                        }
-                        Text {
-                            anchors.centerIn: parent;
-                            text: '2';
-                            //font.bold:true;
-                            color: '#f48fb1';
-                            font.pixelSize: 24;
-                        }
-                    }
-                }
+                // Row {
+                //     spacing: 25;
+                //     anchors.horizontalCenter: mainLine.horizontalCenter;
+                //     Column {
+                //         spacing: 15;
+                //         Text {
+                //             text: qsTr('Заданий');
+                //             color: '#757575';
+                //         }
+                //         Text {
+                //             anchors.centerIn: parent;
+                //             text: '4';
+                //             //font.bold: true;
+                //             color: '#f48fb1';
+                //             font.pixelSize: 24;
+                //             //font.bold: true;
+                //         }
+                //     }
+                //     Column {
+                //         spacing: 15;
+                //         Text {
+                //             text: qsTr('Рейтинг');
+                //             color: '#757575';
+                //         }
+                //         Text {
+                //             anchors.centerIn: parent;
+                //             text: '2';
+                //             //font.bold:true;
+                //             color: '#f48fb1';
+                //             font.pixelSize: 24;
+                //         }
+                //     }
+                // }
             }
         }
 
-        Row { spacing: 40;
+        Row {
+            spacing: 40;
+
             Rectangle {
                 clip: true;
                 id: infoEducation;
@@ -238,47 +244,56 @@ Rectangle {
                 // effects.shadow.color: '#f5f5f9';
                 // effects.shadow.blur: 15;
                 // effects.shadow.spread: 15;
+
                 Column {
                     anchors.verticalCenter: parent.verticalCenter;
                     anchors.left: parent.left;
                     anchors.leftMargin: 20;
                     spacing: 20;
+
                     Column {
                         spacing: 5;
+
                         Text {
                             text: 'Факультет';
                             color: '#757575';
                         }
+
                         Text {
-                            text: qsTr('Факультет економіки, бізнесу і контролю');
+                            text: qsTr('Факультет комп\'ютерної інженерії, програмування та кіберзахисту');
                             color: '#212121';
                             width: infoEducation.width - 30;
                             wrapMode: Text.Wrap;
                             font.pixelSize: 15;
                         }
                     }
+
                     Column {
                         spacing: 5;
+
                         Text {
-                            text: 'Інститут';
+                            text: qsTr('Институт');
                             color: '#757575';
                         }
+
                         Text {
-                            text: qsTr('Навчально-науковий інститут прикладної економіки та менеджменту ім. Г.Е. Вейнштейна');
+                            text: qsTr('Навчально-науковий інститут комп\'ютерних систем і технологій «Індустрія 4.0» ім. П. М. Платонова');
                             color: '#212121';
                             width: infoEducation.width - 30;
                             wrapMode: Text.Wrap;
                             font.pixelSize: 15;
                         }
                     }
+
                     Column {
                         spacing: 5;
                         Text {
                             text: 'Керівник';
                             color: '#757575';
                         }
+
                         Text {
-                            text: qsTr('Прізвище Ім\'я По батькові');
+                            text: qsTr('Фамилия Имя Отчество');
                             color: '#212121';
                             width: infoEducation.width - 30;
                             wrapMode: Text.Wrap;
@@ -329,7 +344,7 @@ Rectangle {
                         }
 
                         Text {
-                            text: '1';
+                            text: qsTr('Информация отсутствует'); 
                             color: '#212121';
                             font.pixelSize: 15;
                         }
@@ -342,7 +357,7 @@ Rectangle {
                         }
 
                         Text {
-                            text: qsTr('Відсутня');
+                            text: qsTr('Информация отсутствует');
                             color: '#212121';
                             font.pixelSize: 15;
                         }
@@ -354,7 +369,7 @@ Rectangle {
                             color: '#757575';
                         }
                         Text {
-                            text: qsTr('Дневная');
+                            text: qsTr('Информация отсутствует');
                             color: '#212121';
                             font.pixelSize: 15;
                         }
@@ -366,7 +381,7 @@ Rectangle {
                             color: '#757575';
                         }
                         Text {
-                            text: qsTr('Бюджет');
+                            text: qsTr('Информация отсутствует');
                             color: '#212121';
                             font.pixelSize: 15;
                         }
@@ -427,7 +442,7 @@ Rectangle {
                             color: '#757575';
                         }
                         Text {
-                            text: qsTr('Не замужем');
+                            text: qsTr('Информация отсутствует');
                             color: '#212121';
                             font.pixelSize: 15;
                         }
@@ -439,7 +454,7 @@ Rectangle {
                             color: '#757575';
                         }
                         Text {
-                            text: qsTr('Нет');
+                            text: qsTr('Информация отсутствует');
                             color: '#212121';
                             font.pixelSize: 15;
                         }
@@ -488,7 +503,7 @@ Rectangle {
                             color: '#757575';
                         }
                         Text {
-                            text: '+380639170208';
+                            text: qsTr('Информация отсутствует');
                             color: '#212121';
                             font.pixelSize: 15;
                         }
@@ -512,7 +527,7 @@ Rectangle {
                             color: '#757575';
                         }
                         Text {
-                            text: qsTr('Место работы');
+                            text: qsTr('Информация отсутствует');
                             color: '#212121';
                             font.pixelSize: 15;
                         }
@@ -524,7 +539,7 @@ Rectangle {
                             color: '#757575';
                         }
                         Text {
-                            text: qsTr('Адрес проживания');
+                            text: qsTr('Информация отсутствует');
                             color: '#212121';
                             font.pixelSize: 15;
                         }

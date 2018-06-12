@@ -71,7 +71,7 @@ Item {
 
                         AbstractButton {
                             anchors.horizontalCenter: parent.horizontalCenter
-                            text: qsTr('Додати фото');
+                            text: qsTr('Добавить фото');
                             height: 20
                             colors.default: '#A7B0C4'
                             radius: 50
