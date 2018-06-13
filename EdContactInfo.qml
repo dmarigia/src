@@ -17,7 +17,10 @@ Item {
         id: edContactRect
         color: '#FBFCFD'
         radius: 4
-        anchors.centerIn: parent
+        anchors.top: parent
+        anchors.topMargin: parent.height / 11
+        anchors.left: parent
+        anchors.leftMargin: parent.width / 3
         effects.shadow.color: '#5D6578'
         effects.shadow.blur: 10
         effects.shadow.spread: 2

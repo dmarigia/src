@@ -150,7 +150,7 @@ Rectangle {
                         spacing: 52;
 
                         Text {
-                            text: qsTr('Ступінь: ');
+                            text: qsTr('Степень: ');
                             color: '#757575';
                         }
 

@@ -66,7 +66,7 @@ MainItem {
         firstName: 'Ольга'
         lastName: 'Ольшевська'
         middleName: 'Володимірівна'
-        role: GlobalSettings.Head;
+        role: GlobalSettings.Admin;
     }
 
     LocalStorage {

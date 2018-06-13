@@ -30,6 +30,38 @@ Item {
     }
 
     AbstractButton {
+        id: person;
+        anchors.top: parent.top
+        anchors.topMargin: 40 
+        height: 40
+        radius: 50 
+        colors.hovered: '#faf6fb'
+        colors.default: 'transparent' 
+        width: 400    
+        anchors.horizontalCenter: parent.horizontalCenter;
+        text: "Баранюк Христина Олександрівна";
+        font.pixelSize: 16;
+        font.bold: true;
+    }
+
+    Row {
+        anchors.bottom: person.bottom
+        anchors.horizontalCenter: person
+        width: person.width - 36
+        Rectangle {
+            height: 1
+            color: '#D6A7DF'
+            width: parent.width / 2
+            z:1
+        }
+        Rectangle {
+            height: 1
+            color: '#B0C5EF'
+            width: parent.width / 2
+        }
+    }
+
+    AbstractButton {
         id: addTaskButton
         anchors.top: parent.top
         anchors.right: parent.right
@@ -42,7 +74,7 @@ Item {
         height: 40
         width: 160
         onClicked: {
-            listModel.insert(0, {'sub': false})
+            listModel.insert(0, {'sub': false, 'edit': true})
         }
     }
 
@@ -72,6 +104,15 @@ Item {
         model: ListModel {
             id: listModel
         }
+        onCompleted: { // moder taskDone comment name
+            listModel.append({name: 'Дослідна пропозиція на тему: "Аспекти розвитку управління конкурентноспроможністю підприємств малого бізнесу в харчовій промисловості"', taskDone: true, moder: true })
+            listModel.append({name: 'Дослідження підходів до визначення сутності', taskDone: true, moder: true, sub: true })
+            listModel.append({name: 'Визначення факторів конкурентоспроможності', taskDone: true, moder: true, sub: true })
+            listModel.append({name: 'Удосконалення структури', taskDone: true, moder: true, sub: true })
+            listModel.append({name: 'Звітна робота', taskDone: false, moder: false})
+            listModel.append({name: 'Аналіз літературних джерел', taskDone: false, moder: false, sub: true})
+            listModel.append({name: 'Опубліковання наукових праць', taskDone: false, moder: false, sub: true })
+        }
 
         delegate: Rectangle {
             id: deleg
@@ -80,7 +121,7 @@ Item {
             border.width: 2
             border.color: '#f5f5f9'
             //color: model.sub ? '#FBFCFD' : '#f5f5f9'
-            property bool edit: true
+            property bool edit: model.edit
             height: (!journal.hideSub && model.sub) ? 55 : (model.sub ? 0 : 55)
             visible: (!journal.hideSub && model.sub) || !model.sub // TODO
             color: checkBox1.checked && checkBox2.checked ? '#b9f6ca' : (model.sub ? '#FBFCFD' : '#f5f5f9')
@@ -110,7 +151,7 @@ Item {
                         colors.pressed: '#5D6578'
                         radius: 50
                         opacity: (checkBox1.checked && checkBox2.checked) ? 0.6 : 0.4
-                        onClicked: { listModel.insert(model.index + 1, {'sub':true}) }
+                        onClicked: { listModel.insert(model.index + 1, {'sub':true, 'edit': true}) }
                     }
                 }
 
@@ -129,7 +170,7 @@ Item {
                         colors.pressed: '#5D6578'
                         radius: 50
                         opacity: (checkBox1.checked && checkBox2.checked) ? 0.6 : 0.4
-                        onClicked: { deleg.edit = false }
+                        onClicked: { deleg.edit = false; optMenu.visible = false }
                     }
                 }
 
@@ -144,6 +185,7 @@ Item {
                         width: parent.width - 20
                         anchors.bottom: parent.bottom
                         placeholder.text: model.sub ? 'Назва підпункту': 'Назва завдання'
+                        text: model.name ? model.name : ''
                         materialColor: '#A8AEEC'
                         font.pixelSize: 14
                     }
@@ -212,16 +254,7 @@ Item {
                         width: 18
                         height: 18
                         enabled: deleg.edit;
-                        // onCheckedChanged: {
-                        //     log('[checkBox1]', value)
-                        //     if (!model.sub) return
-                        //     for (var i = model.index; i != 0; --i) {
-                        //         console.log('цикл', listModel.get(i).sub)
-                        //         if (!listModel.get(i).sub) {
-                        //             break
-                        //         }
-                        //     }
-                        // }
+                        checked: model.taskDone;
                     }
                 }
 
@@ -234,6 +267,7 @@ Item {
                         id: checkBox2
                         anchors.centerIn: parent
                         enabled: deleg.edit
+                        checked: model.moder
                     }
                 }
 
@@ -247,6 +281,7 @@ Item {
                         materialColor: '#A8AEEC'
                         font.pixelSize: 14
                         enabled: deleg.edit
+                        text: model.comment ? model.comment : ''
                     }
 
                 }
@@ -285,15 +320,6 @@ Item {
         }
     }
 
-    // Rectangle { // TODO
-    //             id: line
-    //             color: '#FBFCFD'
-    //             anchors.horizontalCenter: parent.horizontalCenter
-    //             height: 5
-    //             width: parent.width * 0.9
-    //             anchors.top: listRect.bottom
-    //         }
-
     Rectangle {
         id: listRect
         anchors.top: addTaskButton.bottom
@@ -302,9 +328,6 @@ Item {
         anchors.horizontalCenter: parent.horizontalCenter
         width: parent.width * 0.9
         height: 50
-        // effects.shadow.color: '#efefef'
-        // effects.shadow.blur: 10
-        // effects.shadow.spread: 2
 
         Rectangle {
             width: 100%

@@ -88,7 +88,7 @@ Item {
 
                             Text {
                                 color: '#A7B0C4'
-                                text: 'ПІБ (укр.)'
+                                text: 'ПІБ (укр.) *'
                             }
 
                             TextInputMaterial {
@@ -105,7 +105,7 @@ Item {
 
                             Text {
                                 color: '#A7B0C4'
-                                text: 'Name Surname (eng)'
+                                text: 'Name Surname (eng) *'
                             }
 
                             TextInputMaterial {
@@ -152,7 +152,7 @@ Item {
 
                         Text {
                             color: '#A7B0C4'
-                            text: 'Інститут'
+                            text: 'Інститут *'
                         }
 
                         ComboBox {
@@ -163,8 +163,9 @@ Item {
                             effects.shadow.color: '#A8AEEC'
                             effects.shadow.blur: 1
                             //effects.shadow.spread: 1
+                            //wrapMode: Text.Wrap;
 
-                            model: ['Інст1', 'Інст2', 'Інст3', 'Інст4', 'Інст5']
+                            model: ['Оберіть інститут','Навчально-науковий технологічний інститут харчової промисловості', 'Навчально-науковий інститут комп\'ютерних систем і технологій «Індустрія 4.0»"', 'Навчально-науковий інститут прикладної економіки та менеджменту', 'Навчально-науковий інститут холоду, кріотехнологій та екоенергетики']
                         }
                     }
 
@@ -173,7 +174,7 @@ Item {
 
                         Text {
                             color: '#A7B0C4'
-                            text: 'Факультет'
+                            text: 'Факультет *'
                         }
 
                         ComboBox {
@@ -182,7 +183,7 @@ Item {
                             effects.shadow.blur: 1
                             button.font.pixelSize: 15
                             width: 500
-                            model: ['Факультет', 'Факультет']
+                            model: ['Оберіть факультет', 'Факультет']
                         }
                     }
 
@@ -191,61 +192,7 @@ Item {
 
                         Text {
                             color: '#A7B0C4'
-                            text: 'Звання'
-                        }
-
-                        ComboBox {
-                            displayText: !currentText ? 'Оберіть звання' : currentText
-                            effects.shadow.color: '#A8AEEC'
-                            effects.shadow.blur: 1
-                            button.font.pixelSize: 15
-                            width: 500
-                            model: ['Звання 1', 'Звання 2']
-                        }
-                    }
-
-                    Column {
-                        spacing: 10
-
-                        Text {
-                            color: '#A7B0C4'
-                            text: 'Ступінь'
-                        }
-
-                        ComboBox {
-                            displayText: !currentText ? 'Оберіть ступінь' : currentText
-                            effects.shadow.color: '#A8AEEC'
-                            effects.shadow.blur: 1
-                            button.font.pixelSize: 15
-                            width: 500
-                            model: ['Ступінь', 'Ступінь']
-                        }
-                    }
-
-                    Column {
-                        spacing: 10
-
-                        Text {
-                            color: '#A7B0C4'
-                            text: 'Спеціальність'
-                        }
-
-                        ComboBox {
-                            displayText: !currentText ? 'Оберіть спеціальність' : currentText
-                            effects.shadow.color: '#A8AEEC'
-                            effects.shadow.blur: 1
-                            button.font.pixelSize: 15
-                            width: 500
-                            model: ['Спеціальність 1', 'Спеціальність 2']
-                        }
-                    }
-
-                    Column {
-                        spacing: 10
-
-                        Text {
-                            color: '#A7B0C4'
-                            text: 'Кафедра'
+                            text: 'Кафедра *'
                         }
 
                         ComboBox {
@@ -254,7 +201,61 @@ Item {
                             effects.shadow.blur: 1
                             button.font.pixelSize: 15
                             width: 500
-                            model: ['Кафедра 1', 'Кафедра 2']
+                            model: ['Оберіть кафедру', 'Кафедра 2']
+                        }
+                    }
+
+                    Column {
+                        spacing: 10
+
+                        Text {
+                            color: '#A7B0C4'
+                            text: 'Спеціальність *'
+                        }
+
+                        ComboBox {
+                            displayText: !currentText ? 'Оберіть спеціальність' : currentText
+                            effects.shadow.color: '#A8AEEC'
+                            effects.shadow.blur: 1
+                            button.font.pixelSize: 15
+                            width: 500
+                            model: ['Оберіть спеціальність', 'Спеціальність 2']
+                        }
+                    }
+
+                    Column {
+                        spacing: 10
+
+                        Text {
+                            color: '#A7B0C4'
+                            text: 'Вчене звання'
+                        }
+
+                        ComboBox {
+                            displayText: !currentText ? 'Оберіть вчене звання' : currentText
+                            effects.shadow.color: '#A8AEEC'
+                            effects.shadow.blur: 1
+                            button.font.pixelSize: 15
+                            width: 500
+                            model: ['Оберіть вчене звання', 'Звання 2']
+                        }
+                    }
+
+                    Column {
+                        spacing: 10
+
+                        Text {
+                            color: '#A7B0C4'
+                            text: 'Наукова ступінь'
+                        }
+
+                        ComboBox {
+                            displayText: !currentText ? 'Оберіть наукову ступінь' : currentText
+                            effects.shadow.color: '#A8AEEC'
+                            effects.shadow.blur: 1
+                            button.font.pixelSize: 15
+                            width: 500
+                            model: ['Оберіть наукову ступінь', 'Ступінь']
                         }
                     }
 
@@ -272,7 +273,7 @@ Item {
                             effects.shadow.blur: 1
                             button.font.pixelSize: 15
                             width: 500
-                            model: ['1', '2']
+                            model: ['Оберіть рік навчання', '2']
                         }
                     }
 
@@ -290,7 +291,7 @@ Item {
                             effects.shadow.blur: 1
                             button.font.pixelSize: 15
                             width: 500
-                            model: ['Денна', 'Заочна']
+                            model: ['Оберіть основу навчання', 'Заочна']
                         }
                     }
 
@@ -308,7 +309,7 @@ Item {
                             effects.shadow.blur: 1
                             button.font.pixelSize: 15
                             width: 500
-                            model: ['Бюджет', 'Контракт']
+                            model: ['Оберіть форму навчання', 'Контракт']
                         }
                     }
 
@@ -325,7 +326,7 @@ Item {
                             effects.shadow.blur: 1
                             button.font.pixelSize: 15
                             width: 500
-                            model: ['Керівник 1', 'Керівник 2']
+                            model: ['Оберіть керівника', 'Керівник 2']
                         }
                     }
 
@@ -338,7 +339,7 @@ Item {
                         }
 
                         TextInputMaterial {
-                            placeholder.text: 'Тема наукової роботи'
+                            placeholder.text: 'Вкажіть тему наукової роботи'
                             materialColor: '#A8AEEC'
                             font.pixelSize: 15
                             width: 500
@@ -371,7 +372,7 @@ Item {
                         }
 
                         TextInputMaterial {
-                            placeholder.text: '+38 (063) '
+                            placeholder.text: '+38 (ххх)-хххх-ххх'
                             materialColor: '#A8AEEC'
                             font.pixelSize: 15
                             width: 500
@@ -387,7 +388,7 @@ Item {
                         }
 
                         TextInputMaterial {
-                            placeholder.text: 'e-mail'
+                            placeholder.text: 'Вкажіть e-mail'
                             materialColor: '#A8AEEC'
                             font.pixelSize: 15
                             width: 500
@@ -403,7 +404,7 @@ Item {
                         }
 
                         TextInputMaterial {
-                            placeholder.text: 'Місце роботи'
+                            placeholder.text: 'Вкажіть місце роботи'
                             materialColor: '#A8AEEC'
                             font.pixelSize: 15
                             width: 500
@@ -419,7 +420,7 @@ Item {
                         }
 
                         TextInputMaterial {
-                            placeholder.text: 'Адреса проживання'
+                            placeholder.text: 'Вкажіть адресу проживання'
                             materialColor: '#A8AEEC'
                             font.pixelSize: 15
                             width: 500
@@ -521,7 +522,7 @@ Item {
                             effects.shadow.blur: 1
                             button.font.pixelSize: 15
                             width: 500
-                            model: ['1', '2']
+                            model: ['Оберіть сімейний стан', '2']
                         }
                     }
 
@@ -539,7 +540,7 @@ Item {
                             effects.shadow.blur: 1
                             button.font.pixelSize: 15
                             width: 500
-                            model: ['Немає', '1']
+                            model: ['Оберіть відповідний пункт', '1']
                         }
                     }
                 }
@@ -564,11 +565,11 @@ Item {
                         spacing: 10
                         Text {
                             color: '#A7B0C4'
-                            text: 'Вкажіть логін для користувача'
+                            text: 'Вкажіть e-mail користувача у якості логіну*'
                         }
 
                         TextInputMaterial {
-                            placeholder.text: 'Логін'
+                            placeholder.text: 'e-mail користувача'
                             materialColor: '#A8AEEC'
                             font.pixelSize: 15
                             width: 500
@@ -580,7 +581,7 @@ Item {
 
                         Text {
                             color: '#A7B0C4'
-                            text: 'Вкажіть пароль для користувача'
+                            text: 'Вкажіть пароль для користувача *'
                         }
 
                         TextInputMaterial {
@@ -596,7 +597,7 @@ Item {
 
                         Text {
                             color: '#A7B0C4'
-                            text: 'Вкажіть роль користувача у системі'
+                            text: 'Вкажіть роль користувача у системі *'
                         }
 
                         ComboBox {

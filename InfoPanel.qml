@@ -34,18 +34,16 @@ Rectangle {
         anchors.top: parent
         anchors.topMargin: 22
         opacity: 0.5
-        anchors.right: exitButton.left
+        anchors.right: exitImage.left
         anchors.rightMargin: 15
     }
 
-    Row {
-        id: exitButton
-        spacing: 0
-        anchors.right: infoPanel.right
-        anchors.rightMargin: 30
-        anchors.verticalCenter: parent.verticalCenter
-
-        Image {
+    Image {
+            anchors.right: exitButton.left
+            anchors.rightMargin: 7
+            anchors.top: parent
+            anchors.topMargin: 23
+            id: exitImage
             source: 'images/exit.png'
             height: 25
             width: 25
@@ -57,6 +55,14 @@ Rectangle {
                 color: 'white'
             }
         }
+
+    Row {
+        id: exitButton
+        spacing: 0
+        anchors.right: infoPanel.right
+        anchors.rightMargin: 30
+        anchors.top: parent
+        anchors.topMargin: 10
 
         AbstractButton {
             opacity: 0.8

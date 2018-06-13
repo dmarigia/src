@@ -110,6 +110,10 @@ Rectangle {
     //     width: 120
     // }
 
+    Text {
+        text: ''
+    }
+
     AbstractButton {
         id: addButton
         anchors.top: parent.top
@@ -158,8 +162,9 @@ Rectangle {
         }
 
         onCompleted: {
-            for(var i = 0; i !== 50; ++i)
             elistModel.append({name: "Батраков Олександр Олегович" , role: "Аспірант"})
+            elistModel.append({name: "Баранюк Христина Олександрівна" , role: "Аспірант"})
+            elistModel.append({name: "Ольшевська Ольга Володимірівна", role: "Адміністратор"})
         }
 
         NetworkRequest {
@@ -197,6 +202,7 @@ Rectangle {
                 editUser.visible = !editUser.visible;
             }
 
+
             Row {
                 width: parent.width;
 
@@ -205,11 +211,21 @@ Rectangle {
                     width: parent.width / 5;
 
                     Image {
+                        id: av
                         anchors.centerIn: parent;
                         source: 'images/avatarbig45.png'
                         height: 45;
                         width: 45;
                         opacity: 0.4;
+                    }
+                    Image {
+                        anchors.fill: av
+                        source: model.index == 2 ? settings.avatarPath : settings.avatarPath !== ''
+                        visible: settings.avatarPath !== ''
+                        height: 45
+                        width: 45
+                        radius: 100
+                        fillMode: Image.PreserveAspectCrop
                     }
                 }
 
@@ -259,7 +275,8 @@ Rectangle {
                         anchors.topMargin: 20;
                         anchors.horizontalCenter: opt.horizontalCenter;
                         visible: false;
-                        z: 1;
+                        profile: true
+                        z: 2
                     }
                 }
             }

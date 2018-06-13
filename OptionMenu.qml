@@ -2,6 +2,7 @@ Item {
     id: optionMenu
     anchors.centerIn: parent
     width: menu.width
+    property bool profile
 
     Menu {
         id: menu
@@ -40,19 +41,19 @@ Item {
             }
         }
 
-        // MenuItem {
-        //     id: menuItem3
-        //     visible: false
-        //     position: AbstractButton.Left
-        //     icon.source: 'images/delete.png'
-        //     icon.height: 20
-        //     icon.width: 20
-        //     icon.opacity: 0.4
-        //     text: 'Перегляд завдань'
-        //     onTriggered: {
-        //         optionMenu.visible = false
-        //     }
-        // }
+        MenuItem {
+            id: menuItem3
+            visible: optionMenu.profile
+            position: AbstractButton.Left
+            icon.source: 'images/account36.png'
+            icon.height: 20
+            icon.width: 20
+            icon.opacity: 0.4
+            text: 'Перегляд профілю'
+            onTriggered: {
+                optionMenu.visible = false
+            }
+        }
     }
 
     Triangle {

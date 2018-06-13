@@ -268,6 +268,11 @@
     </message>
     <message>
         <location filename="src/PersonalPage.qml" line="1"/>
+        <source>Степень: </source>
+        <translation>Ступінь: </translation>
+    </message>
+    <message>
+        <location filename="src/PersonalPage.qml" line="1"/>
         <source>Ступінь: </source>
         <translation type="unfinished"></translation>
     </message>

@@ -17,7 +17,7 @@ WebItem {
 
     Image {
         id: textLang
-        source: parent.lang === 'uk' ? 'images/ukr.png' : 'images/ukr.png'
+        source: parent.lang === 'uk' ? 'images/ukr.png' : 'images/rus.png'
         height: 25
         width: 35
         //text: parent.lang === 'uk' ? 'українська' : 'русский'
